@@ -173,6 +173,19 @@ class PowerConversionPage(QWidget):
     # 标准功率等级 (W)
     POWER_RATINGS = [0.125, 0.25, 0.5, 1, 2, 3, 5]
 
+    # 电阻封装参数: 额定功率W / 相对单价 / 相对PCB占用面积 (用于选型对比)
+    # 价格与面积为相对值 (以 0603 为基准 1.0), 用于方案间对比, 非绝对报价
+    PACKAGES = {
+        "0603":        {"w": 0.1,   "price": 1.0, "area": 1.0},
+        "0805":        {"w": 0.125, "price": 1.3, "area": 1.8},
+        "1206":        {"w": 0.25,  "price": 1.6, "area": 3.2},
+        "2512":        {"w": 1.0,   "price": 4.5, "area": 7.5},
+        "大功率贴片":   {"w": 2.0,   "price": 12,  "area": 16},
+        "插件绕线电阻": {"w": 5.0,   "price": 6.0, "area": 22},
+    }
+    # 可并联替代的小封装 (按性价比/空间权衡排序)
+    PARALLEL_PACKAGES = ("1206", "0805", "0603")
+
     def __init__(self):
         super().__init__()
         # 配置文件统一管理默认参数 / API / 型号库 (方便手动修改)
@@ -656,7 +669,8 @@ class PowerConversionPage(QWidget):
         if p_r > 0:
             rating = self.select_power_rating(p_r * 2)
             package = self.select_package(rating)
-            p_r_text = f"{self.format_value(p_r, 'W', 'mW')}  (建议 ≥{rating}W {package})"
+            plan = self.suggest_resistor_plan(p_r)
+            p_r_text = f"{self.format_value(p_r, 'W', 'mW')} (需 ≥{rating}W)\n{plan}"
         else:
             p_r_text = "0 W (无需电阻)"
 
@@ -954,7 +968,7 @@ class PowerConversionPage(QWidget):
         return 10
 
     def select_package(self, rating):
-        """根据功率等级推荐电阻封装"""
+        """根据功率等级推荐单颗电阻封装"""
         if rating <= 0.125:
             return "0603"
         if rating <= 0.25:
@@ -966,6 +980,44 @@ class PowerConversionPage(QWidget):
         if rating <= 2:
             return "大功率贴片"
         return "插件绕线电阻"
+
+    def suggest_resistor_plan(self, p_r):
+        """生成电阻选型方案: 单颗大封装 vs 多颗小封装并联, 对比成本与 PCB 空间
+        例如 1W 场景: 1×2512 或 4×1206 并联 (每颗 0.25W)"""
+        if p_r <= 0:
+            return "无需电阻"
+        p_need = p_r * 2  # 留 2 倍功率余量
+        rating = self.select_power_rating(p_need)
+        single_pkg = self.select_package(rating)
+        single = self.PACKAGES.get(single_pkg)
+        base = f"1×{single_pkg} ({rating}W)"
+
+        # 评估小封装并联方案: n 颗, 每颗承担 p_need/n, 2~8 颗为合理范围
+        best = None
+        for pkg in self.PARALLEL_PACKAGES:
+            info = self.PACKAGES[pkg]
+            n = math.ceil(p_need / info["w"])
+            if not (2 <= n <= 8):
+                continue
+            cost = n * info["price"]
+            area = n * info["area"]
+            if best is None or (cost, area) < (best[3], best[4]):
+                best = (pkg, n, info["w"], cost, area)
+        if best is None or single is None:
+            return base
+
+        pkg, n, pw, cost, area = best
+        scost, sarea = single["price"], single["area"]
+        tags = []
+        if cost <= scost * 0.95 and area <= sarea * 0.9:
+            tags.append("更便宜更省空间")
+        elif cost <= scost * 0.95:
+            tags.append("更便宜")
+        elif area <= sarea * 0.9:
+            tags.append("更省空间")
+        else:
+            tags.append("成本/空间略增")
+        return f"{base} | 替代 {n}×{pkg} 并联, 每颗 {pw}W ({','.join(tags)})"
 
     def format_value(self, value, unit, small_unit=None):
         """格式化数值, 自动进行单位换算"""
