@@ -1,0 +1,287 @@
+from PyQt6.QtWidgets import (
+    QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
+    QLabel, QPushButton, QFrame, QSplitter, QTextEdit, QMessageBox, QFileDialog, QMenuBar, QMenu, QScrollArea, QGridLayout, QStackedWidget, QComboBox
+)
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QFont
+import sys
+
+from home_page import HomePage
+from serial_debug_page import SerialDebugPage
+from placeholder_page import PlaceholderPage
+from resistor_color_code_page import ResistorColorCodePage
+
+
+class SerialDebugTool(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+        self.show()
+
+    def initUI(self):
+        # 设置窗口基本属性
+        self.setWindowTitle('串口调试工具')
+        self.setGeometry(100, 100, 1200, 800)
+        
+        # 记录导航栏状态
+        self.nav_expanded = True  # True=展开, False=收起
+        
+        # 创建中央部件
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+        
+        # 主布局
+        main_layout = QHBoxLayout(central_widget)
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.setSpacing(0)
+        
+        # ===== 左侧导航栏 =====
+        nav_frame = QFrame()
+        nav_frame.setObjectName("navFrame")
+        nav_frame.setFixedWidth(200)
+        self.nav_frame = nav_frame  # 保存引用以便后续修改宽度
+        nav_layout = QVBoxLayout(nav_frame)
+        nav_layout.setContentsMargins(10, 20, 10, 20)
+        nav_layout.setSpacing(5)
+        
+        # 标题栏(带切换按钮)
+        title_layout = QHBoxLayout()
+        
+        self.title_label = QLabel("⚡ 工作助手")
+        self.title_label.setFont(QFont("Microsoft YaHei", 16, QFont.Weight.Bold))
+        self.title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.title_label.setStyleSheet("color: #333; padding: 10px;")
+        title_layout.addWidget(self.title_label)
+        
+        # 切换按钮
+        toggle_btn = QPushButton("◀")
+        toggle_btn.setFixedSize(30, 30)
+        toggle_btn.setCursor(Qt.CursorShape.PointingHandCursor)
+        toggle_btn.setStyleSheet("""
+            QPushButton {
+                background: transparent;
+                color: #999;
+                border: none;
+                border-radius: 15px;
+                font-size: 14px;
+            }
+            QPushButton:hover {
+                background: #E8F4FF;
+                color: #409EFF;
+            }
+        """)
+        toggle_btn.clicked.connect(self.toggle_nav_bar)
+        title_layout.addWidget(toggle_btn)
+        
+        nav_layout.addLayout(title_layout)
+        
+        nav_layout.addSpacing(20)
+        
+        # 保存导航项数据
+        self.nav_items = [
+            ("🏠", "首页概览"),
+            ("🔌", "串口调试"),
+            ("📄", "BOM整理"),
+            ("📐", "文档图纸"),
+            ("📏", "走线计算"),
+            ("📈", "功率变换"),
+            ("📚", "常识查询"),
+            ("⚙️", "系统设置")
+        ]
+        
+        # 导航按钮列表
+        self.nav_buttons = []
+        for index, (icon, text) in enumerate(self.nav_items):
+            btn = self.create_nav_button(icon, text, index)
+            nav_layout.addWidget(btn)
+            self.nav_buttons.append(btn)
+        
+        nav_layout.addStretch()
+        
+        # ===== 右侧内容区 - 使用堆叠窗口 =====
+        content_widget = QWidget()
+        content_layout = QVBoxLayout(content_widget)
+        content_layout.setContentsMargins(20, 20, 20, 20)
+        content_layout.setSpacing(20)
+        
+        # 顶部标题栏
+        header_layout = QHBoxLayout()
+        self.page_title = QLabel("首页")
+        self.page_title.setFont(QFont("Microsoft YaHei", 20, QFont.Weight.Bold))
+        self.page_title.setStyleSheet("color: #333;")
+        header_layout.addWidget(self.page_title)
+        header_layout.addStretch()
+        content_layout.addLayout(header_layout)
+        
+        # 堆叠窗口 - 用于切换不同页面
+        self.stacked_widget = QStackedWidget()
+        
+        # 创建各个页面
+        self.page_home = HomePage()
+        self.page_serial = SerialDebugPage()
+        self.page_bom = PlaceholderPage("BOM整理", "📄")
+        self.page_doc = PlaceholderPage("文档图纸", "📐")
+        self.page_trace = PlaceholderPage("走线计算", "📏")
+        self.page_power = PlaceholderPage("功率变换", "📈")
+        self.page_query = ResistorColorCodePage()
+        self.page_settings = PlaceholderPage("系统设置", "⚙️")
+        
+        # 添加页面到堆叠窗口
+        self.stacked_widget.addWidget(self.page_home)
+        self.stacked_widget.addWidget(self.page_serial)
+        self.stacked_widget.addWidget(self.page_bom)
+        self.stacked_widget.addWidget(self.page_doc)
+        self.stacked_widget.addWidget(self.page_trace)
+        self.stacked_widget.addWidget(self.page_power)
+        self.stacked_widget.addWidget(self.page_query)
+        self.stacked_widget.addWidget(self.page_settings)
+        
+        content_layout.addWidget(self.stacked_widget)
+        
+        # 添加到主布局
+        main_layout.addWidget(nav_frame)
+        main_layout.addWidget(content_widget, 1)
+        
+        # 默认选中首页
+        self.nav_buttons[0].setChecked(True)
+        
+        # 应用样式
+        self.apply_styles()
+    
+    def create_nav_button(self, icon, text, index):
+        """创建导航按钮"""
+        btn = QPushButton(f"{icon}  {text}")
+        btn.setMinimumHeight(50)
+        btn.setFont(QFont("Microsoft YaHei", 11))
+        btn.setCursor(Qt.CursorShape.PointingHandCursor)
+        btn.setProperty("index", index)  # 保存页面索引
+        btn.setStyleSheet("""
+            QPushButton {
+                background: transparent;
+                color: #555;
+                border: none;
+                border-radius: 8px;
+                text-align: left;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            QPushButton:hover {
+                background: #E8F4FF;
+                color: #409EFF;
+            }
+            QPushButton:checked {
+                background: #409EFF;
+                color: white;
+            }
+        """)
+        btn.setCheckable(True)
+        btn.clicked.connect(lambda: self.switch_page(index))
+        return btn
+    
+    def switch_page(self, index):
+        """切换页面"""
+        # 取消其他按钮的选中状态
+        for i, btn in enumerate(self.nav_buttons):
+            if i != index:
+                btn.setChecked(False)
+        
+        # 切换到对应页面
+        self.stacked_widget.setCurrentIndex(index)
+        
+        # 更新标题
+        page_names = ["首页概览", "串口调试", "BOM整理", "文档图纸", "走线计算", "功率变换", "常识查询", "系统设置"]
+        self.page_title.setText(page_names[index])
+    
+    def toggle_nav_bar(self):
+        """切换导航栏展开/收起状态"""
+        self.nav_expanded = not self.nav_expanded
+        
+        # 找到切换按钮并更新箭头
+        title_layout = self.nav_frame.layout().itemAt(0).layout()
+        toggle_btn = title_layout.itemAt(1).widget()
+        
+        if self.nav_expanded:
+            # 展开模式
+            self.nav_frame.setFixedWidth(200)
+            self.title_label.setText("⚡ 工作助手")
+            toggle_btn.setText("◀")  # type: ignore
+            
+            # 更新按钮显示文字
+            for btn, (icon, text) in zip(self.nav_buttons, self.nav_items):
+                btn.setText(f"{icon}  {text}")
+        else:
+            # 收起模式(只显示图标)
+            self.nav_frame.setFixedWidth(70)
+            self.title_label.setText("⚡")
+            toggle_btn.setText("▶")  # type: ignore
+            
+            # 更新按钮只显示图标
+            for btn, (icon, text) in zip(self.nav_buttons, self.nav_items):
+                btn.setText(f"{icon}")
+    
+    def create_card(self, title, value, icon, color):
+        """创建信息卡片"""
+        card = QFrame()
+        card.setObjectName("card")
+        card.setFixedHeight(120)
+        card.setStyleSheet(f"""
+            QFrame#card {{
+                background: white;
+                border-radius: 8px;
+                border-left: 4px solid {color};
+            }}
+            QFrame#card:hover {{
+                background: #F5F7FA;
+            }}
+        """)
+        
+        layout = QVBoxLayout(card)
+        layout.setContentsMargins(20, 15, 20, 15)
+        layout.setSpacing(8)
+        
+        # 图标和标题行
+        top_layout = QHBoxLayout()
+        icon_label = QLabel(icon)
+        icon_label.setFont(QFont("Microsoft YaHei", 20))
+        top_layout.addWidget(icon_label)
+        
+        title_label = QLabel(title)
+        title_label.setFont(QFont("Microsoft YaHei", 12))
+        title_label.setStyleSheet("color: #666;")
+        top_layout.addWidget(title_label)
+        top_layout.addStretch()
+        layout.addLayout(top_layout)
+        
+        # 数值
+        value_label = QLabel(value)
+        value_label.setFont(QFont("Microsoft YaHei", 18, QFont.Weight.Bold))
+        value_label.setStyleSheet(f"color: {color};")
+        layout.addWidget(value_label)
+        
+        return card
+    
+    def apply_styles(self):
+        """应用全局样式"""
+        self.setStyleSheet("""
+            QMainWindow {
+                background: #F5F7FA;
+            }
+            QFrame#navFrame {
+                background: white;
+                border-right: 1px solid #E8E8E8;
+            }
+            QFrame#card {
+                background: white;
+                border-radius: 8px;
+            }
+        """)
+
+
+def main():
+    app = QApplication(sys.argv)
+    ex = SerialDebugTool()
+    sys.exit(app.exec())
+
+
+if __name__ == '__main__':
+    main()
