@@ -56,8 +56,49 @@ class ConfigManager:
                 "language": "zh_CN",
                 "auto_save": True,
                 "log_max_lines": 10000
+            },
+            "power_conversion": {
+                "defaults": {
+                    "model_index": 0,
+                    "vin": "12",
+                    "current_ma": "100",
+                    "derate": "80",
+                    "tamb": "25",
+                    "rthja": "",
+                    "iq": ""
+                },
+                "api": {
+                    "base_url": "https://api.deepseek.com/chat/completions",
+                    "model": "deepseek-chat",
+                    "api_key": "",
+                    "temperature": 0.7,
+                    "max_tokens": 1500
+                },
+                "regulators": {
+                    "78L05 (SOT-89, 100mA)": {"vout": 5.0, "vdrop": 2.0, "rthja": 140, "imax": 100, "iq": 6},
+                    "78L08 (SOT-89, 100mA)": {"vout": 8.0, "vdrop": 1.7, "rthja": 140, "imax": 100, "iq": 6},
+                    "AMS1117-3.3 (SOT-223, 1A)": {"vout": 3.3, "vdrop": 1.2, "rthja": 90, "imax": 1000, "iq": 5},
+                    "AMS1117-5.0 (SOT-223, 1A)": {"vout": 5.0, "vdrop": 1.2, "rthja": 90, "imax": 1000, "iq": 5},
+                    "HT7533 (SOT-89, 100mA)": {"vout": 3.3, "vdrop": 0.5, "rthja": 140, "imax": 100, "iq": 0.005},
+                    "HT7550 (SOT-89, 100mA)": {"vout": 5.0, "vdrop": 0.5, "rthja": 140, "imax": 100, "iq": 0.005},
+                    "XC6206P332MR (SOT-23, 200mA)": {"vout": 3.3, "vdrop": 0.3, "rthja": 250, "imax": 200, "iq": 0.002},
+                    "ME6211C33 (SOT-23-5, 500mA)": {"vout": 3.3, "vdrop": 0.25, "rthja": 200, "imax": 500, "iq": 0.05},
+                    "LP5907MFX-3.3 (SOT-23-5, 250mA)": {"vout": 3.3, "vdrop": 0.1, "rthja": 220, "imax": 250, "iq": 0.015},
+                    "RT9013-33PB (SOT-23-5, 500mA)": {"vout": 3.3, "vdrop": 0.15, "rthja": 200, "imax": 500, "iq": 0.05},
+                    "MIC5205-3.3 (SOT-23-5, 150mA)": {"vout": 3.3, "vdrop": 0.2, "rthja": 220, "imax": 150, "iq": 0.11},
+                    "78L05 (TO-92, 100mA)": {"vout": 5.0, "vdrop": 2.0, "rthja": 200, "imax": 100, "iq": 6},
+                    "78L33 (TO-92, 100mA)": {"vout": 3.3, "vdrop": 1.7, "rthja": 200, "imax": 100, "iq": 6},
+                    "7805 (TO-220, 1A)": {"vout": 5.0, "vdrop": 2.0, "rthja": 65, "imax": 1000, "iq": 8},
+                    "7808 (TO-220, 1A)": {"vout": 8.0, "vdrop": 2.0, "rthja": 65, "imax": 1000, "iq": 8},
+                    "7812 (TO-220, 1A)": {"vout": 12.0, "vdrop": 2.0, "rthja": 65, "imax": 1000, "iq": 8},
+                    "自定义": {"vout": 5.0, "vdrop": 2.0, "rthja": 200, "imax": 100, "iq": 5}
+                }
             }
         }
+    
+    def get_factory_defaults(self):
+        """获取出厂默认配置 (用于恢复默认)"""
+        return self._get_default_config()
     
     def save_config(self):
         """保存配置到文件"""

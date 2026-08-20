@@ -10,6 +10,7 @@ from home_page import HomePage
 from serial_debug_page import SerialDebugPage
 from placeholder_page import PlaceholderPage
 from resistor_color_code_page import ResistorColorCodePage
+from power_conversion_page import PowerConversionPage
 
 
 class SerialDebugTool(QMainWindow):
@@ -104,15 +105,6 @@ class SerialDebugTool(QMainWindow):
         content_layout.setContentsMargins(20, 20, 20, 20)
         content_layout.setSpacing(20)
         
-        # 顶部标题栏
-        header_layout = QHBoxLayout()
-        self.page_title = QLabel("首页")
-        self.page_title.setFont(QFont("Microsoft YaHei", 20, QFont.Weight.Bold))
-        self.page_title.setStyleSheet("color: #333;")
-        header_layout.addWidget(self.page_title)
-        header_layout.addStretch()
-        content_layout.addLayout(header_layout)
-        
         # 堆叠窗口 - 用于切换不同页面
         self.stacked_widget = QStackedWidget()
         
@@ -122,7 +114,7 @@ class SerialDebugTool(QMainWindow):
         self.page_bom = PlaceholderPage("BOM整理", "📄")
         self.page_doc = PlaceholderPage("文档图纸", "📐")
         self.page_trace = PlaceholderPage("走线计算", "📏")
-        self.page_power = PlaceholderPage("功率变换", "📈")
+        self.page_power = PowerConversionPage()
         self.page_query = ResistorColorCodePage()
         self.page_settings = PlaceholderPage("系统设置", "⚙️")
         
@@ -187,10 +179,6 @@ class SerialDebugTool(QMainWindow):
         
         # 切换到对应页面
         self.stacked_widget.setCurrentIndex(index)
-        
-        # 更新标题
-        page_names = ["首页概览", "串口调试", "BOM整理", "文档图纸", "走线计算", "功率变换", "常识查询", "系统设置"]
-        self.page_title.setText(page_names[index])
     
     def toggle_nav_bar(self):
         """切换导航栏展开/收起状态"""
