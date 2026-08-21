@@ -3,7 +3,7 @@ Author: ilencee 862491025@qq.com
 Date: 2026-04-13 21:54:41
 LastEditors: ilencee 862491025@qq.com
 LastEditTime: 2026-04-13 23:11:40
-FilePath: \QT\Untitled-1.py
+FilePath: /QT/Untitled-1.py
 Description: 
 
 Copyright (c) 2026 by ${git_name_email}, All Rights Reserved. 

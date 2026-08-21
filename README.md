@@ -1,174 +1,67 @@
-# 串口调试工具 - 项目结构说明
+# 工作助手 (串口调试工具)
+
+基于 PyQt6 的电子工程桌面工具，集成了串口调试、功率变换计算、电阻色环查询等功能。
 
 ## 📁 项目架构
 
-本项目采用**模块化设计**，将不同界面分离到独立文件中，便于维护和扩展。
-
-### 核心文件说明
-
-#### 1. **test1.py** - 主程序入口
-- **职责**：窗口框架、导航栏、页面切换逻辑
-- **包含内容**：
-  - `SerialDebugTool` 类：主窗口类
-  - 导航按钮管理
-  - 页面切换逻辑
-  - 导航栏展开/收起功能
-  - 全局样式应用
-
-#### 2. **home_page.py** - 首页模块
-- **类名**：`HomePage`
-- **功能**：显示串口状态、数据统计卡片
-- **特点**：可滚动区域，网格布局展示信息卡片
-
-#### 3. **serial_debug_page.py** - 串口调试页面
-- **类名**：`SerialDebugPage`
-- **功能**：串口配置、数据收发显示
-- **特点**：包含串口选择、波特率设置、数据显示区域
-
-#### 4. **placeholder_page.py** - 占位页面模块
-- **类名**：`PlaceholderPage`
-- **功能**：用于尚未开发的功能页面
-- **参数**：接收标题和图标，显示"此功能正在开发中..."
-- **使用场景**：BOM整理、文档图纸、走线计算、功率变换、系统设置
-
-#### 5. **resistor_color_code_page.py** - 电阻色环查询页面
-- **类名**：`ResistorColorCodePage`
-- **功能**：电阻色环对照表、快速查询计算器
-- **特点**：
-  - 完整的色环颜色对照表
-  - 下拉框选择器
-  - 自动计算电阻值
-  - 支持多种单位显示（Ω, kΩ, MΩ, GΩ）
-
-## 🎯 架构优势
-
-### 1. **易于维护**
-- 每个页面独立管理，修改一个页面不影响其他页面
-- 代码职责清晰，便于定位问题
-
-### 2. **便于扩展**
-- 新增页面只需创建新文件，在主程序中注册即可
-- 不需要修改现有页面代码
-
-### 3. **团队协作友好**
-- 不同开发者可以同时开发不同页面
-- 减少代码冲突
-
-### 4. **代码复用**
-- 通用组件可以提取为独立模块
-- 占位页面可重复使用
-
-## 📝 如何添加新页面
-
-### 步骤 1：创建页面文件
-```python
-# new_feature_page.py
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLabel
-from PyQt6.QtGui import QFont
-
-class NewFeaturePage(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.initUI()
-    
-    def initUI(self):
-        layout = QVBoxLayout(self)
-        # 添加你的界面元素
-        label = QLabel("新功能页面")
-        layout.addWidget(label)
+```
+tool/
+├── main.py                    # 统一入口 (python main.py)
+├── requirements.txt           # 依赖清单
+├── config.json                # 应用配置 (默认参数 / API / 型号库)
+├── assets/
+│   └── icon.png               # 应用图标
+├── app/                       # 应用主包
+│   ├── main_window.py         # 主窗口 (导航栏 + 页面切换 + 懒加载)
+│   ├── pages/                 # 功能页面
+│   │   ├── home_page.py              # 首页概览 (状态卡片)
+│   │   ├── serial_debug_page.py      # 串口调试页面
+│   │   ├── power_conversion_page.py  # 功率变换计算 (LDO/电阻选型/AI 分析)
+│   │   ├── text_polish_page.py       # 文本润色 (工艺要求/测试流程/烧录指导)
+│   │   ├── resistor_color_code_page.py # 电阻色环查询
+│   │   └── placeholder_page.py       # 占位页面 (未开发功能)
+│   ├── core/                  # 核心模块
+│   │   ├── config_manager.py  # 配置管理 (config.json)
+│   │   ├── deepseek_client.py # DeepSeek API 客户端 (线程/结果弹窗, 多页面共享)
+│   │   └── style_manager.py   # 统一样式管理
+│   └── tools/                 # 独立工具 (可单独运行)
+│       ├── serial_port.py     # SerialStudio 独立串口调试器
+│       └── learn.py           # 无边框窗口示例
+├── scripts/
+│   └── test_resistor_plan.py  # 电阻选型算法测试脚本
+└── archive/                   # 历史备份 (旧版代码)
+    └── Untitled-1.py
 ```
 
-### 步骤 2：在主程序中导入
-```python
-# test1.py
-from new_feature_page import NewFeaturePage
-```
-
-### 步骤 3：在 initUI 中实例化
-```python
-self.page_new_feature = NewFeaturePage()
-self.stacked_widget.addWidget(self.page_new_feature)
-```
-
-### 步骤 4：添加到导航项
-```python
-self.nav_items = [
-    ("🏠", "首页概览"),
-    ("🔌", "串口调试"),
-    # ... 其他项
-    ("✨", "新功能")  # 添加新项
-]
-```
-
-## 🔧 运行项目
+## 🚀 运行
 
 ```bash
-python test1.py
+pip install -r requirements.txt
+python main.py
 ```
 
-## 📌 注意事项
+独立工具:
 
-1. **依赖管理**：确保已安装 PyQt6
-   ```bash
-   pip install PyQt6
-   ```
-
-2. **导入顺序**：主程序必须先导入所有页面模块
-
-3. **命名规范**：
-   - 文件名：小写+下划线（如 `home_page.py`）
-   - 类名：大驼峰（如 `HomePage`）
-
-4. **页面通信**：如需页面间通信，可通过主程序传递信号或共享数据
-
-## 🚀 后续优化建议
-
-1. **样式管理**：✅ 已完成 - 使用 `style_manager.py` 统一管理所有UI组件样式
-2. **配置管理**：✅ 已完成 - 使用 `config_manager.py` 管理串口配置等设置
-3. **日志系统**：添加日志记录功能
-4. **单元测试**：为各个页面编写测试用例
-
-## 📝 使用说明
-
-### 样式管理器 (style_manager.py)
-
-```python
-from style_manager import StyleManager
-
-# 应用卡片样式
-card = QFrame()
-StyleManager.card_info(card, color="#409EFF")
-
-# 应用滚动区域样式
-scroll = QScrollArea()
-StyleManager.scroll_area_clean(scroll)
-
-# 应用按钮样式
-button = QPushButton("按钮")
-StyleManager.button_modern_flat(button)
+```bash
+python app/tools/serial_port.py   # SerialStudio
 ```
 
-### 配置管理器 (config_manager.py)
+## 🔧 配置说明 (config.json)
 
-```python
-from config_manager import ConfigManager
+- `power_conversion.defaults`: 功率变换页默认参数（型号、电压、电流等）
+- `power_conversion.regulators`: LDO 稳压器型号库
+- `power_conversion.api`: DeepSeek API Key（用于 AI 分析）
+- `text_polish.types`: 文本润色各文档类型的模板与限制（工艺要求/测试流程/烧录指导），每项含 `system_role`（角色设定）、`template`（文档模板）、`constraints`（限制条件数组），修改后重启生效
 
-# 创建配置管理器实例
-config = ConfigManager("config.json")
+## 🎯 架构设计
 
-# 获取串口配置
-serial_config = config.get_serial_config()
-params = config.get_full_serial_params()
+- **模块化**：页面按功能拆分到 `app/pages/`，核心逻辑在 `app/core/`
+- **懒加载**：主窗口启动只创建首页，其余页面首次点击时创建，加快启动速度
+- **独立工具隔离**：`app/tools/` 下的工具各自独立运行，不依赖主窗口
+- **配置持久化**：默认参数、型号库、API 统一由 `config.json` 管理，支持手动编辑
 
-# 设置串口参数
-config.set_serial_port("COM3")
-config.set_baudrate(115200)
+## 📝 添加新页面
 
-# 保存配置到文件
-config.save_config()
-
-# 通过路径访问配置
-baudrate = config.get_value("serial_port.baudrate", default=9600)
-config.set_value("window.theme", "macOS Light")
-```
-
+1. 在 `app/pages/` 下创建页面文件（如 `new_feature_page.py`）
+2. 在 `app/main_window.py` 的 `_page_factories` 中添加工厂函数
+3. 在 `nav_items` 中添加对应导航项

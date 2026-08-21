@@ -13,126 +13,19 @@
     从而降低稳压器本身的功耗与温升。
 """
 
-import json
 import math
-import urllib.error
-import urllib.request
 from pathlib import Path
 
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QFrame, QLabel,
     QComboBox, QPushButton, QLineEdit, QFormLayout, QGridLayout,
-    QSizePolicy, QCheckBox, QTextBrowser, QDialog,
+    QSizePolicy, QCheckBox,
 )
-from PyQt6.QtCore import Qt, QThread, pyqtSignal
+from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QDoubleValidator
 
-from config_manager import ConfigManager
-
-
-class DeepSeekThread(QThread):
-    """后台线程调用 DeepSeek API (不阻塞界面)"""
-    succeeded = pyqtSignal(str)  # 分析结果文本
-    failed = pyqtSignal(str)     # 错误信息
-
-    def __init__(self, api_key, prompt, base_url, model="deepseek-chat",
-                 temperature=0.7, max_tokens=1500, parent=None):
-        super().__init__(parent)
-        self.api_key = api_key
-        self.prompt = prompt
-        self.base_url = base_url
-        self.model = model
-        self.temperature = temperature
-        self.max_tokens = max_tokens
-
-    def run(self):
-        try:
-            payload = {
-                "model": self.model,
-                "messages": [
-                    {
-                        "role": "system",
-                        "content": "你是一名资深的电源工程师, 精通 LDO 线性稳压电路设计、"
-                                   "降额使用与散热分析。请用中文给出专业、简洁、可执行的工程建议。",
-                    },
-                    {"role": "user", "content": self.prompt},
-                ],
-                "temperature": self.temperature,
-                "max_tokens": self.max_tokens,
-            }
-            data = json.dumps(payload).encode("utf-8")
-            req = urllib.request.Request(
-                self.base_url,
-                data=data,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.api_key}",
-                },
-            )
-            with urllib.request.urlopen(req, timeout=60) as resp:
-                result = json.loads(resp.read().decode("utf-8"))
-            text = result["choices"][0]["message"]["content"]
-            self.succeeded.emit(text.strip())
-        except urllib.error.HTTPError as e:
-            try:
-                body = e.read().decode("utf-8", errors="ignore")
-            except Exception:
-                body = ""
-            self.failed.emit(f"HTTP {e.code}: {e.reason}\n{body}")
-        except Exception as e:
-            self.failed.emit(f"请求失败: {e}")
-
-
-class DeepSeekDialog(QDialog):
-    """DeepSeek 分析结果独立窗口"""
-
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setWindowTitle("🤖 DeepSeek 分析结果")
-        self.resize(720, 560)
-        self.setMinimumSize(520, 380)
-
-        layout = QVBoxLayout(self)
-        layout.setContentsMargins(16, 16, 16, 16)
-        layout.setSpacing(12)
-
-        title = QLabel("🤖 DeepSeek 电源设计分析")
-        title.setFont(QFont("Microsoft YaHei", 14, QFont.Weight.Bold))
-        layout.addWidget(title)
-
-        # QTextBrowser + setMarkdown: AI 返回的 Markdown (标题/列表/代码块等) 直接渲染
-        self.text = QTextBrowser()
-        self.text.setOpenExternalLinks(True)
-        self.text.setStyleSheet("""
-            QTextBrowser {
-                background: white; border: 1px solid #DCDFE6;
-                border-radius: 8px; padding: 12px;
-            }
-            QTextBrowser a { color: #409EFF; }
-        """)
-        layout.addWidget(self.text, 1)
-
-        close_btn = QPushButton("关闭")
-        close_btn.setMinimumHeight(36)
-        close_btn.setCursor(Qt.CursorShape.PointingHandCursor)
-        close_btn.setStyleSheet("""
-            QPushButton {
-                background: #409EFF; color: white; border: none;
-                border-radius: 6px; padding: 6px 12px; font-weight: bold;
-            }
-            QPushButton:hover { background: #66B1FF; }
-            QPushButton:pressed { background: #337ECC; }
-        """)
-        close_btn.clicked.connect(self.accept)
-        layout.addWidget(close_btn)
-
-    def set_message(self, text):
-        """显示纯文本 (用于加载中/错误提示)"""
-        self.text.setPlainText(text)
-
-    def set_markdown(self, text):
-        """渲染 Markdown 文本 (用于 AI 分析结果)"""
-        self.text.setMarkdown(text)
+from app.core.config_manager import ConfigManager
+from app.core.deepseek_client import DeepSeekThread, DeepSeekDialog, load_api_config
 
 
 class PowerConversionPage(QWidget):
@@ -189,7 +82,7 @@ class PowerConversionPage(QWidget):
     def __init__(self):
         super().__init__()
         # 配置文件统一管理默认参数 / API / 型号库 (方便手动修改)
-        self.cfg = ConfigManager(str(Path(__file__).resolve().parent / "config.json"))
+        self.cfg = ConfigManager(str(Path(__file__).resolve().parents[2] / "config.json"))
         # 确保 config.json 存在: 首次运行自动生成完整模板, 后续可直接手动编辑
         if "power_conversion" not in self.cfg.config:
             self.cfg.config["power_conversion"] = self.cfg.get_factory_defaults()["power_conversion"]
@@ -290,7 +183,7 @@ class PowerConversionPage(QWidget):
         self.model_combo.currentIndexChanged.connect(self.on_regulator_changed)
         layout.addWidget(self.model_combo)
 
-        # 最大电流提示 (徽章)
+        # 最大电流提示 (徽章) - 已隐藏
         self.imax_label = QLabel()
         self.imax_label.setFont(QFont("Microsoft YaHei", 9))
         self.imax_label.setWordWrap(True)
@@ -298,6 +191,7 @@ class PowerConversionPage(QWidget):
             "background: #ECF5FF; color: #409EFF; border-radius: 4px;"
             "padding: 5px 8px;"
         )
+        self.imax_label.hide()
         layout.addWidget(self.imax_label)
 
         # 降压方式: 复选框, 默认串联电阻; 取消勾选 = LDO 全压降
@@ -466,10 +360,6 @@ class PowerConversionPage(QWidget):
         self.vdrop_edit.setText(str(params["vdrop"]))
         self.rthja_edit.setText(str(params["rthja"]))
         self.iq_edit.setText(str(params["iq"]))
-        imax = params["imax"]
-        self.imax_label.setText(
-            f"最大输出 {imax}mA, 80% 降额后建议 ≤ {imax * 0.8:.0f}mA"
-        )
 
     # ==================== 结果卡片 ====================
     def create_result_card(self):
@@ -669,8 +559,10 @@ class PowerConversionPage(QWidget):
         if p_r > 0:
             rating = self.select_power_rating(p_r * 2)
             package = self.select_package(rating)
-            plan = self.suggest_resistor_plan(p_r)
-            p_r_text = f"{self.format_value(p_r, 'W', 'mW')} (需 ≥{rating}W)\n{plan}"
+            p_r_text = (
+                f"{self.format_value(p_r, 'W', 'mW')} (需 ≥{rating}W)\n"
+                f"建议 1×{package} ({rating}W)"
+            )
         else:
             p_r_text = "0 W (无需电阻)"
 
@@ -698,6 +590,7 @@ class PowerConversionPage(QWidget):
             "i_ma": current_ma, "iq_ma": iq,
             "tamb": tamb, "rthja": rthja,
             "r_text": r_text, "p_r_text": p_r_text,
+            "r_value": r, "p_r": p_r,
             "p_ldo": p_ldo, "delta_t": delta_t, "tj": tj,
             "p_in": p_in, "p_loss": p_loss, "efficiency": efficiency,
         }
@@ -715,8 +608,8 @@ class PowerConversionPage(QWidget):
             return
 
         # API Key 从 config.json 的 power_conversion.api 中读取
-        api_cfg = self.cfg.config.get("power_conversion", {}).get("api", {})
-        api_key = str(api_cfg.get("api_key", ""))
+        api_cfg = load_api_config(self.cfg)
+        api_key = api_cfg["api_key"]
         if not api_key:
             dialog = DeepSeekDialog(self)
             dialog.set_message(
@@ -736,10 +629,10 @@ class PowerConversionPage(QWidget):
         self.ai_thread = DeepSeekThread(
             api_key,
             self.build_ai_prompt(),
-            base_url=str(api_cfg.get("base_url", "https://api.deepseek.com/chat/completions")),
-            model=str(api_cfg.get("model", "deepseek-chat")),
-            temperature=float(api_cfg.get("temperature", 0.7)),
-            max_tokens=int(api_cfg.get("max_tokens", 1500)),
+            base_url=api_cfg["base_url"],
+            model=api_cfg["model"],
+            temperature=api_cfg["temperature"],
+            max_tokens=api_cfg["max_tokens"],
         )
         self.ai_thread.succeeded.connect(lambda t: self.on_ai_succeeded(dialog, t))
         self.ai_thread.failed.connect(lambda e: self.on_ai_failed(dialog, e))
@@ -762,6 +655,32 @@ class PowerConversionPage(QWidget):
         """根据当前计算数据生成 AI 分析提示词"""
         d = self.last_data
         warn = self.warn_label.text().strip()
+
+        # 电阻选型上下文: 封装表 + 当前参考方案 (供 AI 推荐具体组合)
+        pkg_info = ", ".join(
+            f"{k}({v['w']}W)"
+            for k, v in self.PACKAGES.items()
+        )
+        plan_text = ""
+        if d.get("p_r", 0) > 0:
+            rv = d.get("r_value")
+            r_desc = (
+                f"{self.format_value(rv, 'Ω')} (E24 推荐 "
+                f"{self.format_value(self.nearest_e24(rv), 'Ω')})" if rv else "无"
+            )
+            plan_text = (
+                "【电阻选型】\n"
+                f"- 串联电阻阻值: {r_desc}\n"
+                f"- 电阻实际功耗: {self.format_value(d['p_r'], 'W', 'mW')} (留 2 倍余量后需 ≥"
+                f"{self.select_power_rating(d['p_r'] * 2)}W)\n"
+                f"- 可选封装(额定功率): {pkg_info}\n"
+                f"- 参考单颗方案: {d['p_r_text'].replace(chr(10), ', ')}\n"
+                f"- 参考并联替代: {self.suggest_resistor_plan(d['p_r'])}\n\n"
+                "请结合以上数据推荐最合理的电阻组合方案: 对比单颗大封装与多颗小封装并联 "
+                "(如 2×1206、4×0805 等), 给出具体封装、数量、每颗功耗, 并说明成本与 "
+                "PCB 空间取舍, 最终给出明确推荐。\n\n"
+            )
+
         return (
             "请对以下 LDO 降压电路的计算结果进行分析, 输出:\n"
             "1) 设计是否安全可靠\n"
@@ -787,8 +706,9 @@ class PowerConversionPage(QWidget):
             f"- 输入功率: {self.format_value(d['p_in'], 'W', 'mW')}\n"
             f"- 总损耗: {self.format_value(d['p_loss'], 'W', 'mW')}\n"
             f"- 效率: {d['efficiency']:.1f} %\n\n"
-            "【降额/警告检查】\n"
-            f"{warn if warn else '无'}"
+            + plan_text
+            + "【降额/警告检查】\n"
+            + f"{warn if warn else '无'}"
         )
 
     def check_warnings(self, current_ma, tj, p_r, p_ldo, derate):
@@ -906,12 +826,17 @@ class PowerConversionPage(QWidget):
                 edit.setText(value)
 
     def restore_factory_defaults(self):
-        """恢复出厂默认 (覆盖 config.json 中保存的默认参数)"""
+        """恢复默认参数: 仅恢复参数输入, 不改变当前选择的元器件型号"""
         factory = self.cfg.get_factory_defaults()["power_conversion"]["defaults"]
-        self.cfg.config.setdefault("power_conversion", {})["defaults"] = factory
+        defaults = self.cfg.config.setdefault("power_conversion", {}).setdefault("defaults", {})
+        # 恢复出厂默认值, 但保留当前选择的型号
+        current_model = self.model_combo.currentIndex()
+        for k, v in factory.items():
+            defaults[k] = v
+        defaults["model_index"] = current_model
         self.cfg.save_config()
 
-        self.model_combo.setCurrentIndex(int(factory.get("model_index", 0)))
+        # 型号保持不变, 只恢复参数输入
         self.vin_edit.setText(str(factory.get("vin", "12")))
         self.current_edit.setText(str(factory.get("current_ma", "100")))
         self.derate_edit.setText(str(factory.get("derate", "80")))
@@ -923,7 +848,7 @@ class PowerConversionPage(QWidget):
         # 强制刷新计算: setText 在文本未变化时不触发 textChanged,
         # 需手动调用, 否则结果区/警告区不会更新
         self.calculate()
-        self.show_op_message("↺ 已恢复出厂默认参数 (已写回 config.json)。", "#67C23A")
+        self.show_op_message("↺ 已恢复默认参数 (元器件型号保持不变)。", "#67C23A")
 
     def show_warning(self, text, color="#E6A23C"):
         """显示警告信息"""

@@ -3,7 +3,7 @@ Author: ilencee 862491025@qq.com
 Date: 2026-04-13 21:54:41
 LastEditors: ilencee 862491025@qq.com
 LastEditTime: 2026-04-13 22:12:43
-FilePath: \QT\serial_port.py
+FilePath: /QT/serial_port.py
 Description: 
 
 Copyright (c) 2026 by ${git_name_email}, All Rights Reserved. 
@@ -695,6 +695,12 @@ class SerialDebugTool(QMainWindow):
         self.send_history: List[str] = []
         self.max_history = 50
         
+        # 接收缓冲: 高频数据先入缓冲, 定时批量刷新, 避免 UI 卡顿
+        self._recv_buffer: List[str] = []
+        self._recv_flush_timer = QTimer(self)
+        self._recv_flush_timer.setInterval(50)
+        self._recv_flush_timer.timeout.connect(self._flush_receive_buffer)
+        
         self._setup_ui()
         self._setup_connections()
         self._load_settings()
@@ -1325,8 +1331,20 @@ class SerialDebugTool(QMainWindow):
             timestamp = datetime.now().strftime("%H:%M:%S.%f")[:-3]
             text = f"[{timestamp}] {text}"
             
-        self.receive_text.append(text)
+        # 追加到缓冲, 由定时器批量刷新到界面
+        self._recv_buffer.append(text)
         self._update_rx_count(len(data))
+        if not self._recv_flush_timer.isActive():
+            self._recv_flush_timer.start()
+            
+    def _flush_receive_buffer(self):
+        """将缓冲中的接收数据一次性刷新到界面 (减少 UI 重排次数)"""
+        if not self._recv_buffer:
+            self._recv_flush_timer.stop()
+            return
+        text = "".join(self._recv_buffer)
+        self._recv_buffer.clear()
+        self.receive_text.append(text)
         
         # 限制缓冲区大小
         if self.receive_text.document().characterCount() > 100000:
@@ -1360,6 +1378,8 @@ class SerialDebugTool(QMainWindow):
         
     def _clear_receive(self):
         """清空接收区"""
+        self._recv_buffer.clear()
+        self._recv_flush_timer.stop()
         self.receive_text.clear()
         
     def _save_data(self):
@@ -1537,6 +1557,7 @@ class SerialDebugTool(QMainWindow):
         
         if self.serial_worker.isRunning():
             self.serial_worker.disconnect_port()
+        self._recv_flush_timer.stop()
         a0.accept()  # type: ignore
 
 

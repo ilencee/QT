@@ -1,7 +1,10 @@
 import sys
 import warnings
+import os
 
 from typing import Optional
+# 支持从项目根目录独立运行本脚本
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QLabel, QPushButton, QFrame, QSplitter, QTextEdit, QMessageBox, QFileDialog, QMenuBar, QMenu
@@ -9,7 +12,7 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtCore import Qt, QPoint
 from PyQt6.QtGui import QFont, QCursor
 from PyQt6.QtWidgets import QToolTip
-from style_manager import StyleManager
+from app.core.style_manager import StyleManager
 
 class Example(QMainWindow):
 

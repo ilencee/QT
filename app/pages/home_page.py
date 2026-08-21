@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QScrollArea, QGridLayout, QFrame, QLabel, QHBoxLayout
 from PyQt6.QtGui import QFont
-from style_manager import StyleManager
+from app.core.style_manager import StyleManager
 
 
 class HomePage(QWidget):

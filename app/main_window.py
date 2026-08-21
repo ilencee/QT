@@ -3,25 +3,30 @@ from PyQt6.QtWidgets import (
     QLabel, QPushButton, QFrame, QSplitter, QTextEdit, QMessageBox, QFileDialog, QMenuBar, QMenu, QScrollArea, QGridLayout, QStackedWidget, QComboBox
 )
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QFont, QIcon
 import sys
+import os
 
-from home_page import HomePage
-from serial_debug_page import SerialDebugPage
-from placeholder_page import PlaceholderPage
-from resistor_color_code_page import ResistorColorCodePage
-from power_conversion_page import PowerConversionPage
+from app.pages.home_page import HomePage
+from app.pages.serial_debug_page import SerialDebugPage
+from app.pages.placeholder_page import PlaceholderPage
+from app.pages.resistor_color_code_page import ResistorColorCodePage
+from app.pages.power_conversion_page import PowerConversionPage
+from app.pages.text_polish_page import TextPolishPage
 
 
 class SerialDebugTool(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
-        self.show()
+        # 不在此处 show(): 窗口显示与构造分离, 由 main() 显式控制
 
     def initUI(self):
         # 设置窗口基本属性
         self.setWindowTitle('串口调试工具')
+        icon_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "icon.png")
+        if os.path.exists(icon_path):
+            self.setWindowIcon(QIcon(icon_path))
         self.setGeometry(100, 100, 1200, 800)
         
         # 记录导航栏状态
@@ -72,6 +77,7 @@ class SerialDebugTool(QMainWindow):
             }
         """)
         toggle_btn.clicked.connect(self.toggle_nav_bar)
+        self.toggle_btn = toggle_btn  # 保存引用, 避免通过布局索引反查
         title_layout.addWidget(toggle_btn)
         
         nav_layout.addLayout(title_layout)
@@ -82,7 +88,7 @@ class SerialDebugTool(QMainWindow):
         self.nav_items = [
             ("🏠", "首页概览"),
             ("🔌", "串口调试"),
-            ("📄", "BOM整理"),
+            ("📄", "文本润色"),
             ("📐", "文档图纸"),
             ("📏", "走线计算"),
             ("📈", "功率变换"),
@@ -108,25 +114,21 @@ class SerialDebugTool(QMainWindow):
         # 堆叠窗口 - 用于切换不同页面
         self.stacked_widget = QStackedWidget()
         
-        # 创建各个页面
-        self.page_home = HomePage()
-        self.page_serial = SerialDebugPage()
-        self.page_bom = PlaceholderPage("BOM整理", "📄")
-        self.page_doc = PlaceholderPage("文档图纸", "📐")
-        self.page_trace = PlaceholderPage("走线计算", "📏")
-        self.page_power = PowerConversionPage()
-        self.page_query = ResistorColorCodePage()
-        self.page_settings = PlaceholderPage("系统设置", "⚙️")
-        
-        # 添加页面到堆叠窗口
-        self.stacked_widget.addWidget(self.page_home)
-        self.stacked_widget.addWidget(self.page_serial)
-        self.stacked_widget.addWidget(self.page_bom)
-        self.stacked_widget.addWidget(self.page_doc)
-        self.stacked_widget.addWidget(self.page_trace)
-        self.stacked_widget.addWidget(self.page_power)
-        self.stacked_widget.addWidget(self.page_query)
-        self.stacked_widget.addWidget(self.page_settings)
+        # 页面工厂 (懒加载: 首次切换时才创建, 加快启动速度)
+        self._page_factories = [
+            lambda: HomePage(),
+            lambda: SerialDebugPage(),
+            lambda: TextPolishPage(),
+            lambda: PlaceholderPage("文档图纸", "📐"),
+            lambda: PlaceholderPage("走线计算", "📏"),
+            lambda: PowerConversionPage(),
+            lambda: ResistorColorCodePage(),
+            lambda: PlaceholderPage("系统设置", "⚙️"),
+        ]
+        self._pages: dict = {}
+
+        # 启动时只创建默认页 (首页)
+        self._ensure_page(0)
         
         content_layout.addWidget(self.stacked_widget)
         
@@ -177,23 +179,27 @@ class SerialDebugTool(QMainWindow):
             if i != index:
                 btn.setChecked(False)
         
-        # 切换到对应页面
-        self.stacked_widget.setCurrentIndex(index)
+        # 懒加载: 首次访问才创建页面, 按对象切换 (不依赖堆叠索引, 避免错位)
+        page = self._ensure_page(index)
+        self.stacked_widget.setCurrentWidget(page)
+    
+    def _ensure_page(self, index):
+        """按需创建页面 (懒加载)"""
+        if index not in self._pages:
+            self._pages[index] = self._page_factories[index]()
+            self.stacked_widget.addWidget(self._pages[index])
+        return self._pages[index]
     
     def toggle_nav_bar(self):
         """切换导航栏展开/收起状态"""
         self.nav_expanded = not self.nav_expanded
-        
-        # 找到切换按钮并更新箭头
-        title_layout = self.nav_frame.layout().itemAt(0).layout()
-        toggle_btn = title_layout.itemAt(1).widget()
-        
+
         if self.nav_expanded:
             # 展开模式
             self.nav_frame.setFixedWidth(200)
             self.title_label.setText("⚡ 工作助手")
-            toggle_btn.setText("◀")  # type: ignore
-            
+            self.toggle_btn.setText("◀")
+
             # 更新按钮显示文字
             for btn, (icon, text) in zip(self.nav_buttons, self.nav_items):
                 btn.setText(f"{icon}  {text}")
@@ -201,8 +207,8 @@ class SerialDebugTool(QMainWindow):
             # 收起模式(只显示图标)
             self.nav_frame.setFixedWidth(70)
             self.title_label.setText("⚡")
-            toggle_btn.setText("▶")  # type: ignore
-            
+            self.toggle_btn.setText("▶")
+
             # 更新按钮只显示图标
             for btn, (icon, text) in zip(self.nav_buttons, self.nav_items):
                 btn.setText(f"{icon}")
@@ -266,8 +272,19 @@ class SerialDebugTool(QMainWindow):
 
 
 def main():
+    # Windows 任务栏图标支持 (需在创建窗口前设置)
+    if os.name == "nt":
+        try:
+            import ctypes
+            # 声明参数类型为宽字符串指针, 避免 64 位下指针截断导致设置失败
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID.restype = ctypes.c_long
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID.argtypes = [ctypes.c_wchar_p]
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("SerialDebugTool.WorkAssistant")
+        except Exception:
+            pass
     app = QApplication(sys.argv)
     ex = SerialDebugTool()
+    ex.show()
     sys.exit(app.exec())
 
 
