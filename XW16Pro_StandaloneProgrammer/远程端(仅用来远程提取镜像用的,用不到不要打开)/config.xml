@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <tcpDirectConnectPara>
+  <serverAddress>127.0.0.1</serverAddress>
+  <serverPort>16888</serverPort>
+  </tcpDirectConnectPara>
+</configuration>

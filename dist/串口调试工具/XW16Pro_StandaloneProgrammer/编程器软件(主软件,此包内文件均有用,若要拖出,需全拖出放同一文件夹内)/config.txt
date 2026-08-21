@@ -1,0 +1,6 @@
+ToLinkedSemi=false
+ToCW32=false
+SetSumToSerial0=false
+SetSumToSerial1=false
+SetCrcToSerial0=false
+SetCrcToSerial1=false

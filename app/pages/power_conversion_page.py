@@ -24,7 +24,7 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QDoubleValidator
 
-from app.core.config_manager import ConfigManager
+from app.core.config_manager import ConfigManager, app_root
 from app.core.deepseek_client import DeepSeekThread, DeepSeekDialog, load_api_config
 
 
@@ -82,7 +82,7 @@ class PowerConversionPage(QWidget):
     def __init__(self):
         super().__init__()
         # 配置文件统一管理默认参数 / API / 型号库 (方便手动修改)
-        self.cfg = ConfigManager(str(Path(__file__).resolve().parents[2] / "config.json"))
+        self.cfg = ConfigManager(str(app_root() / "config.json"))
         # 确保 config.json 存在: 首次运行自动生成完整模板, 后续可直接手动编辑
         if "power_conversion" not in self.cfg.config:
             self.cfg.config["power_conversion"] = self.cfg.get_factory_defaults()["power_conversion"]

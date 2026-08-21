@@ -12,6 +12,7 @@ from app.pages.serial_debug_page import SerialDebugPage
 from app.pages.placeholder_page import PlaceholderPage
 from app.pages.resistor_color_code_page import ResistorColorCodePage
 from app.pages.power_conversion_page import PowerConversionPage
+from app.pages.programming_software_page import ProgrammingSoftwarePage
 from app.pages.text_polish_page import TextPolishPage
 
 
@@ -24,7 +25,8 @@ class SerialDebugTool(QMainWindow):
     def initUI(self):
         # 设置窗口基本属性
         self.setWindowTitle('串口调试工具')
-        icon_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "icon.png")
+        from app.core.config_manager import app_root
+        icon_path = str(app_root() / "assets" / "icon.png")
         if os.path.exists(icon_path):
             self.setWindowIcon(QIcon(icon_path))
         self.setGeometry(100, 100, 1200, 800)
@@ -89,8 +91,7 @@ class SerialDebugTool(QMainWindow):
             ("🏠", "首页概览"),
             ("🔌", "串口调试"),
             ("📄", "文本润色"),
-            ("📐", "文档图纸"),
-            ("📏", "走线计算"),
+            ("💾", "烧录软件"),
             ("📈", "功率变换"),
             ("📚", "常识查询"),
             ("⚙️", "系统设置")
@@ -119,8 +120,7 @@ class SerialDebugTool(QMainWindow):
             lambda: HomePage(),
             lambda: SerialDebugPage(),
             lambda: TextPolishPage(),
-            lambda: PlaceholderPage("文档图纸", "📐"),
-            lambda: PlaceholderPage("走线计算", "📏"),
+            lambda: ProgrammingSoftwarePage(),
             lambda: PowerConversionPage(),
             lambda: ResistorColorCodePage(),
             lambda: PlaceholderPage("系统设置", "⚙️"),

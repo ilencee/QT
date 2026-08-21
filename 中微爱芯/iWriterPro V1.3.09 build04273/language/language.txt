@@ -1,0 +1,60 @@
+1019,选择MCU：,Select MCU:
+1022,状态显示区：,Status displays:
+1027,烧录器信息,Programming device information
+1021,程序区：,Program area：
+1025,程序区,Program area
+1023,选项区,Option area
+1279,数据区,Eeprom area
+1028,校验码,Check code
+1007,校验和,Checksum
+1034,校验和,Checksum
+1433,新算法,New Algo
+1432,旧算法,Old Algo
+
+Toolbar_0,打开文件,0pen file
+Toolbar_1,打开ibj,0pen ibj
+Toolbar_2,保存ibj,Save ibj
+Toolbar_4,选项配置,Config
+Toolbar_5,滚动码,Roll code
+Toolbar_7,下载,Download
+Toolbar_8,上传,Upload
+Toolbar_9,读出芯片,Read chip
+Toolbar_11,固件升级,FW update
+Toolbar_12,版本信息,Ver info
+Toolbar_13,加密文件,Encr file
+Toolbar_14,打开iex,0pen iex
+
+menu_0,文件(&F),File(&F)
+menu_0_0,打开文件(&O),0pen file(&O)
+menu_0_1,打开ibj文件(&B),0pen ibj(&B
+menu_0_2,打开E2文件,0pen Eeprom file
+menu_0_4,保存ibj文件(&S),Save ibj(&S)
+menu_0_5,切换ibj文件型号(&C),Switch ibj model(&C)
+menu_0_7,退出(&X),Exit(&X)
+
+menu_1,编辑(&E),Edit(&E)
+menu_1_0,允许编辑,Allow editing
+
+menu_2,设置(&S),Setting(&S)
+menu_2_0,设置选项字(&O),Set option word(&O)
+menu_2_1,设置滚动码(&R),Set the scroll code(&R)
+menu_2_3,脱机烧录设置(&W),Offline burning settings(&W)
+menu_2_4,脱机烧录区域设置,Offline burning area setting
+menu_2_5,切换英文,Switch chinese
+
+menu_3,设备(&D),Device(&D)
+menu_3_0,下载数据(&D),Download data(&O)
+menu_3_1,上传数据(&U),Upload data(&U)
+menu_3_3,上传烧写器状态(&S),Upload writer status(&S)
+menu_3_5,固件升级(&F),Firmware upgrade(&F)
+menu_3_6,获取设备ID,Get device ID
+
+menu_4,联机操作(&C),On-line operation(&C)
+menu_4_0,读出芯片(&R),Read chip(&R)
+menu_4_1,读出原始校验和,Read original checkSum
+
+menu_5,帮助(&H),Help(&H)
+menu_5_0,版本信息(&I),Version information(&I)
+menu_5_2,使用说明(&M),Instruction(&M)
+menu_5_3,ISP烧录连线说明,ISP burn connection instructions
+menu_5_4,常见问题,FAQ

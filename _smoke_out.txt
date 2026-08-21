@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "c:\Users\86249\Desktop\tool\_smoke_auto_burn.py", line 17, in <module>
+    assert m.DEFAULT_BURN_KEYWORDS, "默认关键词缺失"
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'app.pages.programming_software_page' has no attribute 'DEFAULT_BURN_KEYWORDS'
