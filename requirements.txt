@@ -1,2 +1,3 @@
 PyQt6>=6.5.0
 pyserial>=3.5
+pillow>=9.0.0  # 打包时生成 assets\app.ico 用; 不可用时会自动沿用已有 ico

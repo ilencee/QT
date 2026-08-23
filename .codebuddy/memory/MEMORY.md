@@ -41,7 +41,9 @@ LDO 降压计算，实时计算，固定型号 Vout 锁定仅"自定义"可编�
 - 凭证两方式：① Access Token 直用（`parse_jwt_payload` 解 clt/sub/exp 自动填，30 天过期重取）；② Client ID/Secret 自动换取（缓存过期重取）。Open ID 三通道优先级：显式传入 > JWT sub > 换取响应。诊断 `scripts/diag_tencent_docs.py`。
 
 ### 打包与 Qt 坑
-- 打包环境 Python 3.9.0 自带 VCRUNTIME140 旧版 → PyInstaller 打进 exe 报"无法定位序数 380"；**打包前先跑 `scripts\update_vc_runtime.bat`**（System32 14.50 覆盖 Python39 根 + PyQt6\Qt6\bin，需先结束 python 进程）；诊断 `scripts\diag_vc_runtime.py`。build bat 保持 GBK 编码（UTF-8 乱码失效），icon 用 `%~dp0assets\app.ico` 绝对路径。
+- 打包环境 Python 3.9.0 自带 VCRUNTIME140 旧版 → PyInstaller 打进 exe 报"无法定位序数 380"；**打包前先跑 `scripts\update_vc_runtime.bat`**（System32 14.50 覆盖 Python39 根 + PyQt6\Qt6\bin，需先结束 python 进程）；诊断 `scripts\diag_vc_runtime.py`。
+- **build_exe*.bat 编码（2026-08-23 修正）**：必须 **UTF-8(无 BOM)+CRLF** 与脚本第 2 行 `chcp 65001` 匹配，cmd 才能正确解析中文行；GBK 编码 bat + chcp65001 会行断裂（`'open'/'exist' is not recognized`、set 变量失效）。**勿再运行 scripts/fix_bat_encoding.py（转 GBK 会制造此 bug）**。第 1 步图标生成已容错：Pillow 不可用时沿用已有 assets\app.ico（本机 pip 装不上 pillow：清华源 SSL 失败）。icon 用 `%~dp0assets\app.ico` 绝对路径。
+- **PyInstaller 收集 app.pages（2026-08-23）**：main_window 用 `importlib.import_module("app.pages.xxx")` 延迟加载页面，**打包命令必须加 `--collect-submodules app.pages`**，否则 exe 运行报 `No module named 'app.pages'`（两个 build bat 均已加）。改 spec 的 hiddenimports 无效，因 bat 每次 `--clean` 重新生成 spec。
 - `QLayout.takeAt()` 仅移出布局仍会 paint，必须 `widget.hide(); setParent(None); deleteLater()` 三连。
 - PDF 提图（无 PyMuPDF）：正则定位 `<<...>>stream...endstream` 块按 /Filter 解析（DCTDecode 存 JPEG，FlateDecode zlib 解压）。
 

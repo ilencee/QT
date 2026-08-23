@@ -2,41 +2,50 @@
 chcp 65001 >nul
 cd /d "%~dp0"
 
-set "APP_NAME=¹¤×÷ÖúÊÖ"
+set "APP_NAME=å·¥ä½œåŠ©æ‰‹"
 
 echo ============================================
-echo  ¹¤×÷ÖúÊÖ - µ¥ÎÄ¼þ´ò°ü½Å±¾ (PyInstaller onefile)
+echo  å·¥ä½œåŠ©æ‰‹ - å•æ–‡ä»¶æ‰“åŒ…è„šæœ¬ (PyInstaller onefile)
 echo ============================================
 
-echo [1/4] Éú³ÉÍ¼±êÎÄ¼þ (assets\app.ico) ...
-python -c "from PIL import Image; Image.open('assets/icon.png').save('assets/app.ico', sizes=[(16,16),(32,32),(48,48),(64,64),(128,128),(256,256)])"
-
-echo [2/4] ÇåÀí¾ÉµÄµ¥ÎÄ¼þ´ò°ü²úÎï ...
-if exist "build\%APP_NAME%_onefile" rmdir /s /q "build\%APP_NAME%_onefile"
-if exist "dist\%APP_NAME%_µ¥ÎÄ¼þ" rmdir /s /q "dist\%APP_NAME%_µ¥ÎÄ¼þ"
-
-echo [3/4] PyInstaller µ¥ÎÄ¼þ´ò°ü (onefile, ÎÞ¿ØÖÆÌ¨´°¿Ú) ...
-python -m PyInstaller --noconfirm --clean --onefile --windowed --name "%APP_NAME%" --icon "%~dp0assets\app.ico" --distpath "dist\%APP_NAME%_µ¥ÎÄ¼þ" --workpath "build\%APP_NAME%_onefile" --specpath "build\%APP_NAME%_onefile" main.py
+echo [1/4] ç”Ÿæˆå›¾æ ‡æ–‡ä»¶ (assets\app.ico) ...
+python -c "from PIL import Image; Image.open('assets/icon.png').save('assets/app.ico', sizes=[(16,16),(32,32),(48,48),(64,64),(128,128),(256,256)])" 2>nul
 if errorlevel 1 (
-    echo ´ò°üÊ§°Ü!
+    if exist "assets\app.ico" (
+        echo   è­¦å‘Š: Pillow ä¸å¯ç”¨, æ²¿ç”¨å·²æœ‰ assets\app.ico ^(å¦‚éœ€æ›´æ–°å›¾æ ‡è¯·å…ˆå®‰è£… Pillow: pip install pillow^)
+    ) else (
+        echo   é”™è¯¯: æ— æ³•ç”Ÿæˆå›¾æ ‡ ^(Pillow æœªå®‰è£…^) ä¸” assets\app.ico ä¸å­˜åœ¨!
+        pause
+        exit /b 1
+    )
+)
+
+echo [2/4] æ¸…ç†æ—§çš„å•æ–‡ä»¶æ‰“åŒ…äº§ç‰© ...
+if exist "build\%APP_NAME%_onefile" rmdir /s /q "build\%APP_NAME%_onefile"
+if exist "dist\%APP_NAME%_å•æ–‡ä»¶" rmdir /s /q "dist\%APP_NAME%_å•æ–‡ä»¶"
+
+echo [3/4] PyInstaller å•æ–‡ä»¶æ‰“åŒ… (onefile, æ— æŽ§åˆ¶å°çª—å£) ...
+python -m PyInstaller --noconfirm --clean --onefile --windowed --name "%APP_NAME%" --icon "%~dp0assets\app.ico" --collect-submodules app.pages --distpath "dist\%APP_NAME%_å•æ–‡ä»¶" --workpath "build\%APP_NAME%_onefile" --specpath "build\%APP_NAME%_onefile" main.py
+if errorlevel 1 (
+    echo æ‰“åŒ…å¤±è´¥!
     pause
     exit /b 1
 )
 
-echo [4/4] ¸´ÖÆÔËÐÐËùÐè×ÊÔ´µ½ exe ÅÔ±ß ...
-copy /y "config.json" "dist\%APP_NAME%_µ¥ÎÄ¼þ\config.json" >nul
-if exist "assets" xcopy /e /i /y "assets\*" "dist\%APP_NAME%_µ¥ÎÄ¼þ\assets" >nul
-if exist "ÉÕÂ¼Èí¼þ" xcopy /e /i /y "ÉÕÂ¼Èí¼þ" "dist\%APP_NAME%_µ¥ÎÄ¼þ\ÉÕÂ¼Èí¼þ" >nul
-if exist "´®¿Úµ÷ÊÔÖúÊÖ" xcopy /e /i /y "´®¿Úµ÷ÊÔÖúÊÖ" "dist\%APP_NAME%_µ¥ÎÄ¼þ\´®¿Úµ÷ÊÔÖúÊÖ" >nul
-REM ×¢Òâ: ²»Òª¸´ÖÆ installed_programs_memory.json ¡ª Ê×´ÎÔËÐÐ»á×Ô¶¯Éú³ÉÔÚ exe ÅÔ
+echo [4/4] å¤åˆ¶è¿è¡Œæ‰€éœ€èµ„æºåˆ° exe æ—è¾¹ ...
+copy /y "config.json" "dist\%APP_NAME%_å•æ–‡ä»¶\config.json" >nul
+if exist "assets" xcopy /e /i /y "assets\*" "dist\%APP_NAME%_å•æ–‡ä»¶\assets" >nul
+if exist "çƒ§å½•è½¯ä»¶" xcopy /e /i /y "çƒ§å½•è½¯ä»¶" "dist\%APP_NAME%_å•æ–‡ä»¶\çƒ§å½•è½¯ä»¶" >nul
+if exist "ä¸²å£è°ƒè¯•åŠ©æ‰‹" xcopy /e /i /y "ä¸²å£è°ƒè¯•åŠ©æ‰‹" "dist\%APP_NAME%_å•æ–‡ä»¶\ä¸²å£è°ƒè¯•åŠ©æ‰‹" >nul
+REM æ³¨æ„: ä¸è¦å¤åˆ¶ installed_programs_memory.json â€” é¦–æ¬¡è¿è¡Œä¼šè‡ªåŠ¨ç”Ÿæˆåœ¨ exe æ—
 
 echo.
-echo ´ò°üÍê³É!
-echo Êä³öÄ¿Â¼: dist\%APP_NAME%_µ¥ÎÄ¼þ
-echo Ö÷³ÌÐò:   dist\%APP_NAME%_µ¥ÎÄ¼þ\%APP_NAME%.exe
+echo æ‰“åŒ…å®Œæˆ!
+echo è¾“å‡ºç›®å½•: dist\%APP_NAME%_å•æ–‡ä»¶
+echo ä¸»ç¨‹åº:   dist\%APP_NAME%_å•æ–‡ä»¶\%APP_NAME%.exe
 echo.
-echo ×¢Òâ:
-echo  1. exe ÊÇµ¥ÎÄ¼þ (ÄÚº¬ Python/PyQt6), ÎÞ _internal Ä¿Â¼, ±ãÓÚ¼ÓÈë¼ÓÃÜÈí¼þ°×Ãûµ¥
-echo  2. config.json / assets / ÉÕÂ¼Èí¼þ / ´®¿Úµ÷ÊÔÖúÊÖ ±ØÐëÓë exe Í¬Ä¿Â¼, Îðµ¥¶À¿½×ß exe
-echo  3. Ê×´ÎÔËÐÐ»á×Ô¶¯ÔÚ exe ÅÔÉú³É installed_programs_memory.json (±¾»úÈí¼þ¼ÇÒä)
+echo æ³¨æ„:
+echo  1. exe æ˜¯å•æ–‡ä»¶ (å†…å« Python/PyQt6), æ—  _internal ç›®å½•, ä¾¿äºŽåŠ å…¥åŠ å¯†è½¯ä»¶ç™½åå•
+echo  2. config.json / assets / çƒ§å½•è½¯ä»¶ / ä¸²å£è°ƒè¯•åŠ©æ‰‹ å¿…é¡»ä¸Ž exe åŒç›®å½•, å‹¿å•ç‹¬æ‹·èµ° exe
+echo  3. é¦–æ¬¡è¿è¡Œä¼šè‡ªåŠ¨åœ¨ exe æ—ç”Ÿæˆ installed_programs_memory.json (æœ¬æœºè½¯ä»¶è®°å¿†)
 pause

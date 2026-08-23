@@ -12,12 +12,13 @@
         "timestamp_display": true
     },
     "window": {
-        "width": 1920,
-        "height": 1009,
+        "width": 1242,
+        "height": 857,
         "theme": "Windows 11",
-        "x": 0,
-        "y": 23,
-        "nav_expanded": true
+        "x": 156,
+        "y": 148,
+        "nav_expanded": true,
+        "hidden_pages": []
     },
     "general": {
         "language": "zh_CN",
@@ -414,5 +415,6 @@
         "client_id": "f5ace3b8212e4632bea42e2aa81c8730",
         "open_id": "7c75a4f4abd14354b55fe61f67e8752f",
         "last_url": "https://docs.qq.com/doc/doc123"
-    }
+    },
+    "hardware_toolbox": {}
 }
