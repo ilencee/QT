@@ -1,0 +1,2077 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="小端常规编码">
+        Little endian coding
+    </sys:String>
+    <sys:String x:Key="小端常规编码模式示例">
+        E小端常规编码模式示例：比如滚码将要写的值=1234567890，地址为0x4000,长度设置为4，因为此值的十六进制数为：0X499602D2,则编程器写时会从0x4000地址开始写0XD2 0X02 0X96 0X49,即数据的低位在低地址
+    </sys:String>
+    <sys:String x:Key="大端常规编码">
+        Big endian coding
+    </sys:String>
+    <sys:String x:Key="大端常规编码模式示例">
+        E大端常规编码模式示例：比如滚码将要写的值=1234567890，地址为0x4000,长度设置为4，因为此值的十六进制数为：0X499602D2,则编程器写时会从0x4000地址开始写0X49 0X96 0X02 0XD2,即数据的低位在高地址
+    </sys:String>
+    <sys:String x:Key="小端8421非压缩BCD编码">
+        Little endian 8421 uncompressed BCD encoding
+    </sys:String>
+    <sys:String x:Key="小端8421非压缩BCD编码模式示例">
+        E小端8421非压缩BCD编码模式示例：比如滚码将要写的值=1234567890，地址为0x4000,长度设置为10，则编程器写时会从0x4000地址开始写0X00 0X09 0X08 0X07 0X06 0X05 0X04 0X03 0X02 0X01,即数据的低位在低地址
+    </sys:String>
+    <sys:String x:Key="大端8421非压缩BCD编码">
+        Big endian 8421 uncompressed BCD encoding
+    </sys:String>
+    <sys:String x:Key="大端8421非压缩BCD编码模式示例">
+        E大端8421非压缩BCD编码模式只支持2016.4.2以后的设备固件。示例：比如滚码将要写的值=1234567890，地址为0x4000,长度设置为10，则编程器写时会从0x4000地址开始写0X01 0X02 0X03 0X04 0X05 0X06 0X07 0X08 0X09 0X00,即数据的低位在高地址
+    </sys:String>
+    <sys:String x:Key="小端8421压缩BCD编码">
+        Little endian 8421 compressed BCD encoding
+    </sys:String>
+    <sys:String x:Key="小端8421压缩BCD编码模式示例">
+        E小端8421压缩BCD编码模式示例：比如滚码将要写的值=1234567890，地址为0x4000,长度设置为5，则编程器写时会从0x4000地址开始写0X90 078 0X56 0X34 0X12,即数据的低位在低地址
+    </sys:String>
+    <sys:String x:Key="大端8421压缩BCD编码">
+        Big endian 8421 compressed BCD encoding
+    </sys:String>
+    <sys:String x:Key="大端8421压缩BCD编码模式示例">
+        E大端8421压缩BCD编码模式示例：比如滚码将要写的值=1234567890，地址为0x4000,长度设置为5，则编程器写时会从0x4000地址开始写0X12 0X34 0X56 0X78 0X90,即数据的低位在高地址
+    </sys:String>
+    <sys:String x:Key="小端十进制数ASCII码">
+        Little endian  decimal ASCII
+    </sys:String>
+    <sys:String x:Key="小端十进制数ASCII码模式示例">
+        E小端十进制数ASCII码模式示例：比如滚码将要写的值=1234567890，地址为0x4000,长度设置为10，则编程器写时会从0x4000地址开始写ASCII码的'0''1''2''3''4''5''6''7''8''9''0',即十六进制数据的0x30,0x39,0x38,0x37,0x36,0x35,0x34,0x33,0x32,0x31,数据的低位在低地址
+    </sys:String>
+    <sys:String x:Key="大端十进制数ASCII码">
+        Big endian  decimal ASCII
+    </sys:String>
+    <sys:String x:Key="大端十进制数ASCII码模式示例">
+        E大端十进制数ASCII码模式示例：比如滚码将要写的值=1234567890，地址为0x4000,长度设置为10，则编程器写时会从0x4000地址开始写ASCII码的'1''2''3''4''5''6''7''8''9''0',即十六进制数据的0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x30,数据的低位在高地址
+    </sys:String>
+
+    <sys:String x:Key="写入此滚码">
+        Write This Rolling code
+    </sys:String>
+    <sys:String x:Key="目标存储器类型maohao">
+        Target Memory Type:
+    </sys:String>
+    <sys:String x:Key="编码模式maohao">
+        Encoding Type:
+    </sys:String>
+    <sys:String x:Key="滚码起始值dengyu">
+        Start Value=
+    </sys:String>
+    <sys:String x:Key="滚码步进值dengyu">
+        Step Value=
+    </sys:String>
+    <sys:String x:Key="存储起始地址dengyu0x">
+        Start Address=
+    </sys:String>
+    <sys:String x:Key="滚码存储长度dengyu0x">
+        Length=
+    </sys:String>
+    <sys:String x:Key="字节">
+        Bytes
+    </sys:String>
+    <sys:String x:Key="滚码参数1">
+        Rolling code Parameter 1
+    </sys:String>
+    <sys:String x:Key="滚码参数2">
+        Rolling code Parameter 2
+    </sys:String>
+    <sys:String x:Key="滚码参数3">
+        滚码参数3
+    </sys:String>
+    <sys:String x:Key="滚码参数4">
+        滚码参数4
+    </sys:String>
+    <sys:String x:Key="简单触发信号">
+        Normal Trigger Signal
+    </sys:String>
+    <sys:String x:Key="复合触发信号">
+        Sanner/Command Trigger Signal
+    </sys:String>
+    <sys:String x:Key="简单触发信号注释">
+        Normal trigger Signal as:key,keyboard,pulse,and so on.
+    </sys:String>
+    <sys:String x:Key="扫描命令触发信号注释">
+        Use command to trigger programming.
+    </sys:String>
+    <sys:String x:Key="条码最小长度dengyu">
+        Barcode min length=
+    </sys:String>
+    <sys:String x:Key="延时dengyu">
+        Delay=
+    </sys:String>
+    <sys:String x:Key="毫秒">
+        ms
+    </sys:String>
+    <sys:String x:Key="全部展开">
+        Expand all
+    </sys:String>
+    <sys:String x:Key="全部叠起">
+        Unexpand all
+    </sys:String>
+    <sys:String x:Key="要烧录的芯片型号是哪个wenhao">
+        Which chip you want to programming?
+    </sys:String>
+    <sys:String x:Key="此镜像要存储在哪一个位置">
+        Which image number you want to store for this image?
+    </sys:String>
+    <sys:String x:Key="请指定此镜像的注释">
+        Please give note for the image(It will be displayed on the screen).
+    </sys:String>
+    <sys:String x:Key="注释">
+        Image Note
+    </sys:String>
+    <sys:String x:Key="无注释">
+        No image note
+    </sys:String>
+    <sys:String x:Key="镜像次数限定及减次数的模式">
+        Programming amount imited and reducing mode
+    </sys:String>
+    <sys:String x:Key="密码配置">
+        Password config
+    </sys:String>
+    <sys:String x:Key="触发烧录的方式可以是哪些wenhao">
+        How to trigger the standalone programmer to program?
+    </sys:String>
+    <sys:String x:Key="烧录时输出电压是多少wenhao">
+        What voltage output for being programming?
+    </sys:String>
+    <sys:String x:Key="输出电压后延时多长时间开始烧录wenhao">
+        How many milliseconds delay after output voltage and before programming?
+    </sys:String>
+    <sys:String x:Key="烧录速度级别是多少wenhao">
+        Programming speed level config
+    </sys:String>
+    <sys:String x:Key="是否记录检测到的芯片的UIDwenhao">
+        Do you want to record being programed chip UID?
+    </sys:String>
+    <sys:String x:Key="是否只写指定UID的芯片">
+        Only write the specify UID chips?
+    </sys:String>
+    <sys:String x:Key="进入指定UID列表编辑器">
+        Enter list editor for UID binding
+    </sys:String>
+    <sys:String x:Key="采用哪种方式擦除芯片数据wenhao">
+        Which mode for chip data erase?
+    </sys:String>
+    <sys:String x:Key="去配置要擦除的扇区">
+        To config which pages you want to erase
+    </sys:String>
+    <sys:String x:Key="Config数据配置">
+        Config data Configuration
+    </sys:String>
+    <sys:String x:Key="选项字数据">
+        OPTION BYTES
+    </sys:String>
+    <sys:String x:Key="进入选项字编辑器">
+        Open option bytes Configurator
+    </sys:String>
+    <sys:String x:Key="进入配置字编辑器">
+        Open Config data Configurator
+    </sys:String>
+    <sys:String x:Key="APPROM写入配置">
+        APPROM write Configuration
+    </sys:String>
+    <sys:String x:Key="FLASH存储器写入配置">
+        FLASH Write mode config
+    </sys:String>
+    <sys:String x:Key="EEPROM存储器写入配置">
+        EEPROM Write mode config
+    </sys:String>
+    <sys:String x:Key="OTP存储器写入配置">
+        OTP Write mode config
+    </sys:String>
+    <sys:String x:Key="载入APPROM数据文件">
+        Load APPROM data file
+    </sys:String>
+    <sys:String x:Key="打开APPROM数据编辑器">
+        Open APPROM data editor
+    </sys:String>
+    <sys:String x:Key="LDROM写入配置">
+        LDROM write Configuration
+    </sys:String>
+    <sys:String x:Key="载入LDROM数据文件">
+        Load LDROM data file
+    </sys:String>
+    <sys:String x:Key="打开LDROM数据编辑器">
+        Open LDROM data editor
+    </sys:String>
+    <sys:String x:Key="存储器填充配置">
+        Memory fill Configuration
+    </sys:String>
+    <sys:String x:Key="条码zuoxiegang扫码枪配置">
+        Barcode Configuration
+    </sys:String>
+    <sys:String x:Key="滚码配置">
+        Rolling code Configuration
+    </sys:String>
+    <sys:String x:Key="UID算法加密配置">
+        Encryption algorithm Configuration
+    </sys:String>
+    <sys:String x:Key="烧录完成时的动作是什么wenhao">
+        What operation after programming?
+    </sys:String>
+    <sys:String x:Key="镜像自动跳转配置">
+        Image auto skip mode Configuration
+    </sys:String>
+    <sys:String x:Key="APPROM编辑器">
+        APPROM
+    </sys:String>
+    <sys:String x:Key="生成一组随机数载入编辑器">
+        Generat a set of random numbers fill in the editor
+    </sys:String>
+    <sys:String x:Key="清空编辑器">
+        Clearn Editor
+    </sys:String>
+    <sys:String x:Key="LDROM编辑器">
+        LDROM
+    </sys:String>
+    <sys:String x:Key="指定扇区擦除配置">
+        PAGE ERASE
+    </sys:String>
+    <sys:String x:Key="UID绑定配置器">
+        UID binding Configurator
+    </sys:String>
+    <sys:String x:Key="选项字编辑器">
+        Option bytes editor
+    </sys:String>
+    <sys:String x:Key="载入软件配置">
+        Load config from file
+    </sys:String>
+    <sys:String x:Key="导出软件配置">
+        Export config to file
+    </sys:String>
+    <sys:String x:Key="读取镜像摘要">
+        Read image summary
+    </sys:String>
+    <sys:String x:Key="从编程器读配置文件">
+        Read config from standalone programmer
+    </sys:String>
+    <sys:String x:Key="作废指定程序">
+        Erase Image from standalone programmer
+    </sys:String>
+    <sys:String x:Key="作废所有程序">
+        Erase all Image from standalone programmer
+    </sys:String>
+    <sys:String x:Key="注入到编程器">
+        Inject to device
+    </sys:String>
+
+
+    <sys:String x:Key="要烧录的芯片型号maohao">
+        Chip:
+    </sys:String>
+    <sys:String x:Key="镜像号maohao">
+        Image number:
+    </sys:String>
+    <sys:String x:Key="镜像注释maohao">
+        Image Node:
+    </sys:String>
+    <sys:String x:Key="镜像限定次数maohao">
+        Limit Times:
+    </sys:String>
+    <sys:String x:Key="启动密码maohao">
+        Enter password:
+    </sys:String>
+    <sys:String x:Key="读取密码maohao">
+        Readout password:
+    </sys:String>
+    <sys:String x:Key="摘要密码maohao">
+        Summary Password:
+    </sys:String>
+    <sys:String x:Key="触发方案maohao">
+        Trigger mode:
+    </sys:String>
+    <sys:String x:Key="减数方式maohao">
+        Programming amount limited reduce mode:
+    </sys:String>
+    <sys:String x:Key="输出电压maohao">
+        Volage:
+    </sys:String>
+    <sys:String x:Key="烧录延迟maohao">
+        Delay:
+    </sys:String>
+    <sys:String x:Key="烧录速度">
+        Speed:
+    </sys:String>
+    <sys:String x:Key="档">
+        level
+    </sys:String>
+    <sys:String x:Key="是否记录UID">
+        Record UID:
+    </sys:String>
+    <sys:String x:Key="是否认UID">
+        Recognize UID:
+    </sys:String>
+    <sys:String x:Key="擦除模式">
+        Erase Mode:
+    </sys:String>
+    <sys:String x:Key="APPROM写模式maohao">
+        APPROM write mode:
+    </sys:String>
+    <sys:String x:Key="LDROM写模式maohao">
+        LDROM write mode:
+    </sys:String>
+    <sys:String x:Key="尾部操作maohao">
+        Last operation:
+    </sys:String>
+    <sys:String x:Key="跳转模式maohao">
+        Skip mode:
+    </sys:String>
+    <sys:String x:Key="跳转目标镜像号maohao">
+        Skip target image number:
+    </sys:String>
+    <sys:String x:Key="填充参数1">
+        Fill parameter 1
+    </sys:String>
+    <sys:String x:Key="填充参数2">
+        Fill parameter 2
+    </sys:String>
+    <sys:String x:Key="UID算法加密参数maohao">
+        UID Encryption algorithm parameters:
+    </sys:String>
+    <sys:String x:Key="主配置">
+        MAIN
+    </sys:String>
+    <sys:String x:Key="存放起始地址dengyu0x">
+        Write Start Address=0x
+    </sys:String>
+    <sys:String x:Key="存储字节数dengyu">
+        Write Length=
+    </sys:String>
+    <sys:String x:Key="输入常数dengyu0x">
+        Const Value=0x
+    </sys:String>
+    <sys:String x:Key="使用公式号dengyu">
+        Function Number=
+    </sys:String>
+    <sys:String x:Key="使能此加密配置">
+        Enable this UID encryption
+    </sys:String>
+    <sys:String x:Key="无操作">
+        No operation
+    </sys:String>
+    <sys:String x:Key="重上电">
+        Repower
+    </sys:String>
+    <sys:String x:Key="智能复位">
+        Auto reset
+    </sys:String>
+    <sys:String x:Key="发复位脉冲">
+        Sent reset pulse
+    </sys:String>
+    <sys:String x:Key="关电源输出">
+        Power cut
+    </sys:String>
+    <sys:String x:Key="跳转的模式">
+        Skip mode
+    </sys:String>
+    <sys:String x:Key="要跳转到的镜像号">
+        Skip target image number
+    </sys:String>
+    <sys:String x:Key="只写指定UID的芯片">
+        Binding UID enable
+    </sys:String>
+    <sys:String x:Key="清空全芯片">
+        Erase all chip memory
+    </sys:String>
+    <sys:String x:Key="仅擦除指定的扇区">
+        Just erase target pages
+    </sys:String>
+    <sys:String x:Key="自动">
+        Auto
+    </sys:String>
+    <sys:String x:Key="不输出电源">
+        No power out
+    </sys:String>
+    <sys:String x:Key="极速">
+        Super speed
+    </sys:String>
+    <sys:String x:Key="高速">
+        High speed
+    </sys:String>
+    <sys:String x:Key="全速">
+        Full speed
+    </sys:String>
+    <sys:String x:Key="低速">
+        Low speed
+    </sys:String>
+    <sys:String x:Key="使能此填充">
+        Enable fill memory
+    </sys:String>
+    <sys:String x:Key="要填充的值dengyu">
+        Value to fill=
+    </sys:String>
+    <sys:String x:Key="填充起始地址dengyu0x">
+        Start address=0x
+    </sys:String>
+    <sys:String x:Key="填充结束地址dengyu0x">
+        End address=0x
+    </sys:String>
+    <sys:String x:Key="填充模式注释">
+        Choosing Random Value means filling a specified memory area with a bunch of random numbers. (Note that this is a whole bunch of random numbers, not one.)
+    </sys:String>
+    <sys:String x:Key="镜像号dengyu">
+        Image number=
+    </sys:String>
+    <sys:String x:Key="镜像启动时的密码">
+        Enter image password
+    </sys:String>
+    <sys:String x:Key="读取此镜像的密码">
+        Read image password
+    </sys:String>
+    <sys:String x:Key="读取此镜像摘要的密码">
+        Read image summury password
+    </sys:String>
+    <sys:String x:Key="总字节数dengyu">
+        Total bytes=
+    </sys:String>
+    <sys:String x:Key="扇区号maohao">
+        Page number:
+    </sys:String>
+    <sys:String x:Key="容量maohao">
+        size:
+    </sys:String>
+    <sys:String x:Key="地址域maohao0x">
+        Address region:0x
+    </sys:String>
+    <sys:String x:Key="选择所有扇区">
+        Select all pages
+    </sys:String>
+    <sys:String x:Key="取消所有选择扇区">
+        Cancel selection all pages
+    </sys:String>
+    <sys:String x:Key="此字段">
+        Field
+    </sys:String>
+    <sys:String x:Key="名称maohao">
+        Name:
+    </sys:String>
+    <sys:String x:Key="当前值dengyu0x">
+        Now value=0x
+    </sys:String>
+    <sys:String x:Key="目标值dengyu0x">
+        Target value=0x
+    </sys:String>
+    <sys:String x:Key="恢复默认值">
+        Back default value
+    </sys:String>
+    <sys:String x:Key="起始地址dengyu0x">
+        Start address=0x
+    </sys:String>
+    <sys:String x:Key="shinengxieru">
+        Enable write
+    </sys:String>
+    <sys:String x:Key="配置值序列maohao">
+        Config value array:
+    </sys:String>
+    <sys:String x:Key="全部允许写入">
+        Enable all write
+    </sys:String>
+    <sys:String x:Key="全部恢复默认值">
+        All back default value
+    </sys:String>
+    <sys:String x:Key="导出文件">
+        Export file
+    </sys:String>
+    <sys:String x:Key="导入文件">
+        Import file
+    </sys:String>
+    <sys:String x:Key="烧录过程中减次数">
+        Reduce limited amount In being programming.
+    </sys:String>
+    <sys:String x:Key="确认烧录全部完成后减次数">
+        Reduce limited amount after programming successful.
+    </sys:String>
+    <sys:String x:Key="检测到芯片后减次数">
+        Reduce limited amount after find chip.
+    </sys:String>
+    <sys:String x:Key="触发烧录后减次数">
+        Reduce limited amount after start of programming.
+    </sys:String>
+    <sys:String x:Key="烧录中断或失败后减次数">
+        Reduce limited amount after error.
+    </sys:String>
+    <sys:String x:Key="镜像限定次数">
+        Programming limited amount(Empty is no limited)=
+    </sys:String>
+    <sys:String x:Key="是否写入"  xml:space="preserve">Write </sys:String>
+    <sys:String x:Key="是否校验"  xml:space="preserve">Verify </sys:String>
+    <sys:String x:Key="记录检测到的芯片的UID">
+        Record UID enable
+    </sys:String>
+    <sys:String x:Key="是否记录UID功能注释">
+        Programmer will record IC UID to programmer,you can read out the uid record file in this sofeware.
+    </sys:String>
+    <sys:String x:Key="AppromHuoLdromCunchuqi">
+        APPROM/LDROM
+    </sys:String>
+    <sys:String x:Key="已绑定的目标ID及识别掩码">
+        Target UID and mask code
+    </sys:String>
+    <sys:String x:Key="统计信息maohao">
+        Statistics:
+    </sys:String>
+    <sys:String x:Key="序号">
+        Index
+    </sys:String>
+    <sys:String x:Key="绑定的ID的原始数据">
+        Original UID Data
+    </sys:String>
+    <sys:String x:Key="识别时的模型">
+        Check Mode
+    </sys:String>
+    <sys:String x:Key="目标UID对比掩码配置">
+        Target Uid mask code
+    </sys:String>
+    <sys:String x:Key="核查">
+        Check
+    </sys:String>
+    <sys:String x:Key="从文件导入条目">
+        Load from file
+    </sys:String>
+    <sys:String x:Key="导出条目到文件">
+        Export to file
+    </sys:String>
+    <sys:String x:Key="清空所有绑定的ID">
+        Clear all
+    </sys:String>
+    <sys:String x:Key="删除选中的绑定项">
+        Delete one
+    </sys:String>
+    <sys:String x:Key="增加绑定项">
+        Add
+    </sys:String>
+    <sys:String x:Key="目标ID编辑">
+        Target UID editor(LSB first,one line one)
+    </sys:String>
+    <sys:String x:Key="不跳转">
+        Don't skip
+    </sys:String>
+    <sys:String x:Key="跳转后不执行">
+        Trigger to start run after skip
+    </sys:String>
+    <sys:String x:Key="自动检测到芯片接入后执行">
+        Skip and run after find chip connected
+    </sys:String>
+    <sys:String x:Key="跳转">
+        Skip_And_Delay_
+    </sys:String>
+    <sys:String x:Key="秒后执行">
+        s_Run_Image
+    </sys:String>
+    <sys:String x:Key="是否核查芯片型号wenhao">
+        Check chip part number?
+    </sys:String>
+    <sys:String x:Key="核查芯片型号">
+        Check
+    </sys:String>
+    <sys:String x:Key="不核查芯片型号">
+        No check
+    </sys:String>
+    <sys:String x:Key="不擦除">
+        No erase
+    </sys:String>
+    <sys:String x:Key="条码起始地址dengyu0x">
+        Start address=0x
+    </sys:String>
+    <sys:String x:Key="使能条码写入">
+        Barcode write enable
+    </sys:String>
+    <sys:String x:Key="字节序maohao">
+        Endian mode
+    </sys:String>
+    <sys:String x:Key="小端模式">
+        Little endian
+    </sys:String>
+    <sys:String x:Key="大端模式">
+        Big endian
+    </sys:String>
+    <sys:String x:Key="小端模式注释">
+        First byte write to little address.
+    </sys:String>
+    <sys:String x:Key="大端模式注释">
+        First byte write to big address.
+    </sys:String>
+    <sys:String x:Key="镜像修改密码maohao">
+        Image modify password:
+    </sys:String>
+    <sys:String x:Key="zuofangkuohao序列号maohao">
+        [SN:
+    </sys:String>
+    <sys:String x:Key="zuofangkuohao固件maohao">
+        [FW:
+    </sys:String>
+    <sys:String x:Key="zuofangkuohao引导maohao">
+        [BOOT:
+    </sys:String>
+    <sys:String x:Key="zuofangkuohao硬件maohao">
+        [HW:
+    </sys:String>
+    <sys:String x:Key="清空">
+        Clear
+    </sys:String>
+    <sys:String x:Key="复制">
+        Copy
+    </sys:String>
+    <sys:String x:Key="保存">
+        Save
+    </sys:String>
+    <sys:String x:Key="固件升级">
+        Update
+    </sys:String>
+    <sys:String x:Key="测试">
+        Test
+    </sys:String>
+    <sys:String x:Key="联机">
+        Connected
+    </sys:String>
+    <sys:String x:Key="断开">
+        No deivce
+    </sys:String>
+    <sys:String x:Key="无接入设备">
+        No deivce
+    </sys:String>
+    <sys:String x:Key="一串随机数">
+        A rand array
+    </sys:String>
+    <sys:String x:Key="补空数据dengyu0x">
+        BlankData=0x
+    </sys:String>
+    <sys:String x:Key="编码方案maohao">
+        Encode:
+    </sys:String>
+    <sys:String x:Key="镜像号选择注释">
+        Device can store 1000 files in it,from 0 to 999.You can choose one space number which you want to store the file.
+    </sys:String>
+    <sys:String x:Key="设备信息">
+        Device information
+    </sys:String>
+    <sys:String x:Key="接入状态maohao">
+        Device State:
+    </sys:String>
+    <sys:String x:Key="设备序列号maohao">
+        SN:
+    </sys:String>
+    <sys:String x:Key="设备固件版本maohao">
+        FW:
+    </sys:String>
+    <sys:String x:Key="引导程序版本maohao">
+        BOOT:
+    </sys:String>
+    <sys:String x:Key="设备硬件版本maohao">
+        HW:
+    </sys:String>
+    <sys:String x:Key="操作maohao">
+        Operation:
+    </sys:String>
+    <sys:String x:Key="附加命令maohao">
+        Extern CMD:
+    </sys:String>
+    <sys:String x:Key="日志">
+        LOG
+    </sys:String>
+    <sys:String x:Key="设备固件更新">
+        Firmware Update
+    </sys:String>
+    <sys:String x:Key="XX号镜像注入编程器成功">
+        Image {0} inject sucess.
+    </sys:String>
+    <sys:String x:Key="XX号镜像注入编程器失败">
+        Image {0} inject fail.
+    </sys:String>
+    <sys:String x:Key="支持的镜像数maohao">
+        Support image count:
+    </sys:String>
+    <sys:String x:Key="接入时间maohao">
+        Insert time:
+    </sys:String>
+    <sys:String x:Key="版本maohao">
+        Version:
+    </sys:String>
+    <sys:String x:Key="设备内缺少字库,正在注入...">
+        Injecting font file,please wait...
+    </sys:String>
+    <sys:String x:Key="字库注入失败.">
+        Font file inject error.
+    </sys:String>
+    <sys:String x:Key="字库注入成功.">
+        Font file inject success.
+    </sys:String>
+    <sys:String x:Key="编程器X已移出">
+        Standalone programmer {0} disconnect.
+    </sys:String>
+    <sys:String x:Key="编程器X通讯已建立">
+        Standalone programmer {0} connected.
+    </sys:String>
+    <sys:String x:Key="烧录完成后延时多长时间再提示烧录成功wenhao">
+        After end of programming delay time=
+    </sys:String>
+    <sys:String x:Key="载入">
+        Load
+    </sys:String>
+    <sys:String x:Key="打开">
+        Open
+    </sys:String>
+    <sys:String x:Key="数据文件">
+        data file
+    </sys:String>
+    <sys:String x:Key="数据编辑器">
+        data editor
+    </sys:String>
+    <sys:String x:Key="FLASH编辑器">
+        FLASH editor
+    </sys:String>
+    <sys:String x:Key="EEPROM编辑器">
+        EEPROM editor
+    </sys:String>
+    <sys:String x:Key="OTP编辑器">
+        OTP editor
+    </sys:String>
+    <sys:String x:Key="写模式">
+        write mode
+    </sys:String>
+    <sys:String x:Key="是">
+        yes
+    </sys:String>
+    <sys:String x:Key="否">
+        no
+    </sys:String>
+    <sys:String x:Key="校验和">
+        Crc
+    </sys:String>
+    <sys:String x:Key="累加和">
+        Sum
+    </sys:String>
+    <sys:String x:Key="数据量">
+        DataSize
+    </sys:String>
+    <sys:String x:Key="FLASH存储器">
+        FLASH Memory
+    </sys:String>
+    <sys:String x:Key="EEPROM存储器">
+        EEPROM Memory
+    </sys:String>
+    <sys:String x:Key="OTP存储器">
+        OTP Memory
+    </sys:String>
+    <sys:String x:Key="不写">
+        NoWrite
+    </sys:String>
+    <sys:String x:Key="写">
+        Write
+    </sys:String>
+    <sys:String x:Key="不校验">
+        NoVerify
+    </sys:String>
+    <sys:String x:Key="校验">
+        Verify
+    </sys:String>
+    <sys:String x:Key="简单触发">
+        SimpleTrigger
+    </sys:String>
+    <sys:String x:Key="复合触发">
+        MultiTrigger
+    </sys:String>
+    <sys:String x:Key="目标芯片maohao">
+        Target IC:
+    </sys:String>
+    <sys:String x:Key="目标地址">
+        Target address
+    </sys:String>
+    <sys:String x:Key="存储长度">
+        Write length
+    </sys:String>
+    <sys:String x:Key="常量参数">
+        Const para
+    </sys:String>
+    <sys:String x:Key="公式号">
+        Formula num
+    </sys:String>
+    <sys:String x:Key="UID索引序列">
+        UID index array
+    </sys:String>
+    <sys:String x:Key="尾部延时">
+        End delay
+    </sys:String>
+    <sys:String x:Key="无限次">
+        No limit
+    </sys:String>
+    <sys:String x:Key="请等待上一操作处理完成">
+        Please wait last operation complete.
+    </sys:String>
+    <sys:String x:Key="请接入支持此类芯片的设备">
+        Please insert device that can support this chip type.
+    </sys:String>
+    <sys:String x:Key="可编辑要写的数据或配置起始写入地址">
+        This can edit data or config the start address to write
+    </sys:String>
+    <sys:String x:Key="本软件已在运行douhao请不要重复打开juhao">
+        Software has been opened,please don't reopen.
+    </sys:String>
+    <sys:String x:Key="抹掉此镜像号的镜像">
+        Erase the image in this image num.
+    </sys:String>
+    <sys:String x:Key="此镜像已于XX被删除">
+        ImageHasBeenDeletedIn{0}
+    </sys:String>
+    <sys:String x:Key="XX号镜像已删除">
+        Image {0} deleted.
+    </sys:String>
+    <sys:String x:Key="格式化失败">
+        Format failed.
+    </sys:String>
+    <sys:String x:Key="格式化成功">
+        Format sucess.
+    </sys:String>
+    <sys:String x:Key="UID字节数">
+        UID length
+    </sys:String>
+    <sys:String x:Key="读取此镜像号镜像的摘要">
+        Read image summary in this image num.
+    </sys:String>
+    <sys:String x:Key="读出本镜像已记录的UID数据">
+        Read out the uid record file of this image.
+    </sys:String>
+    <sys:String x:Key="选项字">
+        Option bytes
+    </sys:String>
+    <sys:String x:Key="配置字">
+        Config
+    </sys:String>
+    <sys:String x:Key="配置字编辑器">
+        Config editor
+    </sys:String>
+    <sys:String x:Key="留空表示切换至此镜像无须密码">
+        Stay empty will not need password when switch to this image.
+    </sys:String>
+    <sys:String x:Key="留空表示禁止此镜像禁止在设备上修改">
+        Stay empty will not need password when modify image summary.
+    </sys:String>
+    <sys:String x:Key="留空表示读此镜像摘要信息时无须密码">
+        Stay empty will not need password when read this image summary.
+    </sys:String>
+    <sys:String x:Key="编辑器">
+        Editor
+    </sys:String>
+    <sys:String x:Key="存储器写入配置">
+        Write mode config
+    </sys:String>
+    <sys:String x:Key="附加">
+        Additional
+    </sys:String>
+    <sys:String x:Key="扇区擦除配置">
+        Page erase configer
+    </sys:String>
+    <sys:String x:Key="始地址">
+        StartAddress
+    </sys:String>
+    <sys:String x:Key="芯片类">
+        ChipCalss
+    </sys:String>
+    <sys:String x:Key="容量">
+        Size
+    </sys:String>
+    <sys:String x:Key="脱机烧录器">
+        Standalone programmer
+    </sys:String>
+    <sys:String x:Key="新唐N76">
+        Nuvoton N76
+    </sys:String>
+    <sys:String x:Key="STM32">
+        STM32
+    </sys:String>
+    <sys:String x:Key="烧录时显示加密结果">
+        Show result on screen
+    </sys:String>
+    <sys:String x:Key="正在重启设备">
+        Rebooting
+    </sys:String>
+    <sys:String x:Key="升级成功">
+        Update success
+    </sys:String>
+    <sys:String x:Key="固件升级失败">
+        Firmware update failed
+    </sys:String>
+    <sys:String x:Key="引导升级失败">
+        Boot update failed
+    </sys:String>
+    <sys:String x:Key="正在更新设备固件,请不要对设备断电">
+        Firmware updating,please hold power on
+    </sys:String>
+    <sys:String x:Key="固件自述">
+        Fireware information
+    </sys:String>
+    <sys:String x:Key="引导自述">
+        Bootloader information
+    </sys:String>
+    <sys:String x:Key="正在获取更新数据">
+        Loading update data
+    </sys:String>
+    <sys:String x:Key="检查更新失败.请确认设备是否已接入且计算机可以正常联网">
+        Update failed.Please check network status.
+    </sys:String>
+    <sys:String x:Key="请下载最新版本计算机端软件再对此设备进行固件升级.">
+        Please download new version software to update device firmware.
+    </sys:String>
+    <sys:String x:Key="已成功载入配置文件:">
+        Load config file successful:
+    </sys:String>
+    <sys:String x:Key="配置文件已保存至:">
+        Config file save successful:
+    </sys:String>
+    <sys:String x:Key="保存配置失败.目录操作权限被您计算机限制.无法操作.">
+        Config file save failed.
+    </sys:String>
+    <sys:String x:Key="芯片类选择">
+        Chip class
+    </sys:String>
+    <sys:String x:Key="本框默认识别为10进制如需输入16进制请以0x开头">
+        本框默认识别为10进制,如需输入16进制,请以0x开头.
+    </sys:String>
+    <sys:String x:Key="APPROM存储器">
+        APPROM
+    </sys:String>
+    <sys:String x:Key="DATAROM存储器">
+        DATAROM
+    </sys:String>
+    <sys:String x:Key="LDROM存储器">
+        LDROM
+    </sys:String>
+    <sys:String x:Key="SPROM存储器">
+        SPROM
+    </sys:String>
+    <sys:String x:Key="NUC_Mx">
+        NUC M0/M4
+    </sys:String>
+    <sys:String x:Key="小华HC32">
+        HC32
+    </sys:String>
+    <sys:String x:Key="凌阳GPM">
+        GPM8
+    </sys:String>
+    <sys:String x:Key="兆易GD32">
+        GD32
+    </sys:String>
+    <sys:String x:Key="灵动MM32">
+        MM32
+    </sys:String>
+    <sys:String x:Key="极海(艾派克)APM32">
+        APM32
+    </sys:String>
+    <sys:String x:Key="贝特莱BLM32">
+        BLM32
+    </sys:String>
+    <sys:String x:Key="恩智浦LPC">
+        LPC
+    </sys:String>
+    <sys:String x:Key="航顺HK32">
+        HK32
+    </sys:String>
+    <sys:String x:Key="镜像云端推取">
+        Cloud Service
+    </sys:String>
+    <sys:String x:Key="提取中请稍等">
+        Please wait for getting.
+    </sys:String>
+    <sys:String x:Key="提取成功">
+        Clould data get complete.
+    </sys:String>
+    <sys:String x:Key="提取码长度少于20个字符">
+        Getting code must exceed 20 characters.
+    </sys:String>
+    <sys:String x:Key="客户端">
+        client
+    </sys:String>
+    <sys:String x:Key="提取码">
+        Getting code
+    </sys:String>
+    <sys:String x:Key="提取镜像">
+        Get
+    </sys:String>
+    <sys:String x:Key="提取失败">
+        Unable to get the cloud data.
+    </sys:String>
+    <sys:String x:Key="请接入正确的设备">
+        Please insert device.
+    </sys:String>
+    <sys:String x:Key="专业模式">
+        Professional mode
+    </sys:String>
+    <sys:String x:Key="极简模式">
+        Simplified mode
+    </sys:String>
+    <sys:String x:Key="写入">
+        Write
+    </sys:String>
+    <sys:String x:Key="不写入">
+        No W
+    </sys:String>
+    <sys:String x:Key="EFM8">
+        EFM8
+    </sys:String>
+    <sys:String x:Key="加密字配置">
+        Lock Code Space Config
+    </sys:String>
+    <sys:String x:Key="芯科EFM8/C8051F">
+        EFM8 C8051F Sixxxx
+    </sys:String>
+    <sys:String x:Key="新唐N76/MS51/ML51">
+        Nuvoton N76/MS51/ML51
+    </sys:String>
+    <sys:String x:Key="在单独的窗口中编辑">
+        Open in new window
+    </sys:String>
+    <sys:String x:Key="尾部追加字节maohao">
+        Add tail byte:
+    </sys:String>
+    <sys:String x:Key="不追加">
+        Not add
+    </sys:String>
+    <sys:String x:Key="所有区块均写入">
+        ALL region write
+    </sys:String>
+    <sys:String x:Key="所有区块均不写">
+        Not write all region
+    </sys:String>
+    <sys:String x:Key="增加区块">
+        Add region
+    </sys:String>
+    <sys:String x:Key="整体另存为">
+        Save all as
+    </sys:String>
+    <sys:String x:Key="从文件载入">
+        Load from file
+    </sys:String>
+    <sys:String x:Key="擦除">
+        Erase
+    </sys:String>
+    <sys:String x:Key="地址域maohao">
+        AddressRegion:
+    </sys:String>
+    <sys:String x:Key="共">
+        Total
+    </sys:String>
+    <sys:String x:Key="PSOC">
+        PSOC
+    </sys:String>
+    <sys:String x:Key="编辑本区块">
+        Edit this region
+    </sys:String>
+    <sys:String x:Key="删除本区块">
+        Delete this region
+    </sys:String>
+    <sys:String x:Key="赛普拉斯PSOC">
+        Cypress PSOC
+    </sys:String>
+    <sys:String x:Key="BlueX">
+        BlueX
+    </sys:String>
+    <sys:String x:Key="起始地址dengyu">
+        StartAddress=
+    </sys:String>
+    <sys:String x:Key="QSPI电压是多少wenhao">
+        QSPI Voltage?
+    </sys:String>
+    <sys:String x:Key="QSPI电压">
+        QSPI Voltage
+    </sys:String>
+    <sys:String x:Key="鼠标按着左键或右键上下划动区块可快速批量开关区块">
+        鼠标按着左键或右键上下划动区块可快速批量开关区块
+    </sys:String>
+    <sys:String x:Key="存储器">
+        Memory
+    </sys:String>
+    <sys:String x:Key="烧录接口协议配置">
+        Protocol config
+    </sys:String>
+    <sys:String x:Key="字库完整,无须修复.">
+        Character library is OK.
+    </sys:String>
+    <sys:String x:Key="单文件内多区块合并载入">
+        Load file as single data block
+    </sys:String>
+    <sys:String x:Key="区块合并时未描述区域填充值">
+        Blank data area fill value when load or merge data.
+    </sys:String>
+    <sys:String x:Key="功能导航">
+        Navigation
+    </sys:String>
+    <sys:String x:Key="接入的为非支持此类芯片的设备">
+        The device is not supported this chipType
+    </sys:String>
+    <sys:String x:Key="NORDIC nRF5/9">
+        NORDIC nRF5/9
+    </sys:String>
+    <sys:String x:Key="烧录配置">
+        Program Config
+    </sys:String>
+    <sys:String x:Key="进入编辑器">
+        Enter Editer
+    </sys:String>
+    <sys:String x:Key="UICR存储器">
+        UICR
+    </sys:String>
+    <sys:String x:Key="目标存储器">
+        Target Memory Type
+    </sys:String>
+    <sys:String x:Key="存储最短长度">
+        Shortest saving length
+    </sys:String>
+    <sys:String x:Key="然后把码串">
+        Code as
+    </sys:String>
+    <sys:String x:Key="核查型号">
+        CheckPartNum
+    </sys:String>
+    <sys:String x:Key="欢迎联系定制或添加处理算法">
+        Feel free to contact, customize or add processing algorithms
+    </sys:String>
+    <sys:String x:Key="视为ASCII码串,小端写入">
+        ASCII Code,little endian
+    </sys:String>
+    <sys:String x:Key="视为ASCII码串,大端写入">
+        ASCII Code,big endian
+    </sys:String>
+    <sys:String x:Key="视为10进制数字,小端写入">
+        DEC Number,little endian
+    </sys:String>
+    <sys:String x:Key="视为10进制数字,大端写入">
+        DEC Number,big endian
+    </sys:String>
+    <sys:String x:Key="视为16进制数字,小端写入">
+        HEX Number,little endian
+    </sys:String>
+    <sys:String x:Key="视为16进制数字,大端写入">
+        HEX Number,big endian
+    </sys:String>
+    <sys:String x:Key="视为8421非压缩BCD,小端写入">
+        8421 uncompressed BCD,little endian
+    </sys:String>
+    <sys:String x:Key="视为8421非压缩BCD,大端写入">
+        8421 uncompressed BCD,big endian
+    </sys:String>
+    <sys:String x:Key="视为8421压缩BCD,小端写入">
+        8421 compression BCD,little endian
+    </sys:String>
+    <sys:String x:Key="视为8421压缩BCD,大端写入">
+        8421 compression BCD,big endian
+    </sys:String>
+    <sys:String x:Key="芯科EFM32">
+        EFM32 EFR32 EZR32
+    </sys:String>
+    <sys:String x:Key="芯科">
+        SiliconLabs
+    </sys:String>
+    <sys:String x:Key="安森美CAT5140">
+        CAT5140
+    </sys:String>
+    <sys:String x:Key="数控变阻器">
+        POT
+    </sys:String>
+    <sys:String x:Key="默认支持此功能">
+        Free Func
+    </sys:String>
+    <sys:String x:Key="24型EEPROM">
+        24 EEPROM
+    </sys:String>
+    <sys:String x:Key="器件地址线配置的地址">
+        Chip address
+    </sys:String>
+    <sys:String x:Key="器件地址线配置的地址注释">
+        24型EEPROM器一般有地址线.不同的地址线的电平连接对应着不同的器件地址.这里可以选择需要下载的器件的地址.
+    </sys:String>
+    <sys:String x:Key="器件的地址是多少wenhao">
+        What is the chip address  ?
+    </sys:String>
+    <sys:String x:Key="德州仪器">
+        TI
+    </sys:String>
+    <sys:String x:Key="CC25xx">
+        CC25xx
+    </sys:String>
+    <sys:String x:Key="25型FLASH">
+        25 FLASH
+    </sys:String>
+    <sys:String x:Key="龙迅Lontium">
+        Lontium
+    </sys:String>
+    <sys:String x:Key="视为16进制数字,小端写入,忽略无效字符">
+        HEX Number,little endian,ingore invalid char
+    </sys:String>
+    <sys:String x:Key="视为16进制数字,大端写入,忽略无效字符">
+        HEX Number,big endian,ingore invalid char
+    </sys:String>
+    <sys:String x:Key="合并为单一块">
+        Merge data to one block
+    </sys:String>
+    <sys:String x:Key="领芯电子">
+        Lnchip
+    </sys:String>
+    <sys:String x:Key="LCM32">
+        LCM32
+    </sys:String>
+    <sys:String x:Key="第{0}行提取码无效.">
+        Line {0} is invalid getting code.
+    </sys:String>
+    <sys:String x:Key="视为10进制数字,小端写入,忽略无效字符">
+        DEC Number,little endian,ingore invalid char
+    </sys:String>
+    <sys:String x:Key="视为10进制数字,大端写入,忽略无效字符">
+        DEC Number,big endian,ingore invalid char
+    </sys:String>
+    <sys:String x:Key="新唐">
+        Nuvoton
+    </sys:String>
+    <sys:String x:Key="中科芯">
+        CKS
+    </sys:String>
+    <sys:String x:Key="CS32">
+        CS32
+    </sys:String>
+    <sys:String x:Key="elmos">
+        elmos
+    </sys:String>
+    <sys:String x:Key="INFO存储器">
+        INFO
+    </sys:String>
+    <sys:String x:Key="器件初始密码">
+        Chip access key value
+    </sys:String>
+    <sys:String x:Key="复旦微">
+        Fudan
+    </sys:String>
+    <sys:String x:Key="fudan">
+        Fudan
+    </sys:String>
+    <sys:String x:Key="赛普拉斯">
+        Cypress
+    </sys:String>
+    <sys:String x:Key="笙泉">
+        megawin
+    </sys:String>
+    <sys:String x:Key="CC26x0/CC13x0/CC2538">
+        CC26x0/CC13x0/CC2538
+    </sys:String>
+    <sys:String x:Key="加密及用户配置区">
+        Security and custom config
+    </sys:String>
+    <sys:String x:Key="另存本区块">
+        Save as
+    </sys:String>
+    <sys:String x:Key="STM8">
+        STM8
+    </sys:String>
+    <sys:String x:Key="(8051CPU)">
+        (8051CPU)
+    </sys:String>
+    <sys:String x:Key="CC25xx(8051CPU)">
+        CC25xx(8051CPU)
+    </sys:String>
+    <sys:String x:Key="先忽略码串前">
+        Ignore string first
+    </sys:String>
+    <sys:String x:Key="个字符">
+        chars
+    </sys:String>
+    <sys:String x:Key="再忽略码串后">
+        Ignore string tail
+    </sys:String>
+    <sys:String x:Key="写到">
+        Write to
+    </sys:String>
+    <sys:String x:Key="协议类">
+        Protocol Class
+    </sys:String>
+    <sys:String x:Key="AVR TPI协议类">
+        AVR TPI Class
+    </sys:String>
+    <sys:String x:Key="AVR ISP/JTAG协议类">
+        AVR ISP/JTAG Class
+    </sys:String>
+    <sys:String x:Key="预写熔丝配置">
+        PreFuseConfig
+    </sys:String>
+    <sys:String x:Key="熔丝配置">
+        FuseConfig
+    </sys:String>
+    <sys:String x:Key="自定义算法加密">
+        UID Encypt
+    </sys:String>
+    <sys:String x:Key="校准字">
+        Osccal
+    </sys:String>
+    <sys:String x:Key="RC校准字配置">
+        RC Osccal Config
+    </sys:String>
+    <sys:String x:Key="写入地址">
+        Address
+    </sys:String>
+    <sys:String x:Key="把">
+        Let
+    </sys:String>
+    <sys:String x:Key="RC校准字加上">
+        RC Osccal+
+    </sys:String>
+    <sys:String x:Key="然后再异或">
+        XOR
+    </sys:String>
+    <sys:String x:Key="然后写入">
+        WriteTo
+    </sys:String>
+    <sys:String x:Key="使能RC校准字处理并写入">
+        Enable
+    </sys:String>
+    <sys:String x:Key="地址">
+        Address
+    </sys:String>
+    <sys:String x:Key="预写熔丝数据配置">
+        PreFuseConfig
+    </sys:String>
+    <sys:String x:Key="熔丝数据配置">
+        FuseConfig
+    </sys:String>
+    <sys:String x:Key="增值功能_需定制">
+        增值功能,需定制
+    </sys:String>
+    <sys:String x:Key="芯海">
+        CHIPSEA
+    </sys:String>
+    <sys:String x:Key="中科芯CS32/CKS32">
+        CS32/CKS32
+    </sys:String>
+    <sys:String x:Key="芯海CS32">
+        CHIPSEA CS32
+    </sys:String>
+    <sys:String x:Key="CX32">
+        CX32
+    </sys:String>
+    <sys:String x:Key="一行一个">
+        One per line
+    </sys:String>
+    <sys:String x:Key="即将上线此功能">
+        Comming soon
+    </sys:String>
+    <sys:String x:Key="NORDIC nRF24">
+        NORDIC nRF24
+    </sys:String>
+    <sys:String x:Key="MAIN存储器">
+        MAIN Memory
+    </sys:String>
+    <sys:String x:Key="清空芯片MAIN区保留INFO区">
+        Erase Main Reserve Info
+    </sys:String>
+    <sys:String x:Key="凌思微">
+        LinkedSemi
+    </sys:String>
+    <sys:String x:Key="固件存储器">
+        Firmware Memory
+    </sys:String>
+    <sys:String x:Key="三元码表">
+        三元码表
+    </sys:String>
+    <sys:String x:Key="恩智浦S32">
+        NXP S32
+    </sys:String>
+    <sys:String x:Key="FS32">
+        FS32
+    </sys:String>
+    <sys:String x:Key="FlexNVM存储器">
+        FlexNVM
+    </sys:String>
+    <sys:String x:Key="中微">
+        Cmsemicon
+    </sys:String>
+    <sys:String x:Key="DATA存储器">
+        DATA Memory
+    </sys:String>
+    <sys:String x:Key="恩智浦">
+        NXP
+    </sys:String>
+    <sys:String x:Key="航顺">
+        HSXP-HK
+    </sys:String>
+    <sys:String x:Key="灵动">
+        MindMotion
+    </sys:String>
+    <sys:String x:Key="兆易">
+        GigaDevice
+    </sys:String>
+    <sys:String x:Key="蓝牙地址表">
+        BleAddressList
+    </sys:String>
+    <sys:String x:Key="三元码组配置">
+        三元码组配置
+    </sys:String>
+    <sys:String x:Key="编辑">
+        Edit
+    </sys:String>
+    <sys:String x:Key="删除">
+        Delete
+    </sys:String>
+    <sys:String x:Key="另存为">
+        Save as
+    </sys:String>
+    <sys:String x:Key="飞思卡尔">
+        Freesacle
+    </sys:String>
+    <sys:String x:Key="KINETIS">
+        KINETIS
+    </sys:String>
+    <sys:String x:Key="惠联华芯">
+        mcuxin
+    </sys:String>
+    <sys:String x:Key="BlueNRG">
+        BlueNRG
+    </sys:String>
+    <sys:String x:Key="权责声明">
+        Rights and Liability Statement
+    </sys:String>
+    <sys:String x:Key="艾派克">
+        APEXMIC
+    </sys:String>
+    <sys:String x:Key="贝特莱">
+        Betterlife
+    </sys:String>
+    <sys:String x:Key="雅特力">
+        ARTERY
+    </sys:String>
+    <sys:String x:Key="小华">
+        XHSC
+    </sys:String>
+    <sys:String x:Key="士兰微">
+        SILAN
+    </sys:String>
+    <sys:String x:Key="士兰微8051">
+        SILAN 8051
+    </sys:String>
+    <sys:String x:Key="士兰微ARM">
+        SILAN ARM
+    </sys:String>
+    <sys:String x:Key="器件密钥">
+        IC KEY
+    </sys:String>
+    <sys:String x:Key="开Remap">
+        Check Remap Open
+    </sys:String>
+    <sys:String x:Key="关Remap">
+        Check Remap Close
+    </sys:String>
+    <sys:String x:Key="Remap开关配置">
+        Remap Config
+    </sys:String>
+    <sys:String x:Key="初始密钥">
+        Original Key
+    </sys:String>
+    <sys:String x:Key="初始BOOT区密钥">
+        Original BOOT region key
+    </sys:String>
+    <sys:String x:Key="初始USER1区密钥">
+        Original USER1 region key
+    </sys:String>
+    <sys:String x:Key="初始USER2区密钥">
+        Original USER2 region key
+    </sys:String>
+    <sys:String x:Key="器件初始密钥">
+        Original key
+    </sys:String>
+    <sys:String x:Key="95型EEPROM">
+        95 EEPROM
+    </sys:String>
+    <sys:String x:Key="密钥">
+        Key
+    </sys:String>
+    <sys:String x:Key="加密存储器">
+        Encrypt memory
+    </sys:String>
+    <sys:String x:Key="不加密">
+        No Encrypt
+    </sys:String>
+    <sys:String x:Key="加密">
+        Encrypt
+    </sys:String>
+    <sys:String x:Key="极海">
+        Geehy
+    </sys:String>
+    <sys:String x:Key="单总线">
+        1 Wire
+    </sys:String>
+    <sys:String x:Key="单线存储器">
+        1 Wire Memory
+    </sys:String>
+    <sys:String x:Key="AVR UPDI协议类">
+        AVR UPDI Class
+    </sys:String>
+    <sys:String x:Key="USER ROW">
+        USER ROW
+    </sys:String>
+    <sys:String x:Key="默认">
+        Default
+    </sys:String>
+    <sys:String x:Key="ASM31">
+        ASM31
+    </sys:String>
+    <sys:String x:Key="赛腾微">
+        Sine
+    </sys:String>
+    <sys:String x:Key="Nand Flash">
+        Nand Flash
+    </sys:String>
+    <sys:String x:Key="扩展">
+        Extern
+    </sys:String>
+    <sys:String x:Key="敏矽微">
+        Mesilicon
+    </sys:String>
+    <sys:String x:Key="ME32">
+        ME32
+    </sys:String>
+    <sys:String x:Key="闪芯微">
+        flashchip
+    </sys:String>
+    <sys:String x:Key="FCM32">
+        FCM32
+    </sys:String>
+    <sys:String x:Key="国民技术">
+        Nation
+    </sys:String>
+    <sys:String x:Key="国民技术N32">
+        Nation N32
+    </sys:String>
+    <sys:String x:Key="沁恒">
+        WCH
+    </sys:String>
+    <sys:String x:Key="沁恒CH32">
+        CH32
+    </sys:String>
+    <sys:String x:Key="格式化">
+        Format
+    </sys:String>
+    <sys:String x:Key="编程器">
+        Device
+    </sys:String>
+    <sys:String x:Key="请检查编程器设备是否已经接入且处于菜单界面,或者是编程器断电时按着键再插上USB线进入的界面.">
+        请检查编程器设备是否已经接入且处于菜单界面,或者是编程器断电时按着键再插上USB线进入的界面.
+    </sys:String>
+    <sys:String x:Key="复旦微ARM">
+        FudanMicro ARM
+    </sys:String>
+    <sys:String x:Key="复旦微16bit MCU">
+        FudanMicro 16bit MCU
+    </sys:String>
+    <sys:String x:Key="加密算法">
+        加密算法
+    </sys:String>
+    <sys:String x:Key="数据长度">
+        数据长度
+    </sys:String>
+    <sys:String x:Key="取">
+        取
+    </sys:String>
+    <sys:String x:Key="长度">
+        长度
+    </sys:String>
+    <sys:String x:Key="采用">
+        采用
+    </sys:String>
+    <sys:String x:Key="处理后">
+        处理后
+    </sys:String>
+    <sys:String x:Key="追加KEY序列">
+        追加KEY序列
+    </sys:String>
+    <sys:String x:Key="编辑及查看要追加的KEY序列">
+        编辑及查看要追加的KEY序列
+    </sys:String>
+    <sys:String x:Key="从">
+        从
+    </sys:String>
+    <sys:String x:Key="开始">
+        开始
+    </sys:String>
+    <sys:String x:Key="韦斯佰瑞">
+        WESTBERRY
+    </sys:String>
+    <sys:String x:Key="韦斯佰瑞WB32">
+        WESTBERRY WB32
+    </sys:String>
+    <sys:String x:Key="凌鸥">
+        LKS
+    </sys:String>
+    <sys:String x:Key="凌鸥LKS32">
+        凌鸥LKS32
+    </sys:String>
+    <sys:String x:Key="按需擦除">
+        Erase Used
+    </sys:String>
+    <sys:String x:Key="宏云">
+        IRONCHIP
+    </sys:String>
+    <sys:String x:Key="宏云JMT">
+        IRONCHIP JMT
+    </sys:String>
+    <sys:String x:Key="芯链">
+        ChipNexus
+    </sys:String>
+    <sys:String x:Key="芯链CLM32">
+        CLM32
+    </sys:String>
+    <sys:String x:Key="芯马">
+        CHIPMA
+    </sys:String>
+    <sys:String x:Key="芯马XM100x">
+        芯马XM100x
+    </sys:String>
+    <sys:String x:Key="elmos 16bit MCU">
+        elmos 16bit MCU
+    </sys:String>
+    <sys:String x:Key="elmos ARM">
+        elmos ARM
+    </sys:String>
+    <sys:String x:Key="Microchip">
+        Microchip
+    </sys:String>
+    <sys:String x:Key="睿兴">
+        xtek
+    </sys:String>
+    <sys:String x:Key="ATSAM/SAM">
+        ATSAM/SAM
+    </sys:String>
+    <sys:String x:Key="PT32">
+        PT32
+    </sys:String>
+    <sys:String x:Key="RX32">
+        RX32
+    </sys:String>
+    <sys:String x:Key="澎湃微">
+        Pai-IC
+    </sys:String>
+    <sys:String x:Key="FLASH">
+        FLASH
+    </sys:String>
+    <sys:String x:Key="DATA">
+        DATA
+    </sys:String>
+    <sys:String x:Key="NvmRows">
+        NvmRows
+    </sys:String>
+    <sys:String x:Key="万高">
+        Vango
+    </sys:String>
+    <sys:String x:Key="万高V85xx">
+        Vango V85xx
+    </sys:String>
+    <sys:String x:Key="钜泉光电">
+        hitrendtech
+    </sys:String>
+    <sys:String x:Key="钜泉光电HTxxxx">
+        HTxxxx
+    </sys:String>
+    <sys:String x:Key="航天民芯">
+        Aerosemi
+    </sys:String>
+    <sys:String x:Key="航天民芯MT32">
+        MT32
+    </sys:String>
+    <sys:String x:Key="华芯微特">
+        Synwit
+    </sys:String>
+    <sys:String x:Key="华芯微特SWM32">
+        SWM32
+    </sys:String>
+    <sys:String x:Key="紫芯">
+        αScale
+    </sys:String>
+    <sys:String x:Key="紫芯DG32">
+        DG32
+    </sys:String>
+    <sys:String x:Key="东软载波">
+        Eastsoft
+    </sys:String>
+    <sys:String x:Key="物芯智能">
+        WXZN
+    </sys:String>
+    <sys:String x:Key="杰发科技">
+        Autochip
+    </sys:String>
+    <sys:String x:Key="XCM32">
+        XCM32
+    </sys:String>
+    <sys:String x:Key="亮牛">
+        LIGHTNING
+    </sys:String>
+    <sys:String x:Key="LN882X">
+        LN882X
+    </sys:String>
+    <sys:String x:Key="TH32">
+        TH32
+    </sys:String>
+    <sys:String x:Key="上移">
+        UP
+    </sys:String>
+    <sys:String x:Key="下移">
+        DOWN
+    </sys:String>
+    <sys:String x:Key="可拖放">
+        Support Dragdrop
+    </sys:String>
+    <sys:String x:Key="可拖拽">
+        Support Dragdrop
+    </sys:String>
+    <sys:String x:Key="辉芒">
+        FMD
+    </sys:String>
+    <sys:String x:Key="辉芒FT32">
+        FMD FT32
+    </sys:String>
+    <sys:String x:Key="HVC">
+        HVC
+    </sys:String>
+    <sys:String x:Key="ZLG">
+        ZLG
+    </sys:String>
+    <sys:String x:Key="比亚迪">
+        BYD
+    </sys:String>
+    <sys:String x:Key="健天电子">
+        GENVIC
+    </sys:String>
+    <sys:String x:Key="GVM32">
+        GVM32
+    </sys:String>
+    <sys:String x:Key="NS32">
+        NS32
+    </sys:String>
+    <sys:String x:Key="九科芯">
+        JKX
+    </sys:String>
+    <sys:String x:Key="LCM08">
+        LCM08
+    </sys:String>
+    <sys:String x:Key="PY32">
+        PY32
+    </sys:String>
+    <sys:String x:Key="普冉">
+        PUYA
+    </sys:String>
+    <sys:String x:Key="APM32">
+        APM32
+    </sys:String>
+    <sys:String x:Key="GD32">
+        GD32
+    </sys:String>
+    <sys:String x:Key="MM32">
+        MM32
+    </sys:String>
+    <sys:String x:Key="HK32">
+        HK32
+    </sys:String>
+    <sys:String x:Key="LPC">
+        LPC
+    </sys:String>
+    <sys:String x:Key="FS32K_S32K">
+        FS32K/S32K
+    </sys:String>
+    <sys:String x:Key="HC32">
+        HC32
+    </sys:String>
+    <sys:String x:Key="M0">
+        M0
+    </sys:String>
+    <sys:String x:Key="M4">
+        M4
+    </sys:String>
+    <sys:String x:Key="N32">
+        N32
+    </sys:String>
+    <sys:String x:Key="AVR">
+        AVR
+    </sys:String>
+    <sys:String x:Key="nRF5">
+        nRF5
+    </sys:String>
+    <sys:String x:Key="nRF9">
+        nRF9
+    </sys:String>
+    <sys:String x:Key="nRF24L">
+        nRF24L
+    </sys:String>
+    <sys:String x:Key="nRF31562">
+        nRF31562
+    </sys:String>
+    <sys:String x:Key="CC24xx">
+        CC24xx
+    </sys:String>
+    <sys:String x:Key="CC1110">
+        CC1110
+    </sys:String>
+    <sys:String x:Key="BLM32">
+        BLM32
+    </sys:String>
+    <sys:String x:Key="LKS32">
+        LKS32
+    </sys:String>
+    <sys:String x:Key="AT32">
+        AT32
+    </sys:String>
+    <sys:String x:Key="XM100x">
+        XM100x
+    </sys:String>
+    <sys:String x:Key="EZR32">
+        EZR32
+    </sys:String>
+    <sys:String x:Key="EFR32">
+        EFR32
+    </sys:String>
+    <sys:String x:Key="EFM32">
+        EFM32
+    </sys:String>
+    <sys:String x:Key="CH32">
+        CH32
+    </sys:String>
+    <sys:String x:Key="ARM">
+        ARM
+    </sys:String>
+    <sys:String x:Key="CKS32">
+        CKS32
+    </sys:String>
+    <sys:String x:Key="BAT32">
+        BAT32
+    </sys:String>
+    <sys:String x:Key="CLM32">
+        CLM32
+    </sys:String>
+    <sys:String x:Key="Sixxxx">
+        Sixxxx
+    </sys:String>
+    <sys:String x:Key="C8051F">
+        C8051F
+    </sys:String>
+    <sys:String x:Key="HTxxxx">
+        HTxxxx
+    </sys:String>
+    <sys:String x:Key="V85xx">
+        V85xx
+    </sys:String>
+    <sys:String x:Key="MT32">
+        MT32
+    </sys:String>
+    <sys:String x:Key="WB32">
+        WB32
+    </sys:String>
+    <sys:String x:Key="FT32">
+        FT32
+    </sys:String>
+    <sys:String x:Key="AC78xx">
+        AC78xx
+    </sys:String>
+    <sys:String x:Key="DG32">
+        DG32
+    </sys:String>
+    <sys:String x:Key="SWM32">
+        SWM32
+    </sys:String>
+    <sys:String x:Key="SAM">
+        SAM
+    </sys:String>
+    <sys:String x:Key="ATSAM">
+        ATSAM
+    </sys:String>
+    <sys:String x:Key="Micronas">
+        Micronas
+    </sys:String>
+    <sys:String x:Key="NAND_FLASH">
+        NAND FLASH
+    </sys:String>
+    <sys:String x:Key="16bit">
+        16bit
+    </sys:String>
+    <sys:String x:Key="MCU">
+        MCU
+    </sys:String>
+    <sys:String x:Key="LTxxxx">
+        LTxxxx
+    </sys:String>
+    <sys:String x:Key="8051">
+        8051
+    </sys:String>
+    <sys:String x:Key="32bit">
+        32bit
+    </sys:String>
+    <sys:String x:Key="JMT1808R">
+        JMT1808R
+    </sys:String>
+    <sys:String x:Key="25型SPI FLASH">
+        25 SPI FLASH
+    </sys:String>
+    <sys:String x:Key="NOR FLASH">
+        NOR FLASH
+    </sys:String>
+    <sys:String x:Key="ABOV">
+        ABOV
+    </sys:String>
+    <sys:String x:Key="AT32F40x">
+        AT32F40x
+    </sys:String>
+    <sys:String x:Key="AT32F41x">
+        AT32F41x
+    </sys:String>
+    <sys:String x:Key="AT32F42x">
+        AT32F42x
+    </sys:String>
+    <sys:String x:Key="AT32F43x">
+        AT32F43x
+    </sys:String>
+    <sys:String x:Key="雅特力AT32F41/2">
+        AT32F41/2
+    </sys:String>
+    <sys:String x:Key="雅特力AT32F43">
+        AT32F43
+    </sys:String>
+    <sys:String x:Key="微五">
+        ChinaFive
+    </sys:String>
+    <sys:String x:Key="ABOV(8051)">
+        ABOV(8051)
+    </sys:String>
+    <sys:String x:Key="ABOV(ARM)">
+        ABOV(ARM)
+    </sys:String>
+    <sys:String x:Key="可用滚轮输入">
+        MouseWheel
+    </sys:String>
+    <sys:String x:Key="可按着鼠标左右键上下划动进行开关">
+        MouseWheel+Click~
+    </sys:String>
+    <sys:String x:Key="NVR存储器">
+        NVR
+    </sys:String>
+    <sys:String x:Key="添加本块独">
+        ADD LOCAL
+    </sys:String>
+    <sys:String x:Key="立烧录算法">
+        PROG ALGORITHM
+    </sys:String>
+    <sys:String x:Key="上">
+        UP
+    </sys:String>
+    <sys:String x:Key="下">
+        DOWN
+    </sys:String>
+    <sys:String x:Key="移">
+        MOVE
+    </sys:String>
+    <sys:String x:Key="配置器">
+        Configer
+    </sys:String>
+    <sys:String x:Key="绑定">
+        Binding
+    </sys:String>
+    <sys:String x:Key="另存">
+        Save as
+    </sys:String>
+    <sys:String x:Key="启动读取">
+        READ
+    </sys:String>
+    <sys:String x:Key="字节数">
+        Byte
+    </sys:String>
+    <sys:String x:Key="不屏蔽">
+        不屏蔽
+    </sys:String>
+    <sys:String x:Key="屏蔽">
+        屏蔽
+    </sys:String>
+    <sys:String x:Key="在线读">
+        OnlineRead
+    </sys:String>
+    <sys:String x:Key="刷新本区块">
+        Refresh
+    </sys:String>
+    <sys:String x:Key="通道">
+        Channel
+    </sys:String>
+    <sys:String x:Key="此区块读取时间戳">
+        Timestamp
+    </sys:String>
+    <sys:String x:Key="笙泉MG32F10x">
+        MG32F10x
+    </sys:String>
+    <sys:String x:Key="预写熔丝">
+        PreFuse
+    </sys:String>
+    <sys:String x:Key="最终熔丝">
+        LastFuse
+    </sys:String>
+    <sys:String x:Key="加密字">
+        LockBits
+    </sys:String>
+    <sys:String x:Key="JMT180x">
+        JMT180x
+    </sys:String>
+    <sys:String x:Key="HX32">
+        HX32
+    </sys:String>
+    <sys:String x:Key="六角形">
+        Hexagon
+    </sys:String>
+    <sys:String x:Key="25型">
+        25
+    </sys:String>
+    <sys:String x:Key="25型SPI">
+        25 SPI
+    </sys:String>
+    <sys:String x:Key="铁电">
+        FM
+    </sys:String>
+    <sys:String x:Key="FM存储器">
+        FM
+    </sys:String>
+    <sys:String x:Key="鸿博微">
+        Honor
+    </sys:String>
+    <sys:String x:Key="HBM32">
+        HBM32
+    </sys:String>
+    <sys:String x:Key="云提取">
+        Cloud
+    </sys:String>
+    <sys:String x:Key="直连">
+        TCP
+    </sys:String>
+    <sys:String x:Key="服务器域名或IP地址">
+        SERVER URL/IP
+    </sys:String>
+    <sys:String x:Key="服务器端口号">
+        PORT
+    </sys:String>
+    <sys:String x:Key="登录">
+        LOGIN
+    </sys:String>
+    <sys:String x:Key="中亿芯">
+        中亿芯
+    </sys:String>
+    <sys:String x:Key="YX32">
+        YX32
+    </sys:String>
+    <sys:String x:Key="网络直连">
+        TCP
+    </sys:String>
+
+
+
+
+
+
+
+
+
+
+</ResourceDictionary>
+    
+    
+    

@@ -20,8 +20,20 @@ def app_root() -> Path:
 
 
 class ConfigManager:
-    """配置管理器 - 统一管理应用配置"""
-    
+    """配置管理器 - 统一管理应用配置
+
+    同 config_file 路径共享同一实例 (类级缓存):
+    任一页面 (如系统设置) 修改配置并 save_config 后, 其他页面读取同一实例
+    立即看到新值, 无需各自重新加载文件。
+    """
+    _instances: dict = {}
+
+    def __new__(cls, config_file="config.json"):
+        key = str(config_file)
+        if key not in cls._instances:
+            cls._instances[key] = super().__new__(cls)
+        return cls._instances[key]
+
     def __init__(self, config_file="config.json"):
         """
         初始化配置管理器
@@ -29,7 +41,12 @@ class ConfigManager:
         Args:
             config_file: 配置文件路径，默认为当前目录下的config.json
         """
-        self.config_file = config_file
+        # 类级缓存共享: 已初始化过的实例直接复用, 不重复加载文件覆盖内存中的修改
+        if getattr(self, "_initialized", False):
+            self.config_file = str(config_file)
+            return
+        self._initialized = True
+        self.config_file = str(config_file)
         self.config = self._load_config()
     
     def _load_config(self):
@@ -135,113 +152,35 @@ class ConfigManager:
                         ]
                     },
                     "烧录指导": {
-                        "modes": ["在线烧录", "离线烧录"],
+                        "constraints": [
+                            "先根据原始文本明确烧录方式: 在线烧录指芯片已贴装于 PCBA, 通过 PCBA 上的烧录口手工烧录; 离线烧录指芯片未贴装, 在烧录机上对芯片本体批量烧录, 全文表述保持一致",
+                            "必须写明所用烧录软件与烧录器/烧录机型号, 以及连接与操作步骤",
+                            "在线烧录必须写明 PCBA 上烧录口的位置、接口类型与引脚定义 (如 VDD/GND/CLK/DAT); 离线烧录必须写明芯片烧录引脚与引脚顺序、放置方向",
+                            "条理清晰, 分条列出",
+                            "保留原文所有关键参数, 不凭空增加内容",
+                            "如原文缺少必要信息, 用【待补充】标注",
+                            "使用 Markdown 格式输出"
+                        ],
                         "chips": {
                             "中微爱芯": {
-                                "在线烧录": {
-                                    "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通中微爱芯 (AiP) 芯片的在线烧录。在线烧录指芯片已贴装在 PCBA 上, 通过 PCBA 上的烧录口手工烧录。",
-                                    "template": "请将用户提供的原始文本润色为规范的《中微爱芯 在线烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (iWriterPro 及 AiP 烧录器)\n二、PCBA 烧录口说明 (接口位置、引脚定义、顺序)\n三、连接方式\n四、烧录步骤\n五、校验与注意事项",
-                                    "constraints": [
-                                        "在线烧录为 PCBA 手工烧录, 必须写明 PCBA 上烧录口的位置、接口类型与引脚定义 (如 VDD/GND/CLK/DAT 顺序)",
-                                        "必须写明所用烧录软件 (iWriterPro) 的芯片型号选择与操作步骤",
-                                        "条理清晰, 分条列出",
-                                        "保留原文所有关键参数, 不凭空增加内容",
-                                        "如原文缺少必要信息, 用【待补充】标注",
-                                        "使用 Markdown 格式输出"
-                                    ]
-                                },
-                                "离线烧录": {
-                                    "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通中微爱芯 (AiP) 芯片的离线烧录。离线烧录指芯片未贴装时, 在烧录机上对芯片本体进行批量烧录。",
-                                    "template": "请将用户提供的原始文本润色为规范的《中微爱芯 离线烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (iWriterPro 及烧录机)\n二、芯片烧录引脚说明 (引脚定义、顺序、方向)\n三、烧录机操作步骤\n四、校验方式\n五、注意事项",
-                                    "constraints": [
-                                        "离线烧录为烧录机批量烧录, 必须写明芯片的烧录引脚 (如 VDD/GND/CLK/DAT) 与引脚顺序、放置方向",
-                                        "必须写明烧录软件 (iWriterPro) 与烧录机的操作步骤",
-                                        "条理清晰, 分条列出",
-                                        "保留原文所有关键参数, 不凭空增加内容",
-                                        "如原文缺少必要信息, 用【待补充】标注",
-                                        "使用 Markdown 格式输出"
-                                    ]
-                                }
+                                "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通中微爱芯 (AiP) 芯片的烧录, 覆盖在线烧录 (PCBA 烧录口手工烧录) 与离线烧录 (烧录机批量烧录)。",
+                                "template": "请将用户提供的原始文本润色为规范的《中微爱芯 烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (iWriterPro 及 AiP 烧录器)\n二、烧录口说明 (在线: PCBA 烧录口位置、接口类型与引脚定义; 离线: 芯片烧录引脚)\n三、连接方式\n四、烧录步骤\n五、校验与注意事项"
                             },
                             "十速": {
-                                "在线烧录": {
-                                    "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通十速 (TENX) 芯片的在线烧录。在线烧录指芯片已贴装在 PCBA 上, 通过 PCBA 上的烧录口手工烧录。",
-                                    "template": "请将用户提供的原始文本润色为规范的《十速 在线烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (TWR 系列烧录器)\n二、PCBA 烧录口说明 (接口位置、引脚定义、顺序)\n三、连接方式\n四、烧录步骤\n五、校验与注意事项",
-                                    "constraints": [
-                                        "在线烧录为 PCBA 手工烧录, 必须写明 PCBA 上烧录口的位置、接口类型与引脚定义",
-                                        "必须写明所用烧录器型号 (TWR98/TWR99/TWR100 等) 与操作步骤",
-                                        "十速多为 OTP 芯片, 必须提醒烧录前核对型号与固件, 烧录后不可修改",
-                                        "条理清晰, 分条列出",
-                                        "保留原文所有关键参数, 不凭空增加内容",
-                                        "如原文缺少必要信息, 用【待补充】标注",
-                                        "使用 Markdown 格式输出"
-                                    ]
-                                },
-                                "离线烧录": {
-                                    "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通十速 (TENX) 芯片的离线烧录。离线烧录指芯片未贴装时, 在烧录机上对芯片本体进行批量烧录。",
-                                    "template": "请将用户提供的原始文本润色为规范的《十速 离线烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (TWR 系列烧录器)\n二、芯片烧录引脚说明 (引脚定义、顺序、方向)\n三、烧录机操作步骤\n四、校验方式\n五、注意事项",
-                                    "constraints": [
-                                        "离线烧录为烧录机批量烧录, 必须写明芯片的烧录引脚与引脚顺序、放置方向",
-                                        "必须写明烧录器型号与烧录机操作步骤",
-                                        "十速多为 OTP 芯片, 必须提醒烧录前核对型号与固件, 烧录后不可修改",
-                                        "条理清晰, 分条列出",
-                                        "保留原文所有关键参数, 不凭空增加内容",
-                                        "如原文缺少必要信息, 用【待补充】标注",
-                                        "使用 Markdown 格式输出"
-                                    ]
-                                }
+                                "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通十速 (TENX) 芯片的烧录, 覆盖在线烧录 (PCBA 烧录口手工烧录) 与离线烧录 (烧录机批量烧录)。",
+                                "template": "请将用户提供的原始文本润色为规范的《十速 烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (TWR 系列烧录器)\n二、烧录口说明 (在线: PCBA 烧录口位置、接口类型与引脚定义; 离线: 芯片烧录引脚)\n三、连接方式\n四、烧录步骤\n五、校验与注意事项\n注意事项中必须提醒: 十速多为 OTP 芯片, 烧录前须核对型号与固件, 烧录后不可修改"
                             },
                             "兆易创新": {
-                                "在线烧录": {
-                                    "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通兆易创新 (GigaDevice) GD32 系列芯片的在线烧录。在线烧录指芯片已贴装在 PCBA 上, 通过 PCBA 上的烧录口 (SWD) 手工烧录。",
-                                    "template": "请将用户提供的原始文本润色为规范的《兆易创新 在线烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (GD32 All-In-One Programmer / GD-Link Utility)\n二、PCBA 烧录口说明 (SWD: SWDIO/SWCLK/GND 引脚定义)\n三、连接方式\n四、烧录步骤\n五、校验与注意事项",
-                                    "constraints": [
-                                        "在线烧录为 PCBA 手工烧录, 必须写明 PCBA 上 SWD 烧录口的位置与引脚定义 (SWDIO/SWCLK/GND/复位)",
-                                        "必须写明所用烧录软件 (GD32 All-In-One Programmer 或 GD-Link Utility) 的操作步骤",
-                                        "条理清晰, 分条列出",
-                                        "保留原文所有关键参数, 不凭空增加内容",
-                                        "如原文缺少必要信息, 用【待补充】标注",
-                                        "使用 Markdown 格式输出"
-                                    ]
-                                },
-                                "离线烧录": {
-                                    "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通兆易创新 (GigaDevice) GD32 系列芯片的离线烧录。离线烧录指芯片未贴装时, 在烧录机上对芯片本体进行批量烧录。",
-                                    "template": "请将用户提供的原始文本润色为规范的《兆易创新 离线烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (GD32 量产编程器/烧录机)\n二、芯片烧录引脚说明 (SWDIO/SWCLK/复位等引脚)\n三、烧录机操作步骤\n四、校验方式\n五、注意事项",
-                                    "constraints": [
-                                        "离线烧录为烧录机批量烧录, 必须写明芯片的烧录引脚 (SWDIO/SWCLK/GND/复位) 与引脚顺序、放置方向",
-                                        "必须写明烧录软件与烧录机的操作步骤",
-                                        "条理清晰, 分条列出",
-                                        "保留原文所有关键参数, 不凭空增加内容",
-                                        "如原文缺少必要信息, 用【待补充】标注",
-                                        "使用 Markdown 格式输出"
-                                    ]
-                                }
+                                "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通兆易创新 (GigaDevice) GD32 系列芯片的烧录, 覆盖在线烧录 (SWD 接口) 与离线烧录 (烧录机批量烧录)。",
+                                "template": "请将用户提供的原始文本润色为规范的《兆易创新 烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (GD32 All-In-One Programmer / GD-Link Utility)\n二、烧录口说明 (在线: PCBA 上 SWD 口 SWDIO/SWCLK/GND 引脚定义; 离线: 芯片烧录引脚)\n三、连接方式\n四、烧录步骤\n五、校验与注意事项"
                             },
                             "赛元": {
-                                "在线烧录": {
-                                    "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通赛元 (SOC) 芯片的在线烧录。在线烧录指芯片已贴装在 PCBA 上, 通过 PCBA 上的烧录口手工烧录。",
-                                    "template": "请将用户提供的原始文本润色为规范的《赛元 在线烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (SOC Programming Tool + SC-LINK)\n二、PCBA 烧录口说明 (接口位置、引脚定义、顺序)\n三、连接方式\n四、烧录步骤\n五、校验与注意事项",
-                                    "constraints": [
-                                        "在线烧录为 PCBA 手工烧录, 必须写明 PCBA 上烧录口的位置、接口类型与引脚定义",
-                                        "必须写明所用烧录软件 (SOC Programming Tool) 与 SC-LINK 连接的操作步骤",
-                                        "条理清晰, 分条列出",
-                                        "保留原文所有关键参数, 不凭空增加内容",
-                                        "如原文缺少必要信息, 用【待补充】标注",
-                                        "使用 Markdown 格式输出"
-                                    ]
-                                },
-                                "离线烧录": {
-                                    "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通赛元 (SOC) 芯片的离线烧录。离线烧录指芯片未贴装时, 在烧录机上对芯片本体进行批量烧录。",
-                                    "template": "请将用户提供的原始文本润色为规范的《赛元 离线烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (SOC Programming Tool + SC-LINK, 支持脱机烧录)\n二、芯片烧录引脚说明 (引脚定义、顺序、方向)\n三、烧录机操作步骤\n四、校验方式\n五、注意事项",
-                                    "constraints": [
-                                        "离线烧录为烧录机批量烧录, 必须写明芯片的烧录引脚与引脚顺序、放置方向",
-                                        "必须写明烧录软件 (SOC Programming Tool) 与 SC-LINK 脱机烧录的操作步骤",
-                                        "条理清晰, 分条列出",
-                                        "保留原文所有关键参数, 不凭空增加内容",
-                                        "如原文缺少必要信息, 用【待补充】标注",
-                                        "使用 Markdown 格式输出"
-                                    ]
-                                }
+                                "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通赛元 (SOC) 芯片的烧录, 覆盖在线烧录 (PCBA 烧录口手工烧录) 与离线烧录 (烧录机批量烧录)。",
+                                "template": "请将用户提供的原始文本润色为规范的《赛元 烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (SOC Programming Tool + SC-LINK, 支持脱机烧录)\n二、烧录口说明 (在线: PCBA 烧录口位置、接口类型与引脚定义; 离线: 芯片烧录引脚)\n三、连接方式\n四、烧录步骤\n五、校验与注意事项"
+                            },
+                            "瑞萨": {
+                                "system_role": "你是一名资深嵌入式烧录工艺工程师, 精通瑞萨 (Renesas) RA/RX/RL78 系列芯片的烧录, 覆盖在线烧录 (PCBA 烧录口手工烧录) 与离线烧录 (烧录机批量烧录)。",
+                                "template": "请将用户提供的原始文本润色为规范的《瑞萨 烧录指导》文档, 按以下模板组织内容:\n一、烧录工具与软件 (Renesas Flash Programmer + E2/E2 Lite)\n二、烧录口说明 (在线: PCBA 烧录口位置与接口类型, RA 用 SWD、RL78 用单线 UART、RX 用 FINE/JTAG; 离线: 芯片烧录引脚)\n三、连接方式\n四、烧录步骤\n五、校验与注意事项"
                             }
                         }
                     }
@@ -253,11 +192,36 @@ class ConfigManager:
                         "programmers": [
                             {
                                 "name": "iWriterPro (AiP 烧录器)",
-                                "exe": "中微爱芯/iWriterPro V1.3.09 build04273/iWriterPro.exe",
+                                "exe": "烧录软件/中微爱芯/iWriterPro V1.3.09 build04273/iWriterPro.exe",
                                 "desc": "中微爱芯 (AiP) 官方烧录软件, 配合 AiP 烧录器使用, 支持芯片本体烧录与 PCBA 在线烧录 (ICP)。",
                                 "hardware": "AiP 烧录器 (USB 连接电脑)",
                                 "usage": "1. 安装 iWriterPro 并连接烧录器\n2. 选择芯片型号, 加载固件文件\n3. 按烧录器说明放置芯片或连接 PCBA 烧录口\n4. 点击烧录, 观察状态提示, 烧录完成后核对校验结果",
-                                "note": "在线烧录需确认 PCBA 烧录口引脚定义; 离线烧录需核对芯片引脚方向。"
+                                "note": "在线烧录需确认 PCBA 烧录口引脚定义; 离线烧录需核对芯片引脚方向。",
+                                "website": "http://www.i-core.cn/download.html",
+                                "image": "assets/programmers/aip_iwriterpro.jpg",
+                                "search_keywords": ["iWriterPro", "iWriter", "AiP"]
+                            },
+                            {
+                                "name": "iWriterGang-4 (AiP 并口烧录器)",
+                                "exe": "烧录软件/中微爱芯/iWriterGang-4_V2.0.24_build011/iWriterPro.exe",
+                                "desc": "中微爱芯 iWriterGang-4 编程器配套软件, 用于 AiP 芯片并口批量烧录。",
+                                "hardware": "iWriterGang-4 编程器 (并口/USB 连接电脑)",
+                                "usage": "1. 安装驱动并连接 Gang-4 编程器\n2. 选择芯片型号, 加载固件文件\n3. 放入芯片到烧录座\n4. 执行批量烧录并校验",
+                                "note": "Gang-4 支持一拖多批量烧录; 烧录前核对芯片型号与固件。",
+                                "website": "http://www.i-core.cn/download.html",
+                                "image": "assets/programmers/aip_iwritergang4.jpg",
+                                "search_keywords": ["iWriterGang", "iWriter", "AiP"]
+                            },
+                            {
+                                "name": "i_WRITER V4 (AiP 烧录软件)",
+                                "exe": "烧录软件/中微爱芯/i_WRITER_V4.1.00 build001/i_WRITER.exe",
+                                "desc": "中微爱芯新一代 i_WRITER V4 烧录软件, 支持 AiP 芯片烧录。",
+                                "hardware": "AiP 烧录器 (USB 连接电脑)",
+                                "usage": "1. 启动 i_WRITER 并连接烧录器\n2. 选择芯片型号, 加载固件文件\n3. 按烧录器说明放置芯片或连接 PCBA 烧录口\n4. 执行烧录并核对校验结果",
+                                "note": "V4 版本较 iWriterPro 界面与型号库有更新, 以官方说明为准。",
+                                "website": "http://www.i-core.cn/download.html",
+                                "image": "assets/programmers/aip_iwriterpro.jpg",
+                                "search_keywords": ["i_WRITER", "iWriter", "AiP"]
                             }
                         ]
                     },
@@ -269,7 +233,10 @@ class ConfigManager:
                                 "desc": "十速 (TENX) 官方烧录器及配套软件, TWR200 支持 TM52 系列在线仿真与烧录; 海速芯/十速系列芯片通用。",
                                 "hardware": "TWR98 / TWR99 / TWR100 / TWR200 烧录器",
                                 "usage": "1. 连接烧录器与电脑, 安装配套驱动与软件\n2. 选择芯片型号 (如 TM57/TM58/TM52 系列), 加载固件\n3. 放置芯片到烧录座或连接 PCBA 烧录口\n4. 执行烧录并校验",
-                                "note": "十速多为 OTP 芯片, 只能烧录一次, 烧录前务必核对型号与固件。"
+                                "note": "十速多为 OTP 芯片, 只能烧录一次, 烧录前务必核对型号与固件。",
+                                "website": "https://www.hitenx.com.cn",
+                                "image": "assets/programmers/twr200.jpg",
+                                "search_keywords": ["TWR200", "TWR98", "TWR99", "TWR100", "TENX", "Writer"]
                             }
                         ]
                     },
@@ -277,11 +244,14 @@ class ConfigManager:
                         "programmers": [
                             {
                                 "name": "XW16Pro Standalone Programmer",
-                                "exe": "XW16Pro_StandaloneProgrammer/编程器软件(主软件,此包内文件均有用,若要拖出,需全拖出放同一文件夹内)/XW16ProStandaloneProgrammer.exe",
+                                "exe": "烧录软件/XW16Pro_StandaloneProgrammer/编程器软件(主软件,此包内文件均有用,若要拖出,需全拖出放同一文件夹内)/XW16ProStandaloneProgrammer.exe",
                                 "desc": "XW16Pro Standalone Programmer 配合 XW16Pro 独立编程器, 用于 GD32 系列芯片的量产脱机批量烧录。",
                                 "hardware": "XW16Pro 独立编程器 (USB 连接电脑)",
                                 "usage": "1. 连接 XW16Pro 编程器与电脑, 启动本软件\n2. 选择芯片型号, 加载固件文件\n3. 放入芯片或连接 PCBA 的 SWD 接口 (SWDIO/SWCLK/GND)\n4. 执行烧录并校验",
-                                "note": "用于量产脱机烧录; 接线与引脚定义以厂家说明书为准。"
+                                "note": "用于量产脱机烧录; 接线与引脚定义以厂家说明书为准。",
+                                "website": "http://www.xwopen.com/WpfStandaloneProgrammer.html",
+                                "image": "assets/programmers/xw16pro.jpg",
+                                "search_keywords": ["XW16Pro", "XW16", "StandaloneProgrammer"]
                             },
                             {
                                 "name": "FT200",
@@ -289,7 +259,10 @@ class ConfigManager:
                                 "desc": "FT200 烧录器 (USB 连接电脑), 可用于 GD32 系列芯片在线烧录, 具体型号选择与接线以厂家说明书为准。",
                                 "hardware": "FT200 烧录器 (USB 连接电脑)",
                                 "usage": "1. 安装 FT200 驱动与软件, 连接烧录器到电脑\n2. 选择 GD32 芯片型号, 加载固件\n3. 连接 PCBA 烧录口\n4. 执行烧录并校验",
-                                "note": "接线与引脚定义以 FT200 厂家说明书为准。"
+                                "note": "接线与引脚定义以 FT200 厂家说明书为准。",
+                                "website": "",
+                                "image": "assets/programmers/ft200.png",
+                                "search_keywords": ["FT200"]
                             },
                             {
                                 "name": "GD32 All-In-One Programmer / GD-Link Utility",
@@ -297,7 +270,9 @@ class ConfigManager:
                                 "desc": "GD32 All-In-One Programmer 支持串口 ISP、USB、CAN 等接口在线烧录; GD-Link Utility 配合 GD-Link 调试器使用。",
                                 "hardware": "GD-Link / DAP-Link / J-Link / USB 转串口",
                                 "usage": "1. 安装烧录软件并连接烧录器/调试器\n2. 选择接口与芯片型号, 加载固件\n3. 连接 PCBA 的 SWD 接口 (SWDIO/SWCLK/GND)\n4. 执行烧录并校验",
-                                "note": "在线烧录多用 SWD 接口, 需确认 PCBA 上 SWD 接口定义。"
+                                "note": "在线烧录多用 SWD 接口, 需确认 PCBA 上 SWD 接口定义。",
+                                "website": "https://www.gd32mcu.com/cn/download",
+                                "search_keywords": ["GD32", "GD-Link", "GDLink", "All-In-One"]
                             }
                         ]
                     },
@@ -305,11 +280,45 @@ class ConfigManager:
                         "programmers": [
                             {
                                 "name": "SOC Programming Tool (SC-LINK / SC-LINK PRO)",
+                                "exe": "烧录软件/赛元/SOC Programming Tool Enhance v1.80(LIB1D00)/SOC Programming Tool Enhance v1.80(LIB1D00).exe",
+                                "desc": "赛元 (SOC) 官方全功能烧录软件, 同时配合 SC-LINK 与 SC-LINK PRO 两款烧录器使用, 支持编程、校验、查空、在线/脱机/自动烧录、加密、序列号、烧录电压选择及两款烧录器固件升级。",
+                                "hardware": "SC-LINK 与 SC-LINK PRO 两款烧录器通用 (两款固件不通用)",
+                                "usage": "1. 安装 SOC Programming Tool 并连接 SC-LINK 或 SC-LINK PRO\n2. 选择芯片型号, 加载固件\n3. 若未找到芯片型号或无法仿真, 点击「升级」更新 MCU 库或烧录器固件\n4. 连接 PCBA 烧录口或放置芯片到烧录座, 执行编程、校验, 可配置脱机烧录",
+                                "note": "SC-LINK 与 SC-LINK PRO 是两款不同烧录器, 共用本软件但固件不一致不可互换: SC-LINK 使用 V2.x / V3.40 固件 (V2.x 配套资料含 SOC PRO51); SC-LINK PRO 使用 51版 / ARM版 固件。连接后需确保烧录器固件与所用芯片匹配。",
+                                "website": "https://socmcu.com/cn/tool_show.php?id=43",
+                                "image": ["assets/programmers/sc_link.png", "assets/programmers/sc_link_pro.png"],
+                                "search_keywords": ["SOC Programming Tool", "SOC", "SC-LINK"]
+                            },
+                            {
+                                "name": "SOC Pro51 (SC51F 系列烧录软件)",
+                                "exe": "烧录软件/赛元/SOC+Pro51/SOC Pro51 v5.20.exe",
+                                "desc": "赛元 SOC Pro51 烧录软件, 用于 SC51F 等 8051 内核芯片烧录, 配合 SC-LINK (V2.x 固件) 使用。",
+                                "hardware": "SC-LINK 烧录器 (V2.x 版本固件)",
+                                "usage": "1. 启动 SOC Pro51 并连接 SC-LINK (V2.x 固件)\n2. 选择 SC51F 芯片型号, 加载固件文件\n3. 按烧录器说明放置芯片或连接 PCBA 烧录口\n4. 执行烧录并核对校验结果",
+                                "note": "SOC Pro51 配合 SC-LINK (V2.x 版本固件) 使用, 不建议连接 SC-LINK PRO。SC51F 新项目推荐使用 SOC Programming Tool 配合 SC-LINK (V2.x 固件) 烧录。",
+                                "website": "https://socmcu.com/cn/tool_show.php?id=43",
+                                "image": "assets/programmers/sc_link.png",
+                                "search_keywords": ["SOC Pro51", "SOC", "Pro51"]
+                            }
+                        ]
+                    },
+                    "瑞萨": {
+                        "programmers": [
+                            {
+                                "name": "Renesas Flash Programmer (RFP)",
                                 "exe": "",
-                                "desc": "赛元 (SOC) 官方全功能烧录软件, 配合 SC-LINK / SC-LINK PRO 使用, 支持编程、校验、查空、在线编程与脱机烧录。",
-                                "hardware": "SC-LINK / SC-LINK PRO 烧录调试器",
-                                "usage": "1. 安装 SOC Programming Tool 并连接 SC-LINK\n2. 选择芯片型号, 加载固件\n3. 连接 PCBA 烧录口或放置芯片到烧录座\n4. 执行编程、校验, 可配置脱机烧录",
-                                "note": "支持脱机烧录, 适合量产; 在线烧录需确认 PCBA 烧录口定义。"
+                                "desc": "瑞萨 (Renesas) 官方闪存烧录软件 (RFP), 支持 RA / RX / RL78 系列 MCU 片上 Flash 编程, 需搭配 E1/E2/E2 Lite/E20 仿真调试器使用。",
+                                "hardware": "E1 / E2 / E2 Lite / E20 仿真调试器 (或板载调试器)",
+                                "usage": "1. 安装 Renesas Flash Programmer 并连接 E2/E2 Lite 调试器\n2. 选择 MCU 型号与调试接口 (RA 用 SWD, RL78 用单线 UART, RX 用 FINE/JTAG)\n3. 加载烧录文件 (hex/mot/bin)\n4. 执行擦除、写入、校验",
+                                "note": "RFP 免费版可用于评估; 量产烧录建议向瑞萨或授权代理商咨询授权方案。",
+                                "website": "https://www.renesas.cn/zh/software-tool/renesas-flash-programmer-programming-gui",
+                                "image": [
+                                    "assets/programmers/renesas_e2.png",
+                                    "assets/programmers/renesas_e2lite.png",
+                                    "assets/programmers/renesas_e1.jpg",
+                                    "assets/programmers/renesas_e20.jpg"
+                                ],
+                                "search_keywords": ["Renesas Flash Programmer", "RFP", "Renesas"]
                             }
                         ]
                     }
@@ -336,45 +345,49 @@ class ConfigManager:
         """获取串口配置"""
         return self.config.get("serial_port", {})
     
+    def _serial_section(self) -> dict:
+        """返回串口配置段, 缺失时自动创建 (防止 config.json 缺段导致 KeyError)"""
+        return self.config.setdefault("serial_port", {})
+
     def set_serial_port(self, port):
         """设置串口号"""
-        self.config["serial_port"]["port"] = port
+        self._serial_section()["port"] = port
     
     def set_baudrate(self, baudrate):
         """设置波特率"""
-        self.config["serial_port"]["baudrate"] = baudrate
+        self._serial_section()["baudrate"] = baudrate
     
     def set_bytesize(self, bytesize):
         """设置数据位"""
-        self.config["serial_port"]["bytesize"] = bytesize
+        self._serial_section()["bytesize"] = bytesize
     
     def set_parity(self, parity):
         """设置校验位"""
-        self.config["serial_port"]["parity"] = parity
+        self._serial_section()["parity"] = parity
     
     def set_stopbits(self, stopbits):
         """设置停止位"""
-        self.config["serial_port"]["stopbits"] = stopbits
+        self._serial_section()["stopbits"] = stopbits
     
     def set_timeout(self, timeout):
         """设置超时时间"""
-        self.config["serial_port"]["timeout"] = timeout
+        self._serial_section()["timeout"] = timeout
     
     def set_auto_reconnect(self, auto_reconnect):
         """设置自动重连"""
-        self.config["serial_port"]["auto_reconnect"] = auto_reconnect
+        self._serial_section()["auto_reconnect"] = auto_reconnect
     
     def set_hex_display(self, hex_display):
         """设置十六进制显示"""
-        self.config["serial_port"]["hex_display"] = hex_display
+        self._serial_section()["hex_display"] = hex_display
     
     def set_auto_scroll(self, auto_scroll):
         """设置自动滚动"""
-        self.config["serial_port"]["auto_scroll"] = auto_scroll
+        self._serial_section()["auto_scroll"] = auto_scroll
     
     def set_timestamp_display(self, timestamp_display):
         """设置时间戳显示"""
-        self.config["serial_port"]["timestamp_display"] = timestamp_display
+        self._serial_section()["timestamp_display"] = timestamp_display
     
     def get_full_serial_params(self):
         """获取完整的串口参数字典"""

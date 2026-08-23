@@ -84,9 +84,10 @@ class PowerConversionPage(QWidget):
         # 配置文件统一管理默认参数 / API / 型号库 (方便手动修改)
         self.cfg = ConfigManager(str(app_root() / "config.json"))
         # 确保 config.json 存在: 首次运行自动生成完整模板, 后续可直接手动编辑
+        # 仅当配置缺段时才写盘, 避免每次进入页面都做一次全量 JSON dump (冗余 I/O)
         if "power_conversion" not in self.cfg.config:
             self.cfg.config["power_conversion"] = self.cfg.get_factory_defaults()["power_conversion"]
-        self.cfg.save_config()
+            self.cfg.save_config()
         # 型号库: 优先使用 config.json, 缺失时回退到代码内置
         self.REGULATORS = (
             self.cfg.config.get("power_conversion", {}).get("regulators")
@@ -283,10 +284,11 @@ class PowerConversionPage(QWidget):
         layout.addLayout(btn_layout)
 
         # AI 分析按钮 (API Key 在 config.json 的 power_conversion.api 中配置)
-        ai_btn = QPushButton("🤖 AI 分析当前数据")
-        ai_btn.setMinimumHeight(38)
-        ai_btn.setCursor(Qt.CursorShape.PointingHandCursor)
-        ai_btn.setStyleSheet("""
+        # 请求期间禁用, 防止连点启动多个并发 DeepSeek 线程
+        self.ai_btn = QPushButton("🤖 AI 分析当前数据")
+        self.ai_btn.setMinimumHeight(38)
+        self.ai_btn.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.ai_btn.setStyleSheet("""
             QPushButton {
                 background: #409EFF; color: white; border: none;
                 border-radius: 6px; padding: 6px 12px;
@@ -294,9 +296,10 @@ class PowerConversionPage(QWidget):
             }
             QPushButton:hover { background: #66B1FF; }
             QPushButton:pressed { background: #337ECC; }
+            QPushButton:disabled { background: #A0CFFF; }
         """)
-        ai_btn.clicked.connect(self.analyze_with_ai)
-        layout.addWidget(ai_btn)
+        self.ai_btn.clicked.connect(self.analyze_with_ai)
+        layout.addWidget(self.ai_btn)
         layout.addStretch()
 
         # 初始填充型号参数
@@ -347,7 +350,8 @@ class PowerConversionPage(QWidget):
     def on_regulator_changed(self, index):
         """型号切换时自动填充参数"""
         name = self.model_combo.currentText()
-        params = self.REGULATORS.get(name, self.REGULATORS["自定义"])
+        # 自定义条目可能被用户在 config.json 删除, 用 .get 兜底避免 KeyError
+        params = self.REGULATORS.get(name) or self.REGULATORS.get("自定义", {})
         is_custom = (name == "自定义")
 
         # 型号确定后输出电压固定, 不可修改 (仅"自定义"可编辑)
@@ -599,8 +603,27 @@ class PowerConversionPage(QWidget):
         self.check_warnings(current_ma, tj, p_r, p_ldo, derate)
 
     # ==================== DeepSeek AI 分析 ====================
+    def closeEvent(self, event):
+        """窗口关闭: 等待 AI 线程结束, 避免 QThread destroyed while running"""
+        thread = getattr(self, "ai_thread", None)
+        if thread is not None and thread.isRunning():
+            thread.requestInterruption()  # 无副作用; 线程有 60s 网络超时兜底
+            thread.wait(5000)
+        if thread is not None and not thread.isRunning():
+            self.ai_thread = None
+        super().closeEvent(event)
+
+    def _on_ai_thread_finished(self):
+        """线程结束 (成功或失败): 清空引用由 Python GC 回收, 并恢复按钮。
+        不再用 deleteLater, 否则 Python 引用指向已删除对象, 再次分析即闪退。"""
+        self.ai_thread = None
+        if getattr(self, "ai_btn", None) is not None:
+            self.ai_btn.setEnabled(True)
+
     def analyze_with_ai(self):
         """调用 DeepSeek 分析当前计算结果 (结果在独立弹窗显示)"""
+        if getattr(self, "ai_thread", None) is not None:
+            return  # 上次分析仍在进行 (对象有效且未结束), 忽略连点
         if not hasattr(self, "last_data"):
             dialog = DeepSeekDialog(self)
             dialog.set_message("⚠ 请先完成一次有效计算, 再进行 AI 分析。")
@@ -625,6 +648,8 @@ class PowerConversionPage(QWidget):
         dialog.set_message("⏳ 正在请求 DeepSeek 分析, 请稍候 (约 10~30 秒)...")
         dialog.show()
 
+        # 请求期间禁用按钮, 防止连点启动多个并发线程
+        self.ai_btn.setEnabled(False)
         self.ai_dialog = dialog
         self.ai_thread = DeepSeekThread(
             api_key,
@@ -636,17 +661,19 @@ class PowerConversionPage(QWidget):
         )
         self.ai_thread.succeeded.connect(lambda t: self.on_ai_succeeded(dialog, t))
         self.ai_thread.failed.connect(lambda e: self.on_ai_failed(dialog, e))
-        self.ai_thread.finished.connect(self.ai_thread.deleteLater)
+        self.ai_thread.finished.connect(self._on_ai_thread_finished)
         self.ai_thread.start()
 
     def on_ai_succeeded(self, dialog, text):
         """AI 分析成功 (按 Markdown 渲染)"""
+        self.ai_btn.setEnabled(True)
         if dialog.isVisible():
             dialog.set_markdown(text)
         self.show_op_message("🤖 DeepSeek 分析完成。", "#409EFF")
 
     def on_ai_failed(self, dialog, error):
         """AI 分析失败"""
+        self.ai_btn.setEnabled(True)
         if dialog.isVisible():
             dialog.set_message(f"❌ DeepSeek 请求失败:\n{error}")
         self.show_op_message("❌ DeepSeek 请求失败, 请检查 API Key 与网络。", "#F56C6C")
@@ -714,7 +741,8 @@ class PowerConversionPage(QWidget):
     def check_warnings(self, current_ma, tj, p_r, p_ldo, derate):
         """检查过流/降额/过热警告"""
         name = self.model_combo.currentText()
-        imax = self.REGULATORS.get(name, self.REGULATORS["自定义"])["imax"]
+        params = self.REGULATORS.get(name) or self.REGULATORS.get("自定义", {})
+        imax = params.get("imax", 1.0)
 
         derate_limit = imax * derate  # 降额后的安全电流限值
         need_imax = current_ma / derate  # 满足降额要求所需的最小芯片电流

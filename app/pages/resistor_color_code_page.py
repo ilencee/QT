@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QFrame, QLabel, 
-                             QComboBox, QPushButton)
+                             QComboBox, QPushButton, QCheckBox)
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
 
@@ -124,6 +124,13 @@ class ResistorColorCodePage(QWidget):
         
         self.tolerance_combo = self.create_tolerance_combo("精度:")
         selector_layout.addWidget(self.tolerance_combo)
+
+        # 五环电阻开关: 勾选后第三环参与计算 (四环默认忽略第三环)
+        self.five_band_check = QCheckBox("五环电阻")
+        self.five_band_check.setFont(QFont("Microsoft YaHei", 10))
+        self.five_band_check.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.five_band_check.toggled.connect(self.calculate_resistance)
+        selector_layout.addWidget(self.five_band_check)
         
         query_layout.addLayout(selector_layout)
         
@@ -271,7 +278,7 @@ class ResistorColorCodePage(QWidget):
         return column
     
     def create_color_combo(self, label_text):
-        """创建色环下拉框"""
+        """创建色环下拉框, 容器上挂 combo 引用供计算直接使用"""
         widget = QWidget()
         layout = QVBoxLayout(widget)
         layout.setContentsMargins(0, 0, 0, 0)
@@ -286,11 +293,12 @@ class ResistorColorCodePage(QWidget):
         combo.addItems(["Black (0)", "Brown (1)", "Red (2)", "Orange (3)", "Yellow (4)",
                        "Green (5)", "Blue (6)", "Violet (7)", "Gray (8)", "White (9)"])
         layout.addWidget(combo)
+        widget.combo = combo  # type: ignore[attr-defined]
         
         return widget
     
     def create_multiplier_combo(self, label_text):
-        """创建乘数下拉框"""
+        """创建乘数下拉框, 容器上挂 combo 引用"""
         widget = QWidget()
         layout = QVBoxLayout(widget)
         layout.setContentsMargins(0, 0, 0, 0)
@@ -305,11 +313,12 @@ class ResistorColorCodePage(QWidget):
         combo.addItems(["x 1", "x 10", "x 100", "x 1k", "x 10k", "x 100k", 
                        "x 1M", "x 10M", "x 100M", "x 1G", "x 0.1", "x 0.01"])
         layout.addWidget(combo)
+        widget.combo = combo  # type: ignore[attr-defined]
         
         return widget
     
     def create_tolerance_combo(self, label_text):
-        """创建精度下拉框"""
+        """创建精度下拉框, 容器上挂 combo 引用"""
         widget = QWidget()
         layout = QVBoxLayout(widget)
         layout.setContentsMargins(0, 0, 0, 0)
@@ -324,16 +333,18 @@ class ResistorColorCodePage(QWidget):
         combo.addItems(["± 1%", "± 2%", "± 0.5%", "± 0.25%", "± 0.10%", 
                        "± 0.05%", "± 5%", "± 10%"])
         layout.addWidget(combo)
+        widget.combo = combo  # type: ignore[attr-defined]
         
         return widget
     
     def calculate_resistance(self):
         """计算电阻值"""
-        # 获取选择的索引
-        band1_index = self.band1_combo.findChild(QComboBox).currentIndex()  # type: ignore
-        band2_index = self.band2_combo.findChild(QComboBox).currentIndex()  # type: ignore
-        multiplier_index = self.multiplier_combo.findChild(QComboBox).currentIndex()  # type: ignore
-        tolerance_index = self.tolerance_combo.findChild(QComboBox).currentIndex()  # type: ignore
+        # 获取选择的索引 (直接引用已挂载的 combo, 替代脆弱的 findChild)
+        band1_index = self.band1_combo.combo.currentIndex()  # type: ignore[attr-defined]
+        band2_index = self.band2_combo.combo.currentIndex()  # type: ignore[attr-defined]
+        band3_index = self.band3_combo.combo.currentIndex()  # type: ignore[attr-defined]
+        multiplier_index = self.multiplier_combo.combo.currentIndex()  # type: ignore[attr-defined]
+        tolerance_index = self.tolerance_combo.combo.currentIndex()  # type: ignore[attr-defined]
         
         # 映射值
         band1_values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -346,8 +357,12 @@ class ResistorColorCodePage(QWidget):
         multiplier = multiplier_values[multiplier_index]
         tolerance = tolerance_values[tolerance_index]
         
-        # 计算电阻值
-        resistance = (band1 * 10 + band2) * multiplier
+        # 计算电阻值: 四环 = 2 数字环 + 乘数; 五环 = 3 数字环 + 乘数
+        if self.five_band_check.isChecked():
+            band3 = band1_values[band3_index]
+            resistance = (band1 * 100 + band2 * 10 + band3) * multiplier
+        else:
+            resistance = (band1 * 10 + band2) * multiplier
         
         # 格式化显示
         if resistance >= 1000000000:

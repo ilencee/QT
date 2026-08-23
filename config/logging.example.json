@@ -1,0 +1,26 @@
+{
+  "logging": {
+    "enabled": true,
+    "level": "INFO",
+    "service": "work_assistant",
+    "dir": "logs",
+    "file": "app.log",
+    "max_bytes": 10485760,
+    "backup_count": 5,
+    "console": true,
+    "debug_sample_rate": 0.1,
+    "memory": true,
+    "slow": {
+      "query_ms": 500,
+      "api_ms": 3000
+    },
+    "mask": {
+      "enabled": true,
+      "password": true,
+      "token": true,
+      "id_card": true,
+      "phone": true,
+      "bank_card": true
+    }
+  }
+}

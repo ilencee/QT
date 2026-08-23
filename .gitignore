@@ -13,3 +13,9 @@ venv/
 # 系统
 Thumbs.db
 Desktop.ini
+
+# 运行产物 (各电脑本机已安装软件的记忆, 勿提交)
+installed_programs_memory.json
+
+# 日志
+logs/

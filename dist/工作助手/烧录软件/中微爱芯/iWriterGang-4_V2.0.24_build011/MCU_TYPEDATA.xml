@@ -1,0 +1,3394 @@
+<?xml version="1.0" encoding="gb2312"?>
+<MCU_TypeSetting>
+	
+	<MCU_Type Name="AiP4910">
+		<MCU_ChipName>AiP4910</MCU_ChipName>
+		<MCU_Model>AiP4910</MCU_Model>
+		<MCU_Class>17</MCU_Class>
+		<MCU_SubClass>1</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>1024</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>1701</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16"  Name2="4289">
+			<Pin_Assignment>16,16,1,2,7,8,10,6,5,3,4,9,11</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>					
+	</MCU_Type>
+
+	<MCU_Type Name="AiP4911">
+		<MCU_ChipName>AiP4911</MCU_ChipName>
+		<MCU_Model>AiP4911</MCU_Model>
+		<MCU_Class>17</MCU_Class>
+		<MCU_SubClass>2</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>1024</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>1702</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16"  Name2="4911">
+			<Pin_Assignment>16,16,1,2,7,8,10,6,5,3,4,9,11</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>					
+	</MCU_Type>
+	
+   <MCU_Type Name="AiP4912">
+			<MCU_ChipName>AiP4912</MCU_ChipName>
+			<MCU_Model>AiP4912</MCU_Model>
+			<MCU_Class>17</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1704</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP8">
+				<Pin_Assignment>8,8,1,2,3,4,5,6</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP16">
+				<Pin_Assignment>16,16,1,2,7,8,10,11</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>					
+   </MCU_Type>
+
+   <MCU_Type Name="AiP8D0508">
+		<MCU_ChipName>AiP8D0508</MCU_ChipName>
+		<MCU_Model>AiP8D0508</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>35</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>256</EEPROM_Size>
+		<Writer_Boarde>5135</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>	
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>3</MCU_ThirdClass>				
+   </MCU_Type>  
+
+   <MCU_Type Name="AiP8P001G">
+			<MCU_ChipName>AiP8P001G</MCU_ChipName>
+			<MCU_Model>AiP8P001G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1104</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOT23-6" Name2="42194">
+				<Pin_Assignment>6,5,2,6,1,4,3,0</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+   </MCU_Type>
+   
+   <MCU_Type Name="AiP8P002A">
+			<MCU_ChipName>AiP8P002A</MCU_ChipName>
+			<MCU_Model>AiP8P002A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="4222">
+				<Pin_Assignment>8,1,8,5,6,4,3,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+    
+   <MCU_Type Name="AiP8P002B">
+			<MCU_ChipName>AiP8P002B</MCU_ChipName>
+			<MCU_Model>AiP8P002B</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOT23-6" Name2="42415">
+				<Pin_Assignment>6,5,2,6,1,4,3,0</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP8" Name2="4273">
+				<Pin_Assignment>8,1,8,5,6,4,3,2</Pin_Assignment>
+			</Footprint>	
+			<MCU_ThirdClass>2</MCU_ThirdClass>					
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P002G">
+			<MCU_ChipName>AiP8P002G</MCU_ChipName>
+			<MCU_Model>AiP8P002G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1103</Writer_Boarde>	
+			<Packaging_Num>2</Packaging_Num>
+			<Footprint Name="SOT23-6" Name2="42111">
+				<Pin_Assignment>6,5,2,6,1,4,3,0</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP8" Name2="42108">
+				<Pin_Assignment>8,1,8,5,6,4,3,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>		
+   </MCU_Type>
+    
+   <MCU_Type Name="AiP8P002H">
+			<MCU_ChipName>AiP8P002H</MCU_ChipName>
+			<MCU_Model>AiP8P002H</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1104</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="42190">
+				<Pin_Assignment>8,1,8,5,6,4,3,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>2</MCU_ThirdClass>					
+   </MCU_Type>
+
+		<MCU_Type Name="AiP8P002I">
+			<MCU_ChipName>AiP8P002I</MCU_ChipName>
+			<MCU_Model>AiP8P002I</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>6</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1106</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="42331">
+				<Pin_Assignment>8,1,8,4,5,6,3</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>2</MCU_ThirdClass>					
+		</MCU_Type>
+       
+   <MCU_Type Name="AiP8P003A">
+			<MCU_ChipName>AiP8P003A</MCU_ChipName>
+			<MCU_Model>AiP8P003A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="4215">
+				<Pin_Assignment>8,1,8,5,6,4,3,2</Pin_Assignment>
+			</Footprint>			
+			<Footprint Name="SOP/DIP14" Name2="4210">
+				<Pin_Assignment>14,4,11,8,9,7,6,5</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>3</MCU_ThirdClass>					
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P003G">
+			<MCU_ChipName>AiP8P003G</MCU_ChipName>
+			<MCU_Model>AiP8P003G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1103</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP14" Name2="42106">
+				<Pin_Assignment>14,4,11,8,9,7,6,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>2</MCU_ThirdClass>				
+   </MCU_Type>
+    
+   <MCU_Type Name="AiP8P003H">
+			<MCU_ChipName>AiP8P003H</MCU_ChipName>
+			<MCU_Model>AiP8P003H</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1104</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP14" Name2="42173">
+				<Pin_Assignment>14,4,11,8,9,7,6,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>3</MCU_ThirdClass>	
+							
+   </MCU_Type>
+      <MCU_Type Name="AiP8P003I">
+			<MCU_ChipName>AiP8P003I</MCU_ChipName>
+			<MCU_Model>AiP8P003I</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>6</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1106</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP14" Name2="42295">
+				<Pin_Assignment>14,4,11,7,8,9,6</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>					
+   </MCU_Type> 
+
+		<MCU_Type Name="AiP8P004A">
+			<MCU_ChipName>AiP8P004A</MCU_ChipName>
+			<MCU_Model>AiP8P004A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>7</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1107</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP28-A" Name2="4221">
+				<Pin_Assignment>28,2,4,28,1,9,26,27</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+			<Footprint Name="SOP/DIP28-B" Name2="4288">
+				<Pin_Assignment>28,28,14,22,27,2,20,21</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+   </MCU_Type>
+   
+       
+   <MCU_Type Name="AiP8P005A">
+			<MCU_ChipName>AiP8P005A</MCU_ChipName>
+			<MCU_Model>AiP8P005A</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1001</Writer_Boarde>
+			<Packaging_Num>2</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="4202">
+				<Pin_Assignment>8,1,8,7,6,5,4,3</Pin_Assignment>
+			</Footprint>	
+			<Footprint Name="SOP/DIP14" Name2="4203">
+				<Pin_Assignment>14,4,11,10,9,8,7,6</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>					
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P005B">
+			<MCU_ChipName>AiP8P005B</MCU_ChipName>
+			<MCU_Model>AiP8P005B</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1001</Writer_Boarde>	
+			<Packaging_Num>2</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="4270">
+				<Pin_Assignment>8,1,8,7,6,5,4,3</Pin_Assignment>
+			</Footprint>	
+			<Footprint Name="SOP/DIP14" Name2="4271">
+				<Pin_Assignment>14,4,11,10,9,8,7,6</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>2</MCU_ThirdClass>					
+    </MCU_Type>
+    
+	<MCU_Type Name="AiP8P005G">
+			<MCU_ChipName>AiP8P005G</MCU_ChipName>
+			<MCU_Model>AiP8P005G</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>14</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1014</Writer_Boarde>
+			<Packaging_Num>2</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="">
+				<Pin_Assignment>8,1,8,7,6,5,4,3</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP14" Name2="">
+				<Pin_Assignment>14,4,11,10,9,8,7,6</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+
+   <MCU_Type Name="AiP8P006A">
+			<MCU_ChipName>AiP8P006A</MCU_ChipName>
+			<MCU_Model>AiP8P006A</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1003</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP18" Name2="4213">
+				<Pin_Assignment>18,14,5,6,17,7,4,18</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>					
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P007A">
+			<MCU_ChipName>AiP8P007A</MCU_ChipName>
+			<MCU_Model>AiP8P007A</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>5</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>6144</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1005</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/SKDIP28" Name2="4214">
+			  <Pin_Assignment>28,6,23,1,7,2,26,8</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>					
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P007B">
+			<MCU_ChipName>AiP8P007B</MCU_ChipName>
+			<MCU_Model>AiP8P007B</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>8</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>6144</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1008</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/SKDIP28" Name2="4214">
+			  <Pin_Assignment>28,6,23,1,7,2,26,8</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P101A">
+			<MCU_ChipName>AiP8P101A</MCU_ChipName>
+			<MCU_Model>AiP8P101A</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>2</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1002</Writer_Boarde>
+			<Packaging_Num>2</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="4269">
+			  <Pin_Assignment>8,1,8,5,7,6,3,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP14" Name2="4211">
+			  <Pin_Assignment>14,1,14,9,13,10,4,3</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>					
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P101B">
+			<MCU_ChipName>AiP8P101B</MCU_ChipName>
+			<MCU_Model>AiP8P101B</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>7</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1007</Writer_Boarde>
+			<Packaging_Num>2</Packaging_Num>
+			<Footprint Name="SOP/DIP8-A" Name2="42123">
+			  <Pin_Assignment>8,1,8,5,7,6,3,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP8-B" Name2="42115">
+			  <Pin_Assignment>8,8,1,5,7,6,3,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP8-C" Name2="42343">
+			  <Pin_Assignment>8,1,7,5,8,6,3,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP14" Name2="4258">
+			  <Pin_Assignment>14,1,14,9,13,10,4,3</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>						
+    </MCU_Type>
+  
+   <MCU_Type Name="AiP8P101C">
+			<MCU_ChipName>AiP8P101C</MCU_ChipName>
+			<MCU_Model>AiP8P101C</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>7</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1007</Writer_Boarde>	
+			<Packaging_Num>4</Packaging_Num>
+			<Footprint Name="SOP/DIP8-A" Name2="42121">
+			  <Pin_Assignment>8,1,8,5,7,6,3,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP8-B" Name2="42110">
+			  <Pin_Assignment>8,1,7,5,8,6,3,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="MSOP8" Name2="42130">
+			  <Pin_Assignment>8,1,8,5,7,6,3,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="MSOP10" Name2="42101">
+			  <Pin_Assignment>10,1,10,6,9,7,3,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP14" Name2="4267">
+			  <Pin_Assignment>14,1,14,9,13,10,4,3</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP16" Name2="AL1606A" Name3="42139">
+			  <Pin_Assignment>16,8,13,11,7,12,10,9</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>2</MCU_ThirdClass>				
+    </MCU_Type>
+  
+   <MCU_Type Name="AiP8P101G">
+			<MCU_ChipName>AiP8P101G</MCU_ChipName>
+			<MCU_Model>AiP8P101G</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>9</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1009</Writer_Boarde>	
+			<Packaging_Num>3</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="42169">
+			  <Pin_Assignment>8,1,8,5,7,6,3,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="MSOP8" Name2="42187">
+			  <Pin_Assignment>8,1,8,5,7,6,3,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP14" Name2="42158">
+			  <Pin_Assignment>14,1,14,9,13,10,4,3</Pin_Assignment>
+			</Footprint>	
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+
+    <MCU_Type Name="AiP8M101G">
+			<MCU_ChipName>AiP8M101G</MCU_ChipName>
+			<MCU_Model>AiP8M101G</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>12</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1012</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOT23-6" Name2="42366">
+			  <Pin_Assignment>6,5,2,4,3,6</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP8" Name2="42357">
+			  <Pin_Assignment>8,1,8,3,5,7</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="MSOP10" Name2="42365">
+			  <Pin_Assignment>10,1,10,3,6,9</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP14" Name2="42355">
+			  <Pin_Assignment>14,1,14,4,9,13</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16" Name2="42273" Name3="42287" Name4="42288">
+			  <Pin_Assignment>16,1,16,4,11,15</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+			  <Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type> 
+        
+   <MCU_Type Name="AiP8P102A">
+			<MCU_ChipName>AiP8P102A</MCU_ChipName>
+			<MCU_Model>AiP8P102A</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1004</Writer_Boarde>	
+			<Packaging_Num>2</Packaging_Num>
+			<Footprint Name="SOP16" Name2="4224">
+			  <Pin_Assignment>16,16,1,8,7,6,4,3</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP/TSSOP20" Name2="4209">
+			  <Pin_Assignment>20,20,1,8,7,6,4,3</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P102G">
+			<MCU_ChipName>AiP8P102G</MCU_ChipName>
+			<MCU_Model>AiP8P102G</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>6</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1006</Writer_Boarde>
+			<Packaging_Num>3</Packaging_Num>
+			<Footprint Name="SOP14" Name2="42181">
+			  <Pin_Assignment>14,14,1,7,6,5,4,3</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP16" Name2="42129">
+			  <Pin_Assignment>16,16,1,8,7,6,4,3</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP/TSSOP20" Name2="42128">
+			  <Pin_Assignment>20,20,1,8,7,6,4,3</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+
+		<MCU_Type Name="AiP8M102G">
+			<MCU_ChipName>AiP8M102G</MCU_ChipName>
+			<MCU_Model>AiP8M102G</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>13</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1013</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP20" Name2="42364">
+			  <Pin_Assignment>20,20,1,4,8,7</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16" Name2="42406">
+			  <Pin_Assignment>16,16,1,4,8,7</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+			  <Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+
+	<MCU_Type Name="AiP8F102G">
+		<MCU_ChipName>AiP8F102G</MCU_ChipName>
+		<MCU_Model>AiP8F102G</MCU_Model>
+		<MCU_Class>10</MCU_Class>
+		<MCU_SubClass>15</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>2048</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>1015</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP8" Name2="">
+		  <Pin_Assignment>8,1,8,5,4</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP14" Name2="">
+		  <Pin_Assignment>14,14,1,7,6</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP16" Name2="">
+		  <Pin_Assignment>16,16,1,8,7</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP18" Name2="">
+		  <Pin_Assignment>18,14,18,3,17</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP20" Name2="">
+		  <Pin_Assignment>20,20,1,8,7</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+   
+   <MCU_Type Name="AiP8P103A">
+			<MCU_ChipName>AiP8P103A</MCU_ChipName>
+			<MCU_Model>AiP8P103A</MCU_Model>
+			<MCU_Class>16</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1604</Writer_Boarde>
+			<Packaging_Num>4</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="42207">
+			  <Pin_Assignment>8,6,4,3,8,5,1,2,7</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP14" Name2="4247">
+			  <Pin_Assignment>14,10,5,4,12,9,13,14,11,1,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP16" Name2="4248">
+			  <Pin_Assignment>16,12,5,4,14,11,15,16,13,1,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP18" Name2="42237">
+			  <Pin_Assignment>18,14,5,4,16,13,17,18,15,1,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/TSSOP20" Name2="4235">
+			  <Pin_Assignment>20,15,6,5,17,14,18,19,16,2,3</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+   </MCU_Type>
+
+   <MCU_Type Name="AiP8M103G">
+			<MCU_ChipName>AiP8M103G</MCU_ChipName>
+			<MCU_Model>AiP8M103G</MCU_Model>
+			<MCU_Class>16</MCU_Class>
+			<MCU_SubClass>5</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1605</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP8" Name2="42404">
+			  <Pin_Assignment>8,6,4,3,2,1</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP14-A" Name2="42389">
+			  <Pin_Assignment>14,10,5,4,14,13</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP14-B" Name2="42417">
+			  <Pin_Assignment>14,4,11,9,6,5</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP16" Name2="42388">
+			  <Pin_Assignment>16,12,5,4,16,15</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20" Name2="42285" Name3="42351">
+			  <Pin_Assignment>20,15,6,5,19,18</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+       
+   <MCU_Type Name="AiP8P104A">
+			<MCU_ChipName>AiP8P104A</MCU_ChipName>
+			<MCU_Model>AiP8P104A</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>15</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1204</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP16-A" Name2="4272" Name3="4285" Name4="42163">
+				<Pin_Assignment>16,3,10,4,14,2,1,16,15,13,12</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16-B" Name2="42177">
+				<Pin_Assignment>16,3,13,4,14,2,1,16,15,12,11</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="DIP20" Name2="4268" Name3="42176">
+				<Pin_Assignment>20,3,14,4,18,2,1,20,19,17,16</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>	
+   </MCU_Type>
+     
+   <MCU_Type Name="AiP8M104G">
+			<MCU_ChipName>AiP8M104G</MCU_ChipName>
+			<MCU_Model>AiP8M104G</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>11</MCU_SubClass>
+			<MCU_InsWidth>15</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1211</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP16-A" Name2="42211" Name3="42212">
+				<Pin_Assignment>16,3,10,4,1,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16-B" Name2="42218">
+				<Pin_Assignment>16,4,11,5,2,3</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16-C" Name2="42223">
+				<Pin_Assignment>16,3,13,4,1,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20-A" Name2="42210">
+				<Pin_Assignment>20,3,14,4,1,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20-B" Name2="42219">
+				<Pin_Assignment>20,4,15,5,2,3</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+       
+    <MCU_Type Name="AiP8M104H">
+			<MCU_ChipName>AiP8M104H</MCU_ChipName>
+			<MCU_Model>AiP8M104H</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>14</MCU_SubClass>
+			<MCU_InsWidth>15</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1214</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<!--
+			<Footprint Name="SOP/DIP16" Name2="42271">
+				<Pin_Assignment>16,4,11,5,16,1,14</Pin_Assignment>
+			</Footprint>
+			-->
+			<Footprint Name="SOP/DIP16-A" Name2="42290">
+				<Pin_Assignment>16,3,10,4,9,8,13</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16-B" Name2="42289">
+				<Pin_Assignment>16,4,11,5,10,9,14</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16-C" Name2="42314">
+				<Pin_Assignment>16,12,5,13,6,15,8</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16-D" Name2="42315">
+				<Pin_Assignment>16,3,10,4,9,7,13</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16-E" Name2="42363">
+				<Pin_Assignment>16,3,13,4,9,8,12</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20-A" Name2="42291">
+				<Pin_Assignment>20,3,14,4,13,8,17</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20-B" Name2="42292">
+				<Pin_Assignment>20,4,15,5,14,9,18</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8M106G">
+			<MCU_ChipName>AiP8M106G</MCU_ChipName>
+			<MCU_Model>AiP8M106G</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>15</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>1215</Writer_Boarde>
+			<Packaging_Num>2</Packaging_Num>
+			<Footprint Name="DIP/SOP16-A" Name2="42258" Name3="42304">
+				<Pin_Assignment>16,4,3,7,6,11</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="DIP/SOP16-B" Name2="42305">
+				<Pin_Assignment>16,4,3,7,6,10</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="DIP/TSSOP20" Name2="42368">
+				<Pin_Assignment>20,20,1,4,3,8</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+    <MCU_Type Name="AiP8M0048">
+			<MCU_ChipName>AiP8M0048</MCU_ChipName>
+			<MCU_Model>AiP8M0048</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>14</MCU_SubClass>
+			<MCU_InsWidth>15</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1214</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP16-A" Name2="42290">
+				<Pin_Assignment>16,3,10,4,9,8,13</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>2</MCU_ThirdClass>
+    </MCU_Type>
+   <MCU_Type Name="AiP8P108G">
+			<MCU_ChipName>AiP8P108G</MCU_ChipName>
+			<MCU_Model>AiP8P108G</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>16</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1006</Writer_Boarde>
+			<Packaging_Num>3</Packaging_Num>
+			<Footprint Name="MSOP10">
+			  <Pin_Assignment>10,1,10,9,8,7,3,4</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+   
+   <MCU_Type Name="AiP8M168G">
+		<MCU_ChipName>AiP8M168G</MCU_ChipName>
+		<MCU_Model>AiP8M168G</MCU_Model>
+		<MCU_Class>12</MCU_Class>
+		<MCU_SubClass>19</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>4096</ROM_Size>
+		<Option_Size>32</Option_Size>
+		<EEPROM_Size>64</EEPROM_Size>
+		<Writer_Boarde>1219</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="DIP/SOP16">
+			<Pin_Assignment>16,16,1,7,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="DIP/SOP20">
+			<Pin_Assignment>20,20,1,7,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+	
+   <MCU_Type Name="AiP8M178G">
+		<MCU_ChipName>AiP8M178G</MCU_ChipName>
+		<MCU_Model>AiP8M178G</MCU_Model>
+		<MCU_Class>12</MCU_Class>
+		<MCU_SubClass>20</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>4096</ROM_Size>
+		<Option_Size>32</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>1220</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="DIP/SOP20" Name2="">
+			<Pin_Assignment>20,20,1,7,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="DIP/SOP24" Name2="">
+			<Pin_Assignment>24,24,1,9,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="DIP/SOP28" Name2="">
+			<Pin_Assignment>28,28,1,11,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>
+	</MCU_Type>
+
+	<MCU_Type Name="AiP8M179G">
+		<MCU_ChipName>AiP8M179G</MCU_ChipName>
+		<MCU_Model>AiP8M179G</MCU_Model>
+		<MCU_Class>12</MCU_Class>
+		<MCU_SubClass>20</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>32</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>1220</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="DIP/SOP24" Name2="">
+			<Pin_Assignment>24,24,1,9,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="DIP/SOP28" Name2="">
+			<Pin_Assignment>28,28,1,11,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>
+    </MCU_Type>          
+	
+   <MCU_Type Name="AiP8P201A">
+			<MCU_ChipName>AiP8P201A</MCU_ChipName>
+			<MCU_Model>AiP8P201A</MCU_Model>
+			<MCU_Class>16</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>		
+ 	    <Writer_Boarde>1601</Writer_Boarde>	
+ 	    <Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P202A">
+			<MCU_ChipName>AiP8P202A</MCU_ChipName>
+			<MCU_Model>AiP8P202A</MCU_Model>
+			<MCU_Class>16</MCU_Class>
+			<MCU_SubClass>2</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>8192</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1602</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P202B">
+			<MCU_ChipName>AiP8P202B</MCU_ChipName>
+			<MCU_Model>AiP8P202B</MCU_Model>
+			<MCU_Class>16</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>8192</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1603</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+   
+    <MCU_Type Name="AiP8P203A">
+			<MCU_ChipName>AiP8P203A</MCU_ChipName>
+			<MCU_Model>AiP8P203A</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>16</MCU_SubClass>
+			<MCU_InsWidth>15</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1216</Writer_Boarde>
+			<Packaging_Num>4</Packaging_Num>
+			<Footprint Name="SOP/DIP16" Name2="4276">
+				<Pin_Assignment>16,12,5,13,4,3,16,1,2,15,14</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20" Name2="4287" Name3="4275">
+				<Pin_Assignment>20,16,5,17,4,3,20,1,2,19,18</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP24" Name2="4286">
+				<Pin_Assignment>24,20,5,21,4,3,24,1,2,23,22</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP28" Name2="4253" Name3="4260">
+				<Pin_Assignment>28,24,5,25,4,3,28,1,2,27,26</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8M203G">
+			<MCU_ChipName>AiP8M203G</MCU_ChipName>
+			<MCU_Model>AiP8M203G</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>13</MCU_SubClass>
+			<MCU_InsWidth>15</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1213</Writer_Boarde>
+			<Packaging_Num>5</Packaging_Num>
+			<Footprint Name="SOP/DIP16-A" Name2="42277">
+				<Pin_Assignment>16,12,5,13,2,4,15</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16-B" Name2="42283">
+				<Pin_Assignment>16,16,1,9,13,15,11</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20-A" Name2="42248">
+				<Pin_Assignment>20,16,5,17,2,4,19</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20-B" Name2="42284">
+				<Pin_Assignment>20,20,1,9,13,15,11</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP24" Name2="42250">
+				<Pin_Assignment>24,20,5,21,2,4,23</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP28" Name2="42251">
+				<Pin_Assignment>28,24,5,25,2,4,27</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+
+   
+   <MCU_Type Name="AiP8P501A">
+			<MCU_ChipName>AiP8P501A</MCU_ChipName>
+			<MCU_Model>AiP8P501A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>2</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>2816</ROM_Size>
+			<Option_Size>2</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1102</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP20" Name2="4212">
+			  <Pin_Assignment>20,12,7,5,6,9,10,11</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P501G">
+			<MCU_ChipName>AiP8P501G</MCU_ChipName>
+			<MCU_Model>AiP8P501G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>5</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>2816</ROM_Size>
+			<Option_Size>2</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1105</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP20" Name2="42188" Name3="42189">
+			  <Pin_Assignment>20,12,7,5,6,9,10,11</Pin_Assignment>
+			</Footprint>
+			
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P601A">
+			<MCU_ChipName>AiP8P601A</MCU_ChipName>
+			<MCU_Model>AiP8P601A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP8">
+				<Pin_Assignment>8,1,8,5,6,4,3,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>4</MCU_ThirdClass>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P601B">
+			<MCU_ChipName>AiP8P601B</MCU_ChipName>
+			<MCU_Model>AiP8P601B</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP8">
+				<Pin_Assignment>8,1,8,5,6,4,3,0</Pin_Assignment>
+			</Footprint>	
+			<MCU_ThirdClass>5</MCU_ThirdClass>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P602A">
+			<MCU_ChipName>AiP8P602A</MCU_ChipName>
+			<MCU_Model>AiP8P602A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP8">
+				<Pin_Assignment>8,1,8,5,6,4,3,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>6</MCU_ThirdClass>				
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F0010">
+		<MCU_ChipName>AiP8F0010</MCU_ChipName>
+		<MCU_Model>AiP8F0010</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>21</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5121</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP16">
+			<Pin_Assignment>16,10,4,12,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP20">
+			<Pin_Assignment>20,11,4,16,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>					
+    </MCU_Type>
+
+   <MCU_Type Name="AiP8F0011">
+		<MCU_ChipName>AiP8F0011</MCU_ChipName>
+		<MCU_Model>AiP8F0011</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>19</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5119</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,3,13,14</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,1,3,17,18</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>			
+    </MCU_Type>
+
+   <MCU_Type Name="AiP8F0012">
+		<MCU_ChipName>AiP8F0012</MCU_ChipName>
+		<MCU_Model>AiP8F0012</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>26</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5126</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="TSSOP20">
+			<Pin_Assignment>20,1,2,16,17</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F0015">
+		<MCU_ChipName>AiP8F0015</MCU_ChipName>
+		<MCU_Model>AiP8F0015</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>22</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5122</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="TSSOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>5</MCU_ThirdClass>				
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F0016">
+		<MCU_ChipName>AiP8F0016</MCU_ChipName>
+		<MCU_Model>AiP8F0016</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>23</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5123</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,9,8,2,3</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,11,10,1,2</Pin_Assignment>
+		</Footprint>		
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,15,14,1,2</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>				
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F0017">
+		<MCU_ChipName>AiP8F0017</MCU_ChipName>
+		<MCU_Model>AiP8F0017</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>21</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5121</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP16">
+			<Pin_Assignment>16,2,12,6,3</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>5</MCU_ThirdClass>					
+    </MCU_Type>
+	<MCU_Type Name="AiP8F0019">
+		<MCU_ChipName>AiP8F0019</MCU_ChipName>
+		<MCU_Model>AiP8F0019</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>25</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5125</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>		
+		<Footprint Name="SOP20" Name2="">
+			<Pin_Assignment>20,20,1,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP28" Name2="">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>		
+		<Footprint Name="SOP32" Name2="">
+			<Pin_Assignment>32,1,32,16,17</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>6</MCU_ThirdClass>					
+    </MCU_Type>
+    <MCU_Type Name="AiP8F0020">
+		<MCU_ChipName>AiP8F0020</MCU_ChipName>
+		<MCU_Model>AiP8F0020</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>15</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5115</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>7</MCU_ThirdClass>				
+    </MCU_Type>		
+   <MCU_Type Name="AiP8F0021">
+			<MCU_ChipName>AiP8F0021</MCU_ChipName>
+			<MCU_Model>AiP8F0021</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>19</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5119</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP16">
+				<Pin_Assignment>16,1,16,3,15</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>6</MCU_ThirdClass>				
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F0022">
+		<MCU_ChipName>AiP8F0022</MCU_ChipName>
+		<MCU_Model>AiP8F0022</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>21</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5121</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP16">
+			<Pin_Assignment>16,3,10,4,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP20">
+			<Pin_Assignment>20,3,14,4,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>4</MCU_ThirdClass>					
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F0023">
+		<MCU_ChipName>AiP8F0023</MCU_ChipName>
+		<MCU_Model>AiP8F0023</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>6</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>32</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5106</Writer_Boarde>	
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP28">
+			<Pin_Assignment>28,28,1,26,27</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>			
+    </MCU_Type>
+
+   <MCU_Type Name="AiP8F0024">
+		<MCU_ChipName>AiP8F0024</MCU_ChipName>
+		<MCU_Model>AiP8F0024</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>19</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5119</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP24">
+			<Pin_Assignment>24,18,7,5,6</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>7</MCU_ThirdClass>				
+    </MCU_Type>
+	
+	<MCU_Type Name="AiP8F0028">
+		<MCU_ChipName>AiP8F0028</MCU_ChipName>
+		<MCU_Model>AiP8F0028</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>15</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5115</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="TSSOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>4</MCU_ThirdClass>				
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F0029">
+		<MCU_ChipName>AiP8F0029</MCU_ChipName>
+		<MCU_Model>AiP8F0029</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>25</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5125</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16" Name2="">
+			<Pin_Assignment>16,1,2,7,8</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20" Name2="">
+			<Pin_Assignment>20,10,9,20,1</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP28" Name2="">
+			<Pin_Assignment>28,28,27,14,15</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>5</MCU_ThirdClass>					
+    </MCU_Type>
+   <MCU_Type Name="AiP8F0031E">
+			<MCU_ChipName>AiP8F0031E</MCU_ChipName>
+			<MCU_Model>AiP8F0031E</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>22</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5122</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="TSSOP20">
+				<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>7</MCU_ThirdClass>				
+    </MCU_Type>	
+   <MCU_Type Name="AiP8F0032">
+			<MCU_ChipName>AiP8F0032</MCU_ChipName>
+			<MCU_Model>AiP8F0032</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>8</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5108</Writer_Boarde>		
+			<Packaging_Num>2</Packaging_Num>
+			<Footprint Name="COB28"  Name2="">
+				<Pin_Assignment>28,10,8,21,20</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F0033">
+			<MCU_ChipName>AiP8F0033</MCU_ChipName>
+			<MCU_Model>AiP8F0033</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>20</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5120</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>					
+    </MCU_Type>
+   <MCU_Type Name="AiP8F0037">
+		<MCU_ChipName>AiP8F0037</MCU_ChipName>
+		<MCU_Model>AiP8F0037</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>26</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5126</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SSOP24">
+			<Pin_Assignment>24,24,3,19,20</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>5</MCU_ThirdClass>				
+    </MCU_Type>
+   <MCU_Type Name="AiP8F0039">
+		<MCU_ChipName>AiP8F0039</MCU_ChipName>
+		<MCU_Model>AiP8F0039</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>29</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5129</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>	
+		<Footprint Name="SOP24">
+			<Pin_Assignment>24,18,7,5,6</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>4</MCU_ThirdClass>				
+   </MCU_Type>
+	<MCU_Type Name="AiP8F0041">
+			<MCU_ChipName>AiP8F0041</MCU_ChipName>
+			<MCU_Model>AiP8F0041</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>19</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5119</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SSOP24">
+				<Pin_Assignment>24,3,2,20,21</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>11</MCU_ThirdClass>				
+    </MCU_Type>
+<MCU_Type Name="AiP8F0042">
+		<MCU_ChipName>AiP8F0042</MCU_ChipName>
+		<MCU_Model>AiP8F0042</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>26</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5126</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,12,11,7,10</Pin_Assignment>
+		</Footprint>
+	
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>6</MCU_ThirdClass>				
+    </MCU_Type>
+	<MCU_Type Name="AiP8F0043">
+		<MCU_ChipName>AiP8F0043</MCU_ChipName>
+		<MCU_Model>AiP8F0043</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>33</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5133</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP24">
+			<Pin_Assignment>24,1,24,13,14</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>3</MCU_ThirdClass>
+	</MCU_Type>
+	<MCU_Type Name="AiP8F0047">
+		<MCU_ChipName>AiP8F0047</MCU_ChipName>
+		<MCU_Model>AiP8F0047</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>29</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5129</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>		
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>7</MCU_ThirdClass>				
+   </MCU_Type>
+	<MCU_Type Name="AiP8F0049">
+		<MCU_ChipName>AiP8F0049</MCU_ChipName>
+		<MCU_Model>AiP8F0049</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>23</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5123</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>		
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>5</MCU_ThirdClass>				
+    </MCU_Type>
+ 	<MCU_Type Name="AiP8F0054">
+		<MCU_ChipName>AiP8F0054</MCU_ChipName>
+		<MCU_Model>AiP8F0054</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>29</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5129</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>	
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,7,6,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>9</MCU_ThirdClass>				
+   </MCU_Type>
+<MCU_Type Name="AiP8F0055">
+		<MCU_ChipName>AiP8F0055</MCU_ChipName>
+		<MCU_Model>AiP8F0055</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>29</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5129</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>8</MCU_ThirdClass>				
+   </MCU_Type>
+	<MCU_Type Name="AiP8F0056">
+		<MCU_ChipName>AiP8F0056</MCU_ChipName>
+		<MCU_Model>AiP8F0056</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>33</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5133</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>4</MCU_ThirdClass>
+	</MCU_Type>
+   <MCU_Type Name="AiP8F064">
+		<MCU_ChipName>AiP8F064</MCU_ChipName>
+		<MCU_Model>AiP8F064</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>30</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>65536</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5130</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>
+    </MCU_Type>
+	<MCU_Type Name="AiP8F0110">
+		<MCU_ChipName>AiP8F0110</MCU_ChipName>
+		<MCU_Model>AiP8F0110</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>34</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5134</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,10,4,12,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,11,4,16,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+   	 </MCU_Type>
+	<MCU_Type Name="AiP8F0111">
+		<MCU_ChipName>AiP8F0111</MCU_ChipName>
+		<MCU_Model>AiP8F0111</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>34</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5134</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,3,10,4,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,3,14,4,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>3</MCU_ThirdClass>				
+   	 </MCU_Type>
+   <MCU_Type Name="AiP8F0132">
+			<MCU_ChipName>AiP8F0132</MCU_ChipName>
+			<MCU_Model>AiP8F0132</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>9</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5109</Writer_Boarde>
+			<Packaging_Num>2</Packaging_Num>
+			<Footprint Name="SOP16"  Name2="">
+				<Pin_Assignment>16,5,6,13,14</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F1008">
+		<MCU_ChipName>AiP8F1008</MCU_ChipName>
+		<MCU_Model>AiP8F1008</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>35</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>256</EEPROM_Size>
+		<Writer_Boarde>5135</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/SSOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SSOP24">
+			<Pin_Assignment>24,1,24,13,14</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/SSOP28">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>	
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>4</MCU_ThirdClass>				
+   </MCU_Type>
+	
+   <MCU_Type Name="AiP8F1016">
+			<MCU_ChipName>AiP8F1016</MCU_ChipName>
+			<MCU_Model>AiP8F1016</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>2</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5102</Writer_Boarde>	
+			<Packaging_Num>5</Packaging_Num>
+			<Footprint Name="TSSOP20" Name2="42126">
+				<Pin_Assignment>20,9,7,1,8</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP16">
+				<Pin_Assignment>16,16,1,14,15</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP20" Name2="42145" Name3="42209">
+				<Pin_Assignment>20,20,1,18,19</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP28" Name2="42172" Name3="42120">
+				<Pin_Assignment>28,28,1,26,27</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP32" Name2="42124">
+				<Pin_Assignment>32,32,1,30,31</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+
+   <MCU_Type Name="AiP8F1016_LDO">
+			<MCU_ChipName>AiP8F1016_LDO</MCU_ChipName>
+			<MCU_Model>AiP8F1016_LDO</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>16</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5102</Writer_Boarde>	
+			<Packaging_Num>5</Packaging_Num>
+			<Footprint Name="TSSOP20" Name2="42126">
+				<Pin_Assignment>20,9,7,1,8</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP20" Name2="42145" Name3="42209">
+				<Pin_Assignment>20,20,1,18,19</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SSOP24" Name2="42313">
+				<Pin_Assignment>24,6,5,15,16</Pin_Assignment>
+			</Footprint>	
+			<Footprint Name="SOP28" Name2="42172" Name3="42120">
+				<Pin_Assignment>28,28,1,26,27</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP32" Name2="42124">
+				<Pin_Assignment>32,32,1,30,31</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+        
+   <MCU_Type Name="AiP8F1032">
+			<MCU_ChipName>AiP8F1032</MCU_ChipName>
+			<MCU_Model>AiP8F1032</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5103</Writer_Boarde>	
+			<Packaging_Num>5</Packaging_Num>
+			<Footprint Name="SOP16">
+				<Pin_Assignment>16,16,1,14,15</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="TSSOP20" Name2="42126">
+				<Pin_Assignment>20,9,7,1,8</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP20" Name2="42145" Name3="42209">
+				<Pin_Assignment>20,20,1,18,19</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP28" Name2="42172" Name3="42120">
+				<Pin_Assignment>28,28,1,26,27</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP32" Name2="42124">
+				<Pin_Assignment>32,32,1,30,31</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+
+    <MCU_Type Name="AiP8F1032_LDO">
+			<MCU_ChipName>AiP8F1032_LDO</MCU_ChipName>
+			<MCU_Model>AiP8F1032_LDO</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>17</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5103</Writer_Boarde>	
+			<Packaging_Num>5</Packaging_Num>
+			<Footprint Name="TSSOP20" Name2="42126">
+				<Pin_Assignment>20,9,7,1,8</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP20" Name2="42145" Name3="42209">
+				<Pin_Assignment>20,20,1,18,19</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SSOP24" Name2="42313">
+				<Pin_Assignment>24,6,5,15,16</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP28" Name2="42172" Name3="42120">
+				<Pin_Assignment>28,28,1,26,27</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP32" Name2="42124">
+				<Pin_Assignment>32,32,1,30,31</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+
+   <MCU_Type Name="AiP8F1116">
+		<MCU_ChipName>AiP8F1116</MCU_ChipName>
+		<MCU_Model>AiP8F1116</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>26</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5126</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,9,10</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>				
+    </MCU_Type>
+	
+	<MCU_Type Name="AiP8F1208">
+		<MCU_ChipName>AiP8F1208</MCU_ChipName>
+		<MCU_Model>AiP8F1208</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>27</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>64</Option_Size>
+		<EEPROM_Size>256</EEPROM_Size>
+		<Writer_Boarde>5127</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="TSSOP20">
+			<Pin_Assignment>20,1,20,12,14,13,7</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>	
+   <MCU_Type Name="AiP8F2032">
+			<MCU_ChipName>AiP8F2032</MCU_ChipName>
+			<MCU_Model>AiP8F2032</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>6</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5106</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP28">
+				<Pin_Assignment>28,28,1,26,27</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8F2032_LDO">
+			<MCU_ChipName>AiP8F2032_LDO</MCU_ChipName>
+			<MCU_Model>AiP8F2032_LDO</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>18</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5106</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP16">
+				<Pin_Assignment>16,13,14,11,12</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+     <MCU_Type Name="AiP8F2116">
+		<MCU_ChipName>AiP8F2116</MCU_ChipName>
+		<MCU_Model>AiP8F2116</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>32</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5132</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+     <MCU_Type Name="AiP8M2116S">
+		<MCU_ChipName>AiP8M2116S</MCU_ChipName>
+		<MCU_Model>AiP8M2116S</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>36</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5136</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type> 
+   <MCU_Type Name="AiP8F3116">
+			<MCU_ChipName>AiP8F3116</MCU_ChipName>
+			<MCU_Model>AiP8F3116</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>11</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>512</EEPROM_Size>
+			<Writer_Boarde>5111</Writer_Boarde>	
+			<Packaging_Num>3</Packaging_Num>
+			<Footprint Name="SOP/DIP20-A">
+				<Pin_Assignment>20,19,20,16,15</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20-B">
+				<Pin_Assignment>20,20,1,17,16</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>		
+    </MCU_Type>
+    <MCU_Type Name="AiP8F3101">
+		<MCU_ChipName>AiP8F3101</MCU_ChipName>
+		<MCU_Model>AiP8F3101</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>15</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5115</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>6</MCU_ThirdClass>				
+    </MCU_Type>
+ <MCU_Type Name="AiP8F032">
+		<MCU_ChipName>AiP8F032</MCU_ChipName>
+		<MCU_Model>AiP8F032</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>25</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5125</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>9</MCU_ThirdClass>					
+    </MCU_Type>
+   <MCU_Type Name="AiP8F3201">
+			<MCU_ChipName>AiP8F3201</MCU_ChipName>
+			<MCU_Model>AiP8F3201</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>22</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5122</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP28">
+				<Pin_Assignment>28,1,28,14,15</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>6</MCU_ThirdClass>				
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F3207">
+		<MCU_ChipName>AiP8F3207</MCU_ChipName>
+		<MCU_Model>AiP8F3207</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>15</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5115</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP8"  Name2="">
+			<Pin_Assignment>8,8,1,2,3</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP10"  Name2="">
+			<Pin_Assignment>10,10,1,4,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP16"  Name2="">
+			<Pin_Assignment>16,16,1,9,10</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,20,1,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>				
+    </MCU_Type>
+	
+	<MCU_Type Name="AiP8F3208">
+		<MCU_ChipName>AiP8F3208</MCU_ChipName>
+		<MCU_Model>AiP8F3208</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>15</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5115</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16"  Name2="">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+    
+	
+   <MCU_Type Name="AiP8F3213">
+			<MCU_ChipName>AiP8F3213</MCU_ChipName>
+			<MCU_Model>AiP8F3213</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>19</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5119</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP20">
+				<Pin_Assignment>20,20,1,11,12</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP28">
+				<Pin_Assignment>28,28,1,15,16</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>4</MCU_ThirdClass>				
+    </MCU_Type>
+	
+   <MCU_Type Name="AiP8F3213E">
+			<MCU_ChipName>AiP8F3213E</MCU_ChipName>
+			<MCU_Model>AiP8F3213E</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>22</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5122</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP16">
+				<Pin_Assignment>16,16,1,9,10</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP20">
+				<Pin_Assignment>20,20,1,11,12</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP28">
+				<Pin_Assignment>28,28,1,15,16</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>4</MCU_ThirdClass>				
+    </MCU_Type>
+
+   <MCU_Type Name="AiP8F3214">
+			<MCU_ChipName>AiP8F3214</MCU_ChipName>
+			<MCU_Model>AiP8F3214</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>19</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5119</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP20">
+				<Pin_Assignment>20,1,3,13,14</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP28">
+				<Pin_Assignment>28,1,3,17,18</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SSOP28">
+				<Pin_Assignment>28,1,3,17,18</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>3</MCU_ThirdClass>				
+    </MCU_Type> 
+	
+   <MCU_Type Name="AiP8F3214E">
+			<MCU_ChipName>AiP8F3214E</MCU_ChipName>
+			<MCU_Model>AiP8F3214E</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>22</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5122</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP20">
+				<Pin_Assignment>20,1,3,13,14</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP28">
+				<Pin_Assignment>28,1,3,17,18</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>3</MCU_ThirdClass>				
+    </MCU_Type> 
+
+	<MCU_Type Name="AiP8F3215">
+			<MCU_ChipName>AiP8F3215</MCU_ChipName>
+			<MCU_Model>AiP8F3215</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>19</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5119</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP20">
+				<Pin_Assignment>20,20,1,11,12</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP28">
+				<Pin_Assignment>28,21,20,7,9</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>5</MCU_ThirdClass>				
+    </MCU_Type>
+	
+   <MCU_Type Name="AiP8F3215E">
+			<MCU_ChipName>AiP8F3215E</MCU_ChipName>
+			<MCU_Model>AiP8F3215E</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>22</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5122</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP28">
+				<Pin_Assignment>28,21,20,7,9</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>2</MCU_ThirdClass>				
+    </MCU_Type> 
+    
+   <MCU_Type Name="AiP8F3216">
+			<MCU_ChipName>AiP8F3216</MCU_ChipName>
+			<MCU_Model>AiP8F3216</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>19</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5119</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP16">
+				<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP20">
+				<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP28">
+				<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+   <MCU_Type Name="AiP8F3217">
+			<MCU_ChipName>AiP8F3217</MCU_ChipName>
+			<MCU_Model>AiP8F3217</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>19</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5119</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>9</MCU_ThirdClass>				
+    </MCU_Type>
+	
+   <MCU_Type Name="AiP8F3216E">
+			<MCU_ChipName>AiP8F3216E</MCU_ChipName>
+			<MCU_Model>AiP8F3216E</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>22</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>128</EEPROM_Size>
+			<Writer_Boarde>5122</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP16">
+				<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP20">
+				<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP28">
+				<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+	<MCU_Type Name="AiP8F3232">
+		<MCU_ChipName>AiP8F3232</MCU_ChipName>
+		<MCU_Model>AiP8F3232</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>33</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5133</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP24">
+			<Pin_Assignment>24,1,24,13,14</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>
+	</MCU_Type>
+	<MCU_Type Name="AiP8F3235">
+		<MCU_ChipName>AiP8F3235</MCU_ChipName>
+		<MCU_Model>AiP8F3235</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>33</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5133</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,28,1,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>
+	</MCU_Type>
+	<MCU_Type Name="AiP8F3264">
+		<MCU_ChipName>AiP8F3264</MCU_ChipName>
+		<MCU_Model>AiP8F3264</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>13</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>65536</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5113</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,20,1,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,21,20,9,10</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>
+	</MCU_Type>
+
+	<MCU_Type Name="AiP8S3405">
+		<MCU_ChipName>AiP8S3405</MCU_ChipName>
+		<MCU_Model>AiP8S3405</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>35</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>256</EEPROM_Size>
+		<Writer_Boarde>5135</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP16">
+			<Pin_Assignment>16,8,7,1,2</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP20">
+			<Pin_Assignment>20,10,9,20,1</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP28">
+			<Pin_Assignment>28,14,13,28,1</Pin_Assignment>
+		</Footprint>	
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>				
+   </MCU_Type> 
+
+	<MCU_Type Name="AiP8S3408">
+		<MCU_ChipName>AiP8S3408</MCU_ChipName>
+		<MCU_Model>AiP8S3408</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>35</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>256</EEPROM_Size>
+		<Writer_Boarde>5135</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP28">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>	
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type> 
+	<MCU_Type Name="AiP8F3501">
+		<MCU_ChipName>AiP8F3501</MCU_ChipName>
+		<MCU_Model>AiP8F3501</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>29</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5129</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>		
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,2,1,17,18</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>5</MCU_ThirdClass>				
+   </MCU_Type>
+	<MCU_Type Name="AiP8F3505">
+		<MCU_ChipName>AiP8F3505</MCU_ChipName>
+		<MCU_Model>AiP8F3505</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>29</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5129</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>	
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,14,13,28,1</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>6</MCU_ThirdClass>				
+   </MCU_Type>
+	<MCU_Type Name="AiP8F3506">
+		<MCU_ChipName>AiP8F3506</MCU_ChipName>
+		<MCU_Model>AiP8F3506</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>29</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5129</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>	
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,21,20,7,9</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>3</MCU_ThirdClass>				
+   </MCU_Type>
+	<MCU_Type Name="AiP8F3507">
+		<MCU_ChipName>AiP8F3507</MCU_ChipName>
+		<MCU_Model>AiP8F3507</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>29</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5129</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>	
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,28,1,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>				
+   </MCU_Type>
+
+	<MCU_Type Name="AiP8F3508">
+		<MCU_ChipName>AiP8F3508</MCU_ChipName>
+		<MCU_Model>AiP8F3508</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>29</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5129</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>		
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+	<MCU_Type Name="AiP8F3509">
+		<MCU_ChipName>AiP8F3509</MCU_ChipName>
+		<MCU_Model>AiP8F3509</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>29</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5129</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>		
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,21,20,27,28</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>10</MCU_ThirdClass>				
+   </MCU_Type>
+	<MCU_Type Name="AiP8F3512">
+		<MCU_ChipName>AiP8F3512</MCU_ChipName>
+		<MCU_Model>AiP8F3512</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>23</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5123</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,13,12,4,5</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,8,7,17,18</Pin_Assignment>
+		</Footprint>		
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,8,7,22,23</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>4</MCU_ThirdClass>				
+    </MCU_Type>
+	
+	<MCU_Type Name="AiP8F3515">
+		<MCU_ChipName>AiP8F3515</MCU_ChipName>
+		<MCU_Model>AiP8F3515</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>23</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5123</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,8,7,1,2</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,10,9,20,1</Pin_Assignment>
+		</Footprint>		
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,14,13,28,1</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>3</MCU_ThirdClass>				
+    </MCU_Type>
+	
+	<MCU_Type Name="AiP8F3516">
+		<MCU_ChipName>AiP8F3516</MCU_ChipName>
+		<MCU_Model>AiP8F3516</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>23</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5123</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>		
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+
+   <MCU_Type Name="AiP8F3532">
+		<MCU_ChipName>AiP8F3532</MCU_ChipName>
+		<MCU_Model>AiP8F3532</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>25</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5125</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP20" Name2="">
+			<Pin_Assignment>20,20,1,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP28" Name2="42431">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP32" Name2="42432">
+			<Pin_Assignment>32,1,32,16,17</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>					
+    </MCU_Type>
+   <MCU_Type Name="AiP8F3534">
+		<MCU_ChipName>AiP8F3534</MCU_ChipName>
+		<MCU_Model>AiP8F3534</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>25</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5125</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP28" Name2="42431">
+			<Pin_Assignment>28,21,20,6,7</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>3</MCU_ThirdClass>					
+    </MCU_Type>
+
+   <MCU_Type Name="AiP8F3535">
+		<MCU_ChipName>AiP8F3535</MCU_ChipName>
+		<MCU_Model>AiP8F3535</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>25</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5125</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP28" Name2="42431">
+			<Pin_Assignment>28,28,1,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>4</MCU_ThirdClass>					
+    </MCU_Type>
+   <MCU_Type Name="AiP8F3536">
+		<MCU_ChipName>AiP8F3536</MCU_ChipName>
+		<MCU_Model>AiP8F3536</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>25</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5125</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,8,7,22,23</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>8</MCU_ThirdClass>					
+    </MCU_Type>
+   <MCU_Type Name="AiP8F3537">
+		<MCU_ChipName>AiP8F3537</MCU_ChipName>
+		<MCU_Model>AiP8F3537</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>25</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5125</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP24" Name2="">
+			<Pin_Assignment>24,12,11,24,1</Pin_Assignment>
+		</Footprint>
+		
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>7</MCU_ThirdClass>					
+    </MCU_Type>
+   <MCU_Type Name="AiP8F3564">
+		<MCU_ChipName>AiP8F3564</MCU_ChipName>
+		<MCU_Model>AiP8F3564</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>30</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>65536</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5130</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>
+    </MCU_Type>
+	<MCU_Type Name="AiP8F5008">
+		<MCU_ChipName>AiP8F5008</MCU_ChipName>
+		<MCU_Model>AiP8F5008</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>15</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>8192</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5115</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16"  Name2="">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>5</MCU_ThirdClass>				
+    </MCU_Type>
+
+   <MCU_Type Name="AiP8F5016">
+		<MCU_ChipName>AiP8F5016</MCU_ChipName>
+		<MCU_Model>AiP8F5016</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>19</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>16384</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>128</EEPROM_Size>
+		<Writer_Boarde>5119</Writer_Boarde>		
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP16">
+			<Pin_Assignment>16,1,16,10,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP20">
+			<Pin_Assignment>20,1,20,11,12</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP28">
+			<Pin_Assignment>28,1,28,15,16</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>8</MCU_ThirdClass>				
+    </MCU_Type>
+	
+	<MCU_Type Name="AiP8F7232">
+		<MCU_ChipName>AiP8F7232</MCU_ChipName>
+		<MCU_Model>AiP8F7232</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>20</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5120</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SSOP28" Name2="">
+			<Pin_Assignment>28,2,3,1,28</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>					
+    </MCU_Type>
+
+	<MCU_Type Name="AiP8F7201">
+		<MCU_ChipName>AiP8F7201</MCU_ChipName>
+		<MCU_Model>AiP8F7201</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>20</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5120</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>			
+    </MCU_Type>
+	
+   <MCU_Type Name="AiP8F7232s">
+		<MCU_ChipName>AiP8F7232s</MCU_ChipName>
+		<MCU_Model>AiP8F7232s</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>24</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5124</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SSOP28" Name2="">
+			<Pin_Assignment>28,2,3,1,28</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>					
+    </MCU_Type>
+    
+	<MCU_Type Name="AiP8F7201s">
+		<MCU_ChipName>AiP8F7201s</MCU_ChipName>
+		<MCU_Model>AiP8F7201s</MCU_Model>
+		<MCU_Class>51</MCU_Class>
+		<MCU_SubClass>24</MCU_SubClass>
+		<MCU_InsWidth>8</MCU_InsWidth>
+		<ROM_Size>32768</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>5124</Writer_Boarde>
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>					
+    </MCU_Type>
+
+    <MCU_Type Name="AiP9P152">
+			<MCU_ChipName>AiP9P152</MCU_ChipName>
+			<MCU_Model>AiP9P152</MCU_Model>
+			<MCU_Class>19</MCU_Class>
+			<MCU_SubClass>9</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1909</Writer_Boarde>	
+			<Packaging_Num>0</Packaging_Num>
+			<Footprint Name="SOP/DIP8">
+				<Pin_Assignment>8,1,8,4,6,5</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP16">
+				<Pin_Assignment>16,1,16,4,14,13</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20">
+				<Pin_Assignment>20,1,20,4,18,17</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+	</MCU_Type>
+
+	<MCU_Type Name="AiP9P262">
+		<MCU_ChipName>AiP9P262</MCU_ChipName>
+		<MCU_Model>AiP9P262</MCU_Model>
+		<MCU_Class>19</MCU_Class>
+		<MCU_SubClass>10</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>2048</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>1910</Writer_Boarde>	
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SSOP28">
+			<Pin_Assignment>28,1,28,25,21,20</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+
+	<MCU_Type Name="AiP9P262L">
+		<MCU_ChipName>AiP9P262L</MCU_ChipName>
+		<MCU_Model>AiP9P262L</MCU_Model>
+		<MCU_Class>19</MCU_Class>
+		<MCU_SubClass>10</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>2048</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>1910</Writer_Boarde>	
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SSOP28">
+			<Pin_Assignment>28,1,28,25,21,20</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>				
+   </MCU_Type>
+   
+	<MCU_Type Name="AiP9P263">
+		<MCU_ChipName>AiP9P263</MCU_ChipName>
+		<MCU_Model>AiP9P263</MCU_Model>
+		<MCU_Class>19</MCU_Class>
+		<MCU_SubClass>11</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>4096</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>1911</Writer_Boarde>	
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+	</MCU_Type>
+
+	<MCU_Type Name="AiP9P263L">
+		<MCU_ChipName>AiP9P263L</MCU_ChipName>
+		<MCU_Model>AiP9P263L</MCU_Model>
+		<MCU_Class>19</MCU_Class>
+		<MCU_SubClass>11</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>4096</ROM_Size>
+		<Option_Size>0</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>1911</Writer_Boarde>	
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>2</MCU_ThirdClass>				
+	</MCU_Type>
+	
+	<MCU_Type Name="AiP9P351">
+			<MCU_ChipName>AiP9P351</MCU_ChipName>
+			<MCU_Model>AiP9P351</MCU_Model>
+			<MCU_Class>19</MCU_Class>
+			<MCU_SubClass>8</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1907</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP8-A">
+				<Pin_Assignment>8,1,8,3,6,5</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP8-B">
+				<Pin_Assignment>8,3,4,1,6,7</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+   
+   <MCU_Type Name="AiP9P352">
+			<MCU_ChipName>AiP9P352</MCU_ChipName>
+			<MCU_Model>AiP9P352</MCU_Model>
+			<MCU_Class>19</MCU_Class>
+			<MCU_SubClass>7</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1907</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP16">
+				<Pin_Assignment>16,1,16,4,14,13</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="SOP/DIP20">
+				<Pin_Assignment>20,1,20,4,18,17</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+
+   <MCU_Type Name="AiP9P3521">
+			<MCU_ChipName>AiP9P3521</MCU_ChipName>
+			<MCU_Model>AiP9P3521</MCU_Model>
+			<MCU_Class>19</MCU_Class>
+			<MCU_SubClass>7</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>0</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP16">
+				<Pin_Assignment>16,2,16,5,14,13</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>2</MCU_ThirdClass>				
+   </MCU_Type>
+   <MCU_Type Name="AiP9E163">
+		<MCU_ChipName>AiP9E163</MCU_ChipName>
+		<MCU_Model>AiP9E163</MCU_Model>
+		<MCU_Class>19</MCU_Class>
+		<MCU_SubClass>14</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>4096</ROM_Size>
+		<Option_Size>32</Option_Size>
+		<EEPROM_Size>256</EEPROM_Size>
+		<Writer_Boarde>1914</Writer_Boarde>	
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP8">
+			<Pin_Assignment>8,1,8,2,5,6</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP14">
+			<Pin_Assignment>14,1,14,4,12,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP16">
+			<Pin_Assignment>16,1,16,4,14,13</Pin_Assignment>
+		</Footprint>
+
+		<Footprint Name="SOP/DIP20">
+			<Pin_Assignment>20,20,1,4,18,17</Pin_Assignment>
+		</Footprint>
+
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+
+   <MCU_Type Name="AiP9E168">
+		<MCU_ChipName>AiP9E168</MCU_ChipName>
+		<MCU_Model>AiP9E168</MCU_Model>
+		<MCU_Class>19</MCU_Class>
+		<MCU_SubClass>14</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>4096</ROM_Size>
+		<Option_Size>32</Option_Size>
+		<EEPROM_Size>256</EEPROM_Size>
+		<Writer_Boarde>1914</Writer_Boarde>	
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP8">
+			<Pin_Assignment>8,1,8,2,5,6</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP14">
+			<Pin_Assignment>14,1,14,4,12,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP16">
+			<Pin_Assignment>16,1,16,4,14,13</Pin_Assignment>
+		</Footprint>
+
+		<Footprint Name="SOP/DIP20">
+			<Pin_Assignment>20,20,1,4,18,17</Pin_Assignment>
+		</Footprint>
+
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+   <MCU_Type Name="AiP9M161">
+		<MCU_ChipName>AiP9M161</MCU_ChipName>
+		<MCU_Model>AiP9M161</MCU_Model>
+		<MCU_Class>19</MCU_Class>
+		<MCU_SubClass>12</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>2048</ROM_Size>
+		<Option_Size>32</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>1912</Writer_Boarde>	
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP8">
+			<Pin_Assignment>8,1,8,4,5,6</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP10">
+			<Pin_Assignment>10,1,10,4,7,8</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP14">
+			<Pin_Assignment>14,1,14,4,12,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP16">
+			<Pin_Assignment>16,1,16,4,14,13</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+    <MCU_Type Name="AiP9M169">
+		<MCU_ChipName>AiP9M169</MCU_ChipName>
+		<MCU_Model>AiP9M169</MCU_Model>
+		<MCU_Class>19</MCU_Class>
+		<MCU_SubClass>12</MCU_SubClass>
+		<MCU_InsWidth>16</MCU_InsWidth>
+		<ROM_Size>2048</ROM_Size>
+		<Option_Size>32</Option_Size>
+		<EEPROM_Size>0</EEPROM_Size>
+		<Writer_Boarde>1912</Writer_Boarde>	
+		<Packaging_Num>1</Packaging_Num>
+		<Footprint Name="SOP/DIP8">
+			<Pin_Assignment>8,1,8,4,5,6</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP10">
+			<Pin_Assignment>10,1,10,4,7,8</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP14">
+			<Pin_Assignment>14,1,14,4,12,11</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="SOP/DIP16">
+			<Pin_Assignment>16,1,16,4,14,13</Pin_Assignment>
+		</Footprint>
+		<Footprint Name="ISP">
+			<Pin_Assignment>0,0</Pin_Assignment>
+		</Footprint>
+		<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>  
+   <MCU_Type Name="AiP9M251">
+			<MCU_ChipName>AiP9M251</MCU_ChipName>
+			<MCU_Model>AiP9M251</MCU_Model>
+			<MCU_Class>19</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>14</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1901</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP28">
+				<Pin_Assignment>28,1,28,25,21,20,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+   
+   <MCU_Type Name="AiP9M251L">
+			<MCU_ChipName>AiP9M251L</MCU_ChipName>
+			<MCU_Model>AiP9M251L</MCU_Model>
+			<MCU_Class>19</MCU_Class>
+			<MCU_SubClass>2</MCU_SubClass>
+			<MCU_InsWidth>14</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1902</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="SOP/DIP28">
+				<Pin_Assignment>28,1,28,25,21,20,2</Pin_Assignment>
+			</Footprint>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+   
+   <MCU_Type Name="AiP9M252">
+			<MCU_ChipName>AiP9M252</MCU_ChipName>
+			<MCU_Model>AiP9M252</MCU_Model>
+			<MCU_Class>19</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>14</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1903</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+   
+   <MCU_Type Name="AiP9M252L">
+			<MCU_ChipName>AiP9M252L</MCU_ChipName>
+			<MCU_Model>AiP9M252L</MCU_Model>
+			<MCU_Class>19</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>14</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1904</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+   
+   <MCU_Type Name="AiP9M253">
+			<MCU_ChipName>AiP9M253</MCU_ChipName>
+			<MCU_Model>AiP9M253</MCU_Model>
+			<MCU_Class>19</MCU_Class>
+			<MCU_SubClass>5</MCU_SubClass>
+			<MCU_InsWidth>14</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1905</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+
+   <MCU_Type Name="AiP9M253L">
+			<MCU_ChipName>AiP9M253L</MCU_ChipName>
+			<MCU_Model>AiP9M253L</MCU_Model>
+			<MCU_Class>19</MCU_Class>
+			<MCU_SubClass>6</MCU_SubClass>
+			<MCU_InsWidth>14</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>16</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1906</Writer_Boarde>	
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+   </MCU_Type>
+   
+   <MCU_Type Name="AiP16F800E">
+			<MCU_ChipName>AiP16F800E</MCU_ChipName>
+			<MCU_Model>AiP16F800E</MCU_Model>
+			<MCU_Class>18</MCU_Class>
+			<MCU_SubClass>5</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>98304</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1805</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+    </MCU_Type>
+    
+		<MCU_Type Name="AiP16F800F">
+			<MCU_ChipName>AiP16F800F</MCU_ChipName>
+			<MCU_Model>AiP16F800F</MCU_Model>
+			<MCU_Class>18</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>131072</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1801</Writer_Boarde>
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>			
+		</MCU_Type>
+		
+		<MCU_Type Name="AiP32L1032">
+			<MCU_ChipName>AiP32L1032</MCU_ChipName>
+			<MCU_Model>AiP32L1032</MCU_Model>
+			<MCU_Class>32</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>3201</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>
+
+   	<MCU_Type Name="AiP32L1064">
+			<MCU_ChipName>AiP32L1064</MCU_ChipName>
+			<MCU_Model>AiP32L1064</MCU_Model>
+			<MCU_Class>32</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>65536</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>3201</Writer_Boarde>		
+			<Packaging_Num>1</Packaging_Num>
+			<Footprint Name="ISP">
+				<Pin_Assignment>0,0</Pin_Assignment>
+			</Footprint>
+			<MCU_ThirdClass>1</MCU_ThirdClass>				
+    </MCU_Type>     
+  
+</MCU_TypeSetting>
+

@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="gb2312"?>
+<MCU_TypeSetting>
+  
+   <MCU_Type Name="AiP8P001G">
+			<MCU_ChipName>AiP8P001G</MCU_ChipName>
+			<MCU_Model>AiP8P001G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1104</Writer_Boarde>			
+    </MCU_Type> 
+   
+   <MCU_Type Name="AiP8P002A">
+			<MCU_ChipName>AiP8P002A</MCU_ChipName>
+			<MCU_Model>AiP8P002A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P002B">
+			<MCU_ChipName>AiP8P002B</MCU_ChipName>
+			<MCU_Model>AiP8P002B</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P002G">
+			<MCU_ChipName>AiP8P002G</MCU_ChipName>
+			<MCU_Model>AiP8P002G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1103</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P002H">
+			<MCU_ChipName>AiP8P002H</MCU_ChipName>
+			<MCU_Model>AiP8P002H</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1104</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P003A">
+			<MCU_ChipName>AiP8P003A</MCU_ChipName>
+			<MCU_Model>AiP8P003A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P003G">
+			<MCU_ChipName>AiP8P003G</MCU_ChipName>
+			<MCU_Model>AiP8P003G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1103</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P003H">
+			<MCU_ChipName>AiP8P003H</MCU_ChipName>
+			<MCU_Model>AiP8P003H</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1104</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P005A">
+			<MCU_ChipName>AiP8P005A</MCU_ChipName>
+			<MCU_Model>AiP8P005A</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1001</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P005B">
+			<MCU_ChipName>AiP8P005B</MCU_ChipName>
+			<MCU_Model>AiP8P005B</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1001</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P006A">
+			<MCU_ChipName>AiP8P006A</MCU_ChipName>
+			<MCU_Model>AiP8P006A</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1003</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P007A">
+			<MCU_ChipName>AiP8P007A</MCU_ChipName>
+			<MCU_Model>AiP8P007A</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>5</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>6144</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1005</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P007B">
+			<MCU_ChipName>AiP8P007B</MCU_ChipName>
+			<MCU_Model>AiP8P007B</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>8</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>6144</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1008</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P101A">
+			<MCU_ChipName>AiP8P101A</MCU_ChipName>
+			<MCU_Model>AiP8P101A</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>2</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1002</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P101B">
+			<MCU_ChipName>AiP8P101B</MCU_ChipName>
+			<MCU_Model>AiP8P101B</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>7</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1007</Writer_Boarde>			
+    </MCU_Type>
+  
+   <MCU_Type Name="AiP8P101C">
+			<MCU_ChipName>AiP8P101C</MCU_ChipName>
+			<MCU_Model>AiP8P101C</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>7</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1007</Writer_Boarde>			
+    </MCU_Type>
+  
+   <MCU_Type Name="AiP8P101G">
+			<MCU_ChipName>AiP8P101G</MCU_ChipName>
+			<MCU_Model>AiP8P101G</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>9</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1009</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P102A">
+			<MCU_ChipName>AiP8P102A</MCU_ChipName>
+			<MCU_Model>AiP8P102A</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1004</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P102G">
+			<MCU_ChipName>AiP8P102G</MCU_ChipName>
+			<MCU_Model>AiP8P102G</MCU_Model>
+			<MCU_Class>10</MCU_Class>
+			<MCU_SubClass>6</MCU_SubClass>
+			<MCU_InsWidth>16</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1006</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P103A">
+			<MCU_ChipName>AiP8P103A</MCU_ChipName>
+			<MCU_Model>AiP8P103A</MCU_Model>
+			<MCU_Class>16</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1604</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P201A">
+			<MCU_ChipName>AiP8P201A</MCU_ChipName>
+			<MCU_Model>AiP8P201A</MCU_Model>
+			<MCU_Class>16</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>		
+ 	    <Writer_Boarde>1601</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P202A">
+			<MCU_ChipName>AiP8P202A</MCU_ChipName>
+			<MCU_Model>AiP8P202A</MCU_Model>
+			<MCU_Class>16</MCU_Class>
+			<MCU_SubClass>2</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>8192</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1602</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P202B">
+			<MCU_ChipName>AiP8P202B</MCU_ChipName>
+			<MCU_Model>AiP8P202B</MCU_Model>
+			<MCU_Class>16</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>8192</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1603</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P301A">
+			<MCU_ChipName>AiP8P301A</MCU_ChipName>
+			<MCU_Model>AiP8P301A</MCU_Model>
+			<MCU_Class>15</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>14</MCU_InsWidth>
+			<ROM_Size>2048</ROM_Size>
+			<Option_Size>8</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1501</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P401G">
+			<MCU_ChipName>AiP8P401G</MCU_ChipName>
+			<MCU_Model>AiP8P401G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1103</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P402G">
+			<MCU_ChipName>AiP8P402G</MCU_ChipName>
+			<MCU_Model>AiP8P402G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1103</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P403G">
+			<MCU_ChipName>AiP8P403G</MCU_ChipName>
+			<MCU_Model>AiP8P403G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1103</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P404C">
+			<MCU_ChipName>AiP8P404C</MCU_ChipName>
+			<MCU_Model>AiP8P404C</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1103</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P501A">
+			<MCU_ChipName>AiP8P501A</MCU_ChipName>
+			<MCU_Model>AiP8P501A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>2</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>2816</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1102</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8P501G">
+			<MCU_ChipName>AiP8P501G</MCU_ChipName>
+			<MCU_Model>AiP8P501G</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>5</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>2816</ROM_Size>
+			<Option_Size>5</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1105</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P601A">
+			<MCU_ChipName>AiP8P601A</MCU_ChipName>
+			<MCU_Model>AiP8P601A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P601B">
+			<MCU_ChipName>AiP8P601B</MCU_ChipName>
+			<MCU_Model>AiP8P601B</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P602A">
+			<MCU_ChipName>AiP8P602A</MCU_ChipName>
+			<MCU_Model>AiP8P602A</MCU_Model>
+			<MCU_Class>11</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>13</MCU_InsWidth>
+			<ROM_Size>1024</ROM_Size>
+			<Option_Size>10</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1101</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8F1016">
+			<MCU_ChipName>AiP8F1016</MCU_ChipName>
+			<MCU_Model>AiP8F1016</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>2</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5102</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8F1032">
+			<MCU_ChipName>AiP8F1032</MCU_ChipName>
+			<MCU_Model>AiP8F1032</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5103</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8F2032">
+			<MCU_ChipName>AiP8F2032</MCU_ChipName>
+			<MCU_Model>AiP8F2032</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>6</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5106</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="AiP8F7008">
+			<MCU_ChipName>AiP8F7008</MCU_ChipName>
+			<MCU_Model>AiP8F7008</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>8192</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5104</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8F7016">
+			<MCU_ChipName>AiP8F7016</MCU_ChipName>
+			<MCU_Model>AiP8F7016</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>16384</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5101</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8F7032">
+			<MCU_ChipName>AiP8F7032</MCU_ChipName>
+			<MCU_Model>AiP8F7032</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>5</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5105</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8F7132">
+			<MCU_ChipName>AiP8F7132</MCU_ChipName>
+			<MCU_Model>AiP8F7132</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>7</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5107</Writer_Boarde>			
+    </MCU_Type>
+   
+    
+  
+    
+   <MCU_Type Name="CS17A01">
+			<MCU_ChipName>CS17A01</MCU_ChipName>
+			<MCU_Model>AiP16F800F</MCU_Model>
+			<MCU_Class>18</MCU_Class>
+			<MCU_SubClass>1</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>131072</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1801</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="CS17A01-ONB1">
+			<MCU_ChipName>CS17A01-ONB1</MCU_ChipName>
+			<MCU_Model>AiP16F800F-ISP1</MCU_Model>
+			<MCU_Class>18</MCU_Class>
+			<MCU_SubClass>2</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>131072</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1802</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="CS17A01-ONB2">
+			<MCU_ChipName>CS17A01-ONB2</MCU_ChipName>
+			<MCU_Model>AiP16F800F-ISP2</MCU_Model>
+			<MCU_Class>18</MCU_Class>
+			<MCU_SubClass>3</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>131072</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1803</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="CS17A01-ONB3">
+			<MCU_ChipName>CS17A01-ONB3</MCU_ChipName>
+			<MCU_Model>AiP16F800F-ISP3</MCU_Model>
+			<MCU_Class>18</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>131072</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1804</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="CS17A01">
+			<MCU_ChipName>CS17A01</MCU_ChipName>
+			<MCU_Model>AiP16F800E</MCU_Model>
+			<MCU_Class>18</MCU_Class>
+			<MCU_SubClass>5</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>98304</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1805</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="CS17A01-ONB1">
+			<MCU_ChipName>CS17A01-ONB1</MCU_ChipName>
+			<MCU_Model>AiP16F800E-ISP1</MCU_Model>
+			<MCU_Class>18</MCU_Class>
+			<MCU_SubClass>6</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>98304</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1806</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="CS17A01-ONB2">
+			<MCU_ChipName>CS17A01-ONB2</MCU_ChipName>
+			<MCU_Model>AiP16F800E-ISP2</MCU_Model>
+			<MCU_Class>18</MCU_Class>
+			<MCU_SubClass>7</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>98304</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1807</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="CS17A01-ONB3">
+			<MCU_ChipName>CS17A01-ONB3</MCU_ChipName>
+			<MCU_Model>AiP16F800E-ISP3</MCU_Model>
+			<MCU_Class>18</MCU_Class>
+			<MCU_SubClass>8</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>98304</ROM_Size>
+			<Option_Size>0</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1808</Writer_Boarde>			
+    </MCU_Type>
+   
+   
+   
+   
+   <MCU_Type Name="CS1521">
+			<MCU_ChipName>CS1521</MCU_ChipName>
+			<MCU_Model>AiP8F0032</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>8</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>6</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5108</Writer_Boarde>			
+    </MCU_Type>
+    
+   <MCU_Type Name="CS17A83">
+			<MCU_ChipName>CS17A83</MCU_ChipName>
+			<MCU_Model>AiP8F0132</MCU_Model>
+			<MCU_Class>51</MCU_Class>
+			<MCU_SubClass>9</MCU_SubClass>
+			<MCU_InsWidth>8</MCU_InsWidth>
+			<ROM_Size>32768</ROM_Size>
+			<Option_Size>8</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>5109</Writer_Boarde>			
+    </MCU_Type>
+   
+   <MCU_Type Name="AiP8P104A">
+			<MCU_ChipName>AiP8P104A</MCU_ChipName>
+			<MCU_Model>AiP8P104A</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>4</MCU_SubClass>
+			<MCU_InsWidth>15</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1204</Writer_Boarde>			
+     </MCU_Type> 
+   
+   <MCU_Type Name="AiP8M104G">
+			<MCU_ChipName>AiP8M104G</MCU_ChipName>
+			<MCU_Model>AiP8M104G</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>11</MCU_SubClass>
+			<MCU_InsWidth>15</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1211</Writer_Boarde>			
+    </MCU_Type>
+   
+    
+   <MCU_Type Name="AiP8M104G-ONB1">
+			<MCU_ChipName>AiP8M104G-ONB1</MCU_ChipName>
+			<MCU_Model>AiP8M104G-ISP1</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>12</MCU_SubClass>
+			<MCU_InsWidth>15</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1212</Writer_Boarde>			
+    </MCU_Type>
+    
+    
+   <MCU_Type Name="CS18A02">
+			<MCU_ChipName>CS18A02</MCU_ChipName>
+			<MCU_Model>AiP8M203G</MCU_Model>
+			<MCU_Class>12</MCU_Class>
+			<MCU_SubClass>13</MCU_SubClass>
+			<MCU_InsWidth>15</MCU_InsWidth>
+			<ROM_Size>4096</ROM_Size>
+			<Option_Size>32</Option_Size>
+			<EEPROM_Size>0</EEPROM_Size>
+			<Writer_Boarde>1213</Writer_Boarde>			
+    </MCU_Type>
+    
+    
+   
+</MCU_TypeSetting>

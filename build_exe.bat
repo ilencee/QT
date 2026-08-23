@@ -2,37 +2,40 @@
 chcp 65001 >nul
 cd /d "%~dp0"
 
-set "APP_NAME=ä¸²å£è°ƒè¯•å·¥å…·"
+set "APP_NAME=¹¤×÷ÖúÊÖ"
 
 echo ============================================
-echo  å·¥ä½œåŠ©æ‰‹ - ä¸€é”®æ‰“åŒ…è„šæœ¬ (PyInstaller)
+echo  ¹¤×÷ÖúÊÖ - Ò»¼ü´ò°ü½Å±¾ (PyInstaller)
 echo ============================================
 
-echo [1/5] ç”Ÿæˆå›¾æ ‡æ–‡ä»¶ (assets\app.ico) ...
+echo [1/5] Éú³ÉÍ¼±êÎÄ¼þ (assets\app.ico) ...
 python -c "from PIL import Image; Image.open('assets/icon.png').save('assets/app.ico', sizes=[(16,16),(32,32),(48,48),(64,64),(128,128),(256,256)])"
 
-echo [2/5] æ¸…ç†æ—§çš„æ‰“åŒ…äº§ç‰© ...
-if exist build rmdir /s /q build
-if exist dist rmdir /s /q dist
+echo [2/5] ÇåÀí¾ÉµÄ´ò°ü²úÎï ...
+if exist "build\%APP_NAME%" rmdir /s /q "build\%APP_NAME%"
+if exist "dist\%APP_NAME%" rmdir /s /q "dist\%APP_NAME%"
+REM Ö»ÇåÀí±¾½Å±¾µÄ²úÎï, ±£Áôµ¥ÎÄ¼þ°æ (dist\¹¤×÷ÖúÊÖ_µ¥ÎÄ¼þ) ÓëÀúÊ·²úÎï
 
-echo [3/5] PyInstaller æ‰“åŒ… (one-dir, æ— æŽ§åˆ¶å°çª—å£) ...
-python -m PyInstaller --noconfirm --clean --onedir --windowed --name "%APP_NAME%" --icon "assets/app.ico" main.py
+echo [3/5] PyInstaller ´ò°ü (one-dir, ÎÞ¿ØÖÆÌ¨´°¿Ú) ...
+python -m PyInstaller --noconfirm --clean --onedir --windowed --name "%APP_NAME%" --icon "%~dp0assets\app.ico" main.py
 if errorlevel 1 (
-    echo æ‰“åŒ…å¤±è´¥!
+    echo ´ò°üÊ§°Ü!
     pause
     exit /b 1
 )
 
-echo [4/5] å¤åˆ¶è¿è¡Œæ‰€éœ€èµ„æºåˆ° dist\%APP_NAME% ...
+echo [4/5] ¸´ÖÆÔËÐÐËùÐè×ÊÔ´µ½ dist\%APP_NAME% ...
 copy /y "config.json" "dist\%APP_NAME%\config.json" >nul
 if exist "assets" xcopy /e /i /y "assets\*" "dist\%APP_NAME%\assets" >nul
-if exist "XW16Pro_StandaloneProgrammer" xcopy /e /i /y "XW16Pro_StandaloneProgrammer" "dist\%APP_NAME%\XW16Pro_StandaloneProgrammer" >nul
-if exist "ä¸­å¾®çˆ±èŠ¯" xcopy /e /i /y "ä¸­å¾®çˆ±èŠ¯" "dist\%APP_NAME%\ä¸­å¾®çˆ±èŠ¯" >nul
+if exist "ÉÕÂ¼Èí¼þ" xcopy /e /i /y "ÉÕÂ¼Èí¼þ" "dist\%APP_NAME%\ÉÕÂ¼Èí¼þ" >nul
+if exist "´®¿Úµ÷ÊÔÖúÊÖ" xcopy /e /i /y "´®¿Úµ÷ÊÔÖúÊÖ" "dist\%APP_NAME%\´®¿Úµ÷ÊÔÖúÊÖ" >nul
+REM ×¢Òâ: ²»Òª¸´ÖÆ installed_programs_memory.json ¡ª ËüÊÇÃ¿Ì¨µçÄÔ±¾»úÒÑ°²×°Èí¼þµÄ¼ÇÒä,
+REM ÊôÓÚÔËÐÐÊ±Éú³ÉµÄÓÃ»§Êý¾Ý, Ê×´ÎÔËÐÐ»á×Ô¶¯ÔÚ exe ÅÔÐÂ½¨, ÇÐÎð°Ñ×÷ÕßµÄ¼ÇÒä´ò½ø·¢²¼°æ¡£
 
-echo [5/5] æ‰“åŒ…å®Œæˆ!
-echo è¾“å‡ºç›®å½•: dist\%APP_NAME%
-echo ä¸»ç¨‹åº:   dist\%APP_NAME%\%APP_NAME%.exe
+echo [5/5] ´ò°üÍê³É!
+echo Êä³öÄ¿Â¼: dist\%APP_NAME%
+echo Ö÷³ÌÐò:   dist\%APP_NAME%\%APP_NAME%.exe
 echo.
-echo æ³¨æ„: XW16Pro_StandaloneProgrammer / ä¸­å¾®çˆ±èŠ¯ ç›®å½•ä¸ºçƒ§å½•è½¯ä»¶,
-echo       å·²ä¸€å¹¶å¤åˆ¶åˆ°è¾“å‡ºç›®å½•, çƒ§å½•è½¯ä»¶é¡µé¢å¯ç›´æŽ¥å¯åŠ¨å¯¹åº” exeã€‚
+echo ×¢Òâ: ÉÕÂ¼Èí¼þ / ´®¿Úµ÷ÊÔÖúÊÖ Ä¿Â¼ÒÑÒ»²¢¸´ÖÆµ½Êä³öÄ¿Â¼,
+echo       ÉÕÂ¼Èí¼þÒ³Óë´®¿Úµ÷ÊÔÒ³¿ÉÖ±½ÓÆô¶¯¶ÔÓ¦ exe¡£
 pause
